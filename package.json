@@ -1,0 +1,62 @@
+{
+  "name": "know-answer",
+  "version": "1.0.0",
+  "description": "Interview For Developer Helper",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "test:watch": "npx jest --watchAll",
+    "test:unit": "jest",
+    "lint": "eslint --ext js,jsx .",
+    "coverage": "npm run test:unit -- --coverage",
+    "test": "echo E2E 테스트 마련하고 작성"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kwonmory/project-react-1-kwonmory.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kwonmory/project-react-1-kwonmory/issues"
+  },
+  "homepage": "https://github.com/kwonmory/project-react-1-kwonmory#readme",
+  "dependencies": {
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "@reduxjs/toolkit": "^1.4.0",
+    "css-loader": "^4.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0",
+    "redux": "^4.0.5",
+    "style-loader": "^1.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
+    "@testing-library/jest-dom": "^5.11.1",
+    "@testing-library/react": "^10.4.7",
+    "@types/jest": "^26.0.7",
+    "babel-jest": "^26.1.0",
+    "babel-loader": "^8.1.0",
+    "codeceptjs": "^2.6.6",
+    "eslint": "^7.5.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.4",
+    "eslint-plugin-react-hooks": "^4.0.8",
+    "given2": "^2.1.7",
+    "jest": "^26.1.0",
+    "jest-plugin-context": "^2.9.0",
+    "puppeteer": "^5.2.0",
+    "redux-mock-store": "^1.5.4",
+    "start-server-and-test": "^1.11.2",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
