@@ -43,6 +43,7 @@
     "babel-jest": "^26.1.0",
     "babel-loader": "^8.1.0",
     "codeceptjs": "^2.6.6",
+    "connect-api-mocker": "^1.9.0",
     "eslint": "^7.5.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.0",
