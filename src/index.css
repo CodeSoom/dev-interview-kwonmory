@@ -1,0 +1,12 @@
+@import 'reset-css';
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+
+* {
+  box-sizing: border-box;  
+}
+
+body {
+  font-family: 'Noto Sans KR', sans-serif;
+  width: 100vw;
+}
