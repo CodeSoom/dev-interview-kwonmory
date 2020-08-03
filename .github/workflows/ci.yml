@@ -24,17 +24,17 @@ jobs:
       
       - name: Run unit tests
         run: npm run test:unit
-      
-      - name: Build
-        run: |
-          npm run build
-        
+
       - name: Run E2E tests
         run: |
           npm run test
         env: 
           HEADLESS: true 
 
+      - name: Build
+        run: |
+          npm run build
+        
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.5.9
         with:
