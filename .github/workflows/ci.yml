@@ -31,7 +31,7 @@ jobs:
         
       - name: Run E2E tests
         run: |
-          npm run test:e2e
+          HEADLESS=true npm run test:e2e
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.5.9
