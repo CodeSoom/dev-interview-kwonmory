@@ -17,7 +17,7 @@ jobs:
           persist-credentials: false
         
       - name: Install
-        run: npm i
+        run: npm ci
       
       - name: Lint
         run: npx eslint --ext .js,.jsx src test
@@ -31,7 +31,9 @@ jobs:
         
       - name: Run E2E tests
         run: |
-          HEADLESS=true npm run test:e2e
+          npm run test:e2e
+        env: 
+          HEADLESS: true 
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.5.9
