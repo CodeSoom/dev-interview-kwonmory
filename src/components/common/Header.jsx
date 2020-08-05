@@ -189,11 +189,14 @@ const Header = ({ login, dropDownMenuActive, onDropdownMenuActive }) => (
         <div className="header__right">
           <MenuListStyled className="header__menus">
             <li>
-              <MenuLinkStyled to="/" exact activeClassName="selected">서비스 소개</MenuLinkStyled>
+              <MenuLinkStyled to="/" exact activeClassName="selected">서비스소개</MenuLinkStyled>
+            </li>
+            <li>
+              <MenuLinkStyled to="/interviews" exact activeClassName="selected">인터뷰즈</MenuLinkStyled>
             </li>
             <li className="divider" />
             <li>
-              <MenuLinkStyled to="/challenge" exact activeClassName="selected">인터뷰 챌린지</MenuLinkStyled>
+              <MenuLinkStyled to="/interviews/practice" exact activeClassName="selected">인터뷰연습</MenuLinkStyled>
             </li>
           </MenuListStyled>
           <MenuListStyled className="header__menus">

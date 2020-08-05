@@ -4,6 +4,9 @@ const { actions, reducer } = createSlice({
   name: 'application',
   initialState: {
     accessToken: '',
+    interview: {
+      questions: [],
+    },
   },
   reducers: {
     setAccessToken(state, { payload: accessToken }) {
@@ -12,8 +15,20 @@ const { actions, reducer } = createSlice({
         accessToken,
       };
     },
+    setInterviewQuestions(state, { payload: questions }) {
+      return {
+        ...state,
+        interview: {
+          ...state.interview,
+          questions,
+        },
+      };
+    },
   },
 });
 
-export const { setAccessToken } = actions;
+export const {
+  setAccessToken,
+  setInterviewQuestions,
+} = actions;
 export default reducer;
