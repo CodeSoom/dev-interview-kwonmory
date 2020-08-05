@@ -1,27 +1,30 @@
 {
-  "name": "know-answer",
+  "name": "Inttaview",
   "version": "1.0.0",
   "description": "Interview For Developer Helper",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
-    "test:watch": "npx jest --watchAll",
+    "watch": "jest --watchAll",
+    "build": "webpack --mode=production",
     "test:unit": "jest",
     "lint": "eslint --ext js,jsx .",
     "coverage": "npm run test:unit -- --coverage",
-    "test": "echo E2E 테스트 마련하고 작성"
+    "test:e2e": "codeceptjs run --steps",
+    "test": "npm run coverage && start-server-and-test start http://localhost:8080 test:e2e"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kwonmory/project-react-1-kwonmory.git"
   },
-  "author": "",
+  "author": "kwonmory",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kwonmory/project-react-1-kwonmory/issues"
   },
   "homepage": "https://github.com/kwonmory/project-react-1-kwonmory#readme",
   "dependencies": {
+    "@codeceptjs/configure": "^0.5.2",
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
@@ -49,8 +52,10 @@
     "@types/jest": "^26.0.7",
     "babel-jest": "^26.1.0",
     "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
     "codeceptjs": "^2.6.6",
     "connect-api-mocker": "^1.9.0",
+    "copy-webpack-plugin": "^6.0.3",
     "eslint": "^7.5.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-plugin-import": "^2.22.0",
@@ -58,6 +63,7 @@
     "eslint-plugin-react": "^7.20.4",
     "eslint-plugin-react-hooks": "^4.0.8",
     "given2": "^2.1.7",
+    "html-webpack-plugin": "^4.3.0",
     "jest": "^26.1.0",
     "jest-plugin-context": "^2.9.0",
     "puppeteer": "^5.2.0",
