@@ -1,4 +1,4 @@
-import { get, t } from './utils';
+import { get } from './utils';
 
 test('get', () => {
   const state = {
@@ -10,8 +10,4 @@ test('get', () => {
 
   expect(name(state)).toBe(state.name);
   expect(age(state)).toBeUndefined();
-});
-
-test('t', () => {
-  expect();
 });
