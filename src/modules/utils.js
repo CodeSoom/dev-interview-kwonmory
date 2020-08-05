@@ -1,6 +1,5 @@
-export function get(key) {
-  return (obj) => obj[key];
-}
+const get = (key) => (obj) => obj[key];
 
-// TODO Delete
-export function t() {}
+export { get };
+
+export default get;
