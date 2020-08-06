@@ -39,9 +39,9 @@ describe('Header', () => {
         handleDropdownMenuActive,
       });
 
-      expect(container).toHaveTextContent('서비스 소개');
-      expect(container).toHaveTextContent('인터뷰');
-      expect(container).toHaveTextContent('챌린지');
+      expect(container).toHaveTextContent('서비스소개');
+      expect(container).toHaveTextContent('인터뷰즈');
+      expect(container).toHaveTextContent('인터뷰연습');
 
       expect(container.querySelector('.logo')).not.toBeNull();
       expect(container.querySelector('button')).not.toBeNull();
