@@ -51,7 +51,7 @@ export function loadQuestions() {
   return async (dispatch) => {
     const questions = await fetchQuestions();
 
-    await dispatch(clearInterviewQuestions());
-    await dispatch(setInterviewQuestions(questions));
+    dispatch(clearInterviewQuestions());
+    dispatch(setInterviewQuestions(questions));
   };
 }
