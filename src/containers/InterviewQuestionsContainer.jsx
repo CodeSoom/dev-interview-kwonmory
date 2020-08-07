@@ -22,12 +22,6 @@ const InterviewQuestionsContainer = () => {
           <div key={category.id}>{category.name}</div>
         ))}
       </div>
-      <div>
-        회사:
-        {question.relatedCompany && question.relatedCompany.map((company) => (
-          <div key={company.id}>{company.name}</div>
-        ))}
-      </div>
     </li>
   ));
 
