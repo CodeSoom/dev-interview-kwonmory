@@ -3,7 +3,7 @@ const apiMocker = require('connect-api-mocker');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
+module.exports = (env, argv) => ({
   entry: path.resolve(__dirname, 'src/index.jsx'),
   module: {
     rules: [
@@ -24,7 +24,7 @@ module.exports = {
   output: {
     filename: 'bundle-[hash].js',
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/',
+    publicPath: argv.mode === 'production' ? '/project-react-1-kwonmory' : '/',
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -39,4 +39,4 @@ module.exports = {
     contentBase: '/dist',
     historyApiFallback: true,
   },
-};
+});
