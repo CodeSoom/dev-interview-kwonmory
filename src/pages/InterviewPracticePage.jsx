@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
-import { get } from '../modules/utils';
+import InterviewQuestionsContainer from '../containers/InterviewQuestionsContainer';
+
+import { loadQuestions } from '../modules/reducer';
 
 const InterviewPracticePage = () => {
-  const { questions } = useSelector(get('interview'));
+  const dispatch = useDispatch();
 
-  if (!questions || questions.length === 0) {
-    return (<h2>인터뷰 질문이 없습니다.</h2>);
-  }
+  useEffect(() => {
+    dispatch(loadQuestions());
+  }, []);
 
   return (
     <>
-      질문
+      <div>
+        카테고리영역
+        체감 난이도
+        질문 유형
+        회사별 질문
+      </div>
+      <InterviewQuestionsContainer />
     </>
   );
 };

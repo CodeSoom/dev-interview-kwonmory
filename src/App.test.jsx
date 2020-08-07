@@ -4,7 +4,7 @@ import { render } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
 
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import interviewQuestions from '../fixtures/interview-questions';
 import { interviewQuestionsTerms } from '../fixtures/term';
@@ -22,7 +22,10 @@ function renderApp(path = ['/']) {
 }
 
 describe('App', () => {
+  const dispatch = jest.fn();
+
   beforeEach(() => {
+    useDispatch.mockImplementation(() => dispatch);
     useSelector.mockImplementation((selector) => selector({
       interview: {
         questions: given.questions,

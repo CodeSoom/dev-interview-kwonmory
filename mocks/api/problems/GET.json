@@ -1,15 +1,21 @@
 [
   {
-    "id": "123",
-    "title": "doctype이 무엇을 하는 것인가요?",
+    "id": "1",
+    "title": "인덱스(Index)란 무엇인가?",
     "submitter": {
       "id": "1"
     },
-    "category": {
-      "id": "0006",
-      "name": "HTML"
-    },
-    "comment": [
+    "categories": [{
+      "id": "1",
+      "name": "Database"
+    }],
+    "depthOfQuestion": "하",
+    "relatedCompany": [{
+      "id": "1",
+      "name": "쿠팡"
+    }
+    ],
+    "reviews": [
       {
         "id": "1",
         "userId": "1",
@@ -27,16 +33,22 @@
     "updated_at": "2019-01-30 17:37:07"
   },
   {
-    "id": "123",
-    "title": "doctype이 무엇을 하는 것인가요?",
+    "id": "2",
+    "title": "22인덱스(Index)란 무엇인가?",
     "submitter": {
       "id": "1"
     },
-    "category": {
-      "id": "0006",
-      "name": "HTML"
-    },
-    "comment": [
+    "categories": [{
+      "id": "1",
+      "name": "Database"
+    }],
+    "depthOfQuestion": "하",
+    "relatedCompany": [{
+      "id": "1",
+      "name": "쿠팡"
+    }
+    ],
+    "reviews": [
       {
         "id": "1",
         "userId": "1",
@@ -54,16 +66,18 @@
     "updated_at": "2019-01-30 17:37:07"
   },
   {
-    "id": "123",
-    "title": "doctype이 무엇을 하는 것인가요?",
+    "id": "3",
+    "title": "33인덱스(Index)란 무엇인가?",
     "submitter": {
       "id": "1"
     },
-    "category": {
-      "id": "0006",
-      "name": "HTML"
-    },
-    "comment": [
+    "categories": [{
+      "id": "1",
+      "name": "Database"
+    }],
+    "depthOfQuestion": "하",
+    "relatedCompany": [],
+    "reviews": [
       {
         "id": "1",
         "userId": "1",
