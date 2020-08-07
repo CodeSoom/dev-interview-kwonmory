@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import {
+  fetchParts,
   fetchQuestions,
 } from '../services/api';
 
@@ -10,6 +11,7 @@ const { actions, reducer } = createSlice({
     accessToken: '',
     interview: {
       questions: [],
+      parts: [],
     },
   },
   reducers: {
@@ -37,6 +39,15 @@ const { actions, reducer } = createSlice({
         },
       };
     },
+    setInterviewParts(state, { payload: parts }) {
+      return {
+        ...state,
+        interview: {
+          ...state.interview,
+          parts,
+        },
+      };
+    },
   },
 });
 
@@ -44,6 +55,7 @@ export const {
   setAccessToken,
   setInterviewQuestions,
   clearInterviewQuestions,
+  setInterviewParts,
 } = actions;
 export default reducer;
 
@@ -53,5 +65,13 @@ export function loadQuestions() {
 
     await dispatch(clearInterviewQuestions());
     await dispatch(setInterviewQuestions(questions));
+  };
+}
+
+export function loadParts() {
+  return async (dispatch) => {
+    const parts = await fetchParts();
+
+    dispatch(setInterviewParts(parts));
   };
 }

@@ -7,10 +7,13 @@ import reducer,
   setAccessToken,
   setInterviewQuestions,
   clearInterviewQuestions,
+  setInterviewParts,
   loadQuestions,
+  loadParts,
 } from './reducer';
 
 import interviewQuestions from '../../fixtures/interview-questions';
+import interviewParts from '../../fixtures/parts';
 
 const mockStore = configureStore([...getDefaultMiddleware()]);
 
@@ -21,6 +24,7 @@ describe('reducer', () => {
     accessToken: given.accessToken || '',
     interview: {
       questions: [],
+      parts: [],
     },
   };
 
@@ -52,6 +56,31 @@ describe('reducer', () => {
     const state = reducer(initialState, clearInterviewQuestions());
 
     expect(state.interview.questions).toEqual([]);
+  });
+
+  describe('setInterviewParts', () => {
+    const state = reducer(initialState, setInterviewParts(interviewParts));
+
+    expect(state.interview.parts).toEqual(interviewParts);
+  });
+
+  describe('loadParts', () => {
+    beforeEach(() => {
+      store = mockStore({
+        interview: {
+          parts: [],
+        },
+      });
+      fetch.mockResponseOnce(JSON.stringify([]));
+    });
+
+    it('dispatchs setInterviewParts', async () => {
+      await store.dispatch(loadParts());
+
+      const actions = store.getActions();
+
+      expect(actions[0]).toEqual(setInterviewParts([]));
+    });
   });
 
   describe('loadQuestions', () => {
