@@ -23,18 +23,11 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   output: {
+    filename: 'main.js',
     path: path.resolve(__dirname, './dist'),
     publicPath: process.env.BASE_URL || '/',
   },
   plugins: [
-    new CopyPlugin({
-      patterns: [
-        {
-          from: './index.html',
-          to: './',
-        },
-      ],
-    }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: 'index.html',
@@ -44,6 +37,7 @@ module.exports = {
     before: (app) => {
       app.use(apiMocker('/api', '/mocks/api'));
     },
+    contentBase: '/dist',
     historyApiFallback: {
       historyApiFallback: true,
     },

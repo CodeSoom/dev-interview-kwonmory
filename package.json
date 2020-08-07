@@ -11,7 +11,7 @@
     "lint": "eslint --ext js,jsx .",
     "coverage": "npm run test:unit -- --coverage",
     "test:e2e": "codeceptjs run --steps",
-    "test": "npm run lint && npm run coverage && start-server-and-test start http://localhost:8080 test:e2e"
+    "test": "npm run coverage && start-server-and-test start http://localhost:8080 test:e2e"
   },
   "repository": {
     "type": "git",
@@ -65,6 +65,7 @@
     "given2": "^2.1.7",
     "html-webpack-plugin": "^4.3.0",
     "jest": "^26.1.0",
+    "jest-fetch-mock": "^3.0.3",
     "jest-plugin-context": "^2.9.0",
     "puppeteer": "^5.2.0",
     "redux-mock-store": "^1.5.4",
