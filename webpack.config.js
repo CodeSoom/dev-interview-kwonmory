@@ -1,6 +1,5 @@
 const path = require('path');
 const apiMocker = require('connect-api-mocker');
-const CopyPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -25,7 +24,6 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, './dist'),
-    publicPath: process.env.BASE_URL || '/',
   },
   plugins: [
     new CleanWebpackPlugin(),
