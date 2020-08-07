@@ -22,13 +22,14 @@ module.exports = {
     extensions: ['.js', '.jsx'],
   },
   output: {
-    filename: 'main.js',
+    filename: 'bundle-[hash].js',
     path: path.resolve(__dirname, './dist'),
+    publicPath: '/',
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: 'index.html',
+      template: path.resolve(__dirname, 'index.html'),
     }),
   ],
   devServer: {
@@ -36,8 +37,6 @@ module.exports = {
       app.use(apiMocker('/api', '/mocks/api'));
     },
     contentBase: '/dist',
-    historyApiFallback: {
-      historyApiFallback: true,
-    },
+    historyApiFallback: true,
   },
 };
