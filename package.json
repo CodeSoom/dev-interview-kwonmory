@@ -7,6 +7,7 @@
     "start": "webpack-dev-server",
     "watch": "jest --watchAll",
     "build": "webpack --mode=production",
+    "build:dev": "webpack",
     "test:unit": "jest",
     "lint": "eslint --ext js,jsx .",
     "coverage": "npm run test:unit -- --coverage",
