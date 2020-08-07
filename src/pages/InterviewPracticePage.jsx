@@ -2,12 +2,17 @@ import React, { useEffect } from 'react';
 
 import { useDispatch } from 'react-redux';
 
+import InterviewCategoriesContainer from '../containers/InterviewCategoriesContainer';
 import InterviewQuestionsContainer from '../containers/InterviewQuestionsContainer';
 
-import { loadQuestions } from '../modules/reducer';
+import { loadQuestions, loadParts } from '../modules/reducer';
 
 const InterviewPracticePage = () => {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadParts());
+  }, []);
 
   useEffect(() => {
     dispatch(loadQuestions());
@@ -15,12 +20,7 @@ const InterviewPracticePage = () => {
 
   return (
     <>
-      <div>
-        카테고리영역
-        체감 난이도
-        질문 유형
-        회사별 질문
-      </div>
+      <InterviewCategoriesContainer />
       <InterviewQuestionsContainer />
     </>
   );

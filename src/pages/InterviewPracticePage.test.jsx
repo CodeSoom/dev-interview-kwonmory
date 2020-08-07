@@ -10,6 +10,7 @@ import InterviewPracticePage from './InterviewPracticePage';
 import interviewQuestions from '../../fixtures/interview-questions';
 
 import { interviewQuestionsTerms } from '../../fixtures/term';
+import interviewParts from '../../fixtures/parts';
 
 jest.mock('react-redux');
 
@@ -32,22 +33,15 @@ describe('InterviewQuestionPage', () => {
     useSelector.mockImplementation((selector) => selector({
       interview: {
         questions: given.questions,
+        parts: interviewParts,
       },
     }));
   });
 
-  it('call questions data', () => {
+  it('calls questions data and parts data', () => {
     renderInterviewListPage();
 
-    expect(dispatch).toBeCalled();
-  });
-
-  it('renders categories area', () => {
-    const { container } = renderInterviewListPage();
-
-    expect(container).toHaveTextContent('체감 난이도');
-    expect(container).toHaveTextContent('질문 유형');
-    expect(container).toHaveTextContent('회사별 질문');
+    expect(dispatch).toBeCalledTimes(2);
   });
 
   context('with interview questions', () => {

@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import interviewQuestions from '../fixtures/interview-questions';
 import { interviewQuestionsTerms } from '../fixtures/term';
+import interviewParts from '../fixtures/parts';
 
 import App from './App';
 
@@ -29,6 +30,7 @@ describe('App', () => {
     useSelector.mockImplementation((selector) => selector({
       interview: {
         questions: given.questions,
+        parts: interviewParts,
       },
       accessToken: given.accessToken || '',
     }));

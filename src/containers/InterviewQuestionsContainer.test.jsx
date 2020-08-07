@@ -44,8 +44,7 @@ describe('InterviewQuestionsContainer', () => {
       const { container } = renderInterviewQuestionsContainer();
 
       expect(container).toHaveTextContent('인덱스(Index)란 무엇인가');
-      expect(container).toHaveTextContent('Database');
-      expect(container).toHaveTextContent('쿠팡');
+      expect(container).toHaveTextContent('database');
     });
   });
 
@@ -56,8 +55,7 @@ describe('InterviewQuestionsContainer', () => {
       const { container } = renderInterviewQuestionsContainer();
 
       expect(container).not.toHaveTextContent('인덱스(Index)란 무엇인가');
-      expect(container).not.toHaveTextContent('Database');
-      expect(container).not.toHaveTextContent('쿠팡');
+      expect(container).not.toHaveTextContent('database');
       expect(container).toHaveTextContent(interviewQuestionsTerms.emptyMessage);
     });
   });
