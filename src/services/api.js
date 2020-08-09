@@ -1,9 +1,5 @@
-/* eslint-disable import/prefer-default-export */
-
 export async function fetchInterviewQuestions(data) {
-  const queryObj = {
-
-  };
+  const queryObj = { };
 
   if (data && data.checkedCategories) {
     queryObj.categories = data.checkedCategories;

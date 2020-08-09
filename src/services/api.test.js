@@ -12,10 +12,23 @@ describe('api', () => {
       fetch.mockResponseOnce(JSON.stringify(interviewQuestions));
     });
 
-    it('returns questions', async () => {
-      const questions = await fetchInterviewQuestions();
+    context('with query data', () => {
+      it('returns questions', async () => {
+        const questions = await fetchInterviewQuestions();
 
-      expect(questions).toEqual(interviewQuestions);
+        expect(questions).toEqual(interviewQuestions);
+      });
+    });
+
+    context('without query data', () => {
+      it('returns questions', async () => {
+        const data = {
+          checkedCategories: ['testItem'],
+        };
+        const questions = await fetchInterviewQuestions(data);
+
+        expect(questions).toEqual(interviewQuestions);
+      });
     });
   });
 
