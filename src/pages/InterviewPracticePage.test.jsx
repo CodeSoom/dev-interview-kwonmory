@@ -29,7 +29,7 @@ describe('InterviewQuestionPage', () => {
     useSelector.mockImplementation((selector) => selector({
       interview: {
         questions: given.questions || [],
-        parts: given.parts || [],
+        categories: given.categories || [],
       },
     }));
   });

@@ -1,13 +1,11 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { render } from '@testing-library/react';
-
-import { useSelector, useDispatch } from 'react-redux';
 
 import { MemoryRouter } from 'react-router-dom';
 
 import { interviewQuestionsTerms } from '../../fixtures/term';
-
 import interviewQuestions from '../../fixtures/interview-questions';
 
 import InterviewQuestionsContainer from './InterviewQuestionsContainer';
@@ -35,6 +33,12 @@ describe('InterviewQuestionsContainer', () => {
         questions: given.questions,
       },
     }));
+  });
+
+  it('dispatchs questions', () => {
+    renderInterviewQuestionsContainer();
+
+    expect(dispatch).toBeCalled();
   });
 
   context('with questions', () => {

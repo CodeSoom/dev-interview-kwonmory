@@ -1,9 +1,17 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { loadInterviewQuestions } from '../modules/reducer';
 
 import { get } from '../modules/utils';
 
 const InterviewQuestionsContainer = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(loadInterviewQuestions());
+  }, []);
+
   const { questions } = useSelector(get('interview'));
 
   if (!questions || questions.length === 0) {

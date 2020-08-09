@@ -1,33 +1,33 @@
 import {
-  fetchParts,
-  fetchQuestions,
+  fetchInterviewQuestions,
+  fetchInterviewCategories,
 } from './api';
 
 import interviewQuestions from '../../fixtures/interview-questions';
-import interviewParts from '../../fixtures/parts';
+import interviewCategories from '../../fixtures/interview-categories';
 
 describe('api', () => {
-  describe('fetchQuestions', () => {
+  describe('fetchInterviewQuestions', () => {
     beforeEach(() => {
       fetch.mockResponseOnce(JSON.stringify(interviewQuestions));
     });
 
     it('returns questions', async () => {
-      const questions = await fetchQuestions();
+      const questions = await fetchInterviewQuestions();
 
       expect(questions).toEqual(interviewQuestions);
     });
   });
 
-  describe('fetchParts', () => {
+  describe('fetchInterviewCategories', () => {
     beforeEach(() => {
-      fetch.mockResponseOnce(JSON.stringify(interviewParts));
+      fetch.mockResponseOnce(JSON.stringify(interviewCategories));
     });
 
     it('returns questions', async () => {
-      const parts = await fetchParts();
+      const categories = await fetchInterviewCategories();
 
-      expect(parts).toEqual(interviewParts);
+      expect(categories).toEqual(interviewCategories);
     });
   });
 });
