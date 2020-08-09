@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import InterviewCategoriesContainer from '../containers/InterviewCategoriesContainer';
 import InterviewQuestionsContainer from '../containers/InterviewQuestionsContainer';
