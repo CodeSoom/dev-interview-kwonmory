@@ -38,11 +38,7 @@ describe('InterviewCategoriesContainer', () => {
   });
 
   it('renders InterviewCateogries', () => {
-    const { container } = renderInterviewCategoriesContainer();
-
-    expect(container).toHaveTextContent('Database');
-    expect(container).toHaveTextContent('Javascript');
-    expect(container).toHaveTextContent('FrontEnd');
+    renderInterviewCategoriesContainer();
 
     expect(dispatch).toHaveBeenCalled();
   });
@@ -56,15 +52,6 @@ describe('InterviewCategoriesContainer', () => {
       fireEvent.click(container.querySelector('input[name="FrontEnd"]'));
 
       expect(container.querySelector('input[name="FrontEnd"]').checked).toEqual(true);
-    });
-
-    it('dispatchs loadInterviewQuestions with query(checked parts)', () => {
-      const { container } = renderInterviewCategoriesContainer();
-
-      expect(container.querySelector('input[name="FrontEnd"]').checked).toEqual(false);
-
-      fireEvent.click(container.querySelector('input[name="FrontEnd"]'));
-
       expect(dispatch).toBeCalledTimes(3);
     });
   });

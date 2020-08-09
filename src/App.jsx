@@ -9,7 +9,7 @@ import InterviewPracticePage from './pages/InterviewPracticePage';
 
 const Wrapper = styled.div`
   height: 100vh;
-  background-image: linear-gradient(128deg, #6a80f8 6%, #4a65f6 91%);
+  /* background-image: linear-gradient(128deg, #6a80f8 6%, #4a65f6 91%); */
 `;
 
 const tempMainPage = () => (<></>);

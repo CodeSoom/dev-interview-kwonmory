@@ -16,6 +16,8 @@ const HeaderStyled = styled.div`
   align-items: center;
   min-height: 3.8rem;
   width: 100%;
+  background-image: linear-gradient(128deg, #6a80f8 6%, #4a65f6 91%);
+  border-bottom: 1px solid #dfe6e9;
 `;
 
 const Wrapper = styled.div`

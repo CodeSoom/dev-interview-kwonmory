@@ -6,6 +6,8 @@ import { loadInterviewCategories, loadInterviewQuestions, setCheckedCategories }
 
 import { get } from '../modules/utils';
 
+import InterviewCategories from '../components/InterviewCategories';
+
 const InterviewCategoriesContainer = () => {
   const dispatch = useDispatch();
 
@@ -25,24 +27,10 @@ const InterviewCategoriesContainer = () => {
     dispatch(loadInterviewQuestions());
   };
 
-  const item = categories.map((category) => (
-    <li key={category.id}>
-      <label>
-        <input
-          name={category.name}
-          type="checkbox"
-          onChange={handleCheckBox}
-          data-name={category.name}
-        />
-        {category.name}
-      </label>
-    </li>
-  ));
-
   return (
-    <ul>
-      {item}
-    </ul>
+    <>
+      <InterviewCategories categories={categories} onCheckBox={handleCheckBox} />
+    </>
   );
 };
 
