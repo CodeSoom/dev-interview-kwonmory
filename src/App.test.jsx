@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import interviewQuestions from '../fixtures/interview-questions';
 import { interviewQuestionsTerms } from '../fixtures/term';
-import interviewParts from '../fixtures/parts';
 
 import App from './App';
 
@@ -29,8 +28,8 @@ describe('App', () => {
     useDispatch.mockImplementation(() => dispatch);
     useSelector.mockImplementation((selector) => selector({
       interview: {
-        questions: given.questions,
-        parts: interviewParts,
+        questions: given.questions || [],
+        categories: given.categories || [],
       },
       accessToken: given.accessToken || '',
     }));
@@ -41,17 +40,17 @@ describe('App', () => {
   });
 
   describe('with path "/interviews/practice"', () => {
-    context('with interviews', () => {
+    context('with interviews questions', () => {
       given('questions', () => interviewQuestions);
 
-      it('renders intervers', () => {
+      it('renders interview questions', () => {
         const { container } = renderApp(['/interviews/practice']);
 
         expect(container).not.toHaveTextContent(interviewQuestionsTerms.emptyMessage);
       });
     });
 
-    context('without interviews', () => {
+    context('without interviews questions', () => {
       given('questions', () => []);
 
       it('renders interview empty message', () => {

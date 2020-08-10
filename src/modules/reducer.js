@@ -1,18 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import {
-  fetchParts,
-  fetchQuestions,
+  fetchInterviewCategories,
+  fetchInterviewQuestions,
 } from '../services/api';
 
 const { actions, reducer } = createSlice({
   name: 'application',
   initialState: {
-    accessToken: '',
     interview: {
       questions: [],
-      parts: [],
+      categories: [],
     },
+    accessToken: '',
   },
   reducers: {
     setAccessToken(state, { payload: accessToken }) {
@@ -39,12 +39,21 @@ const { actions, reducer } = createSlice({
         },
       };
     },
-    setInterviewParts(state, { payload: parts }) {
+    setInterviewCategories(state, { payload: categories }) {
       return {
         ...state,
         interview: {
           ...state.interview,
-          parts,
+          categories,
+        },
+      };
+    },
+    setCheckedCategories(state, { payload: checkedCategories }) {
+      return {
+        ...state,
+        interview: {
+          ...state.interview,
+          checkedCategories,
         },
       };
     },
@@ -55,23 +64,26 @@ export const {
   setAccessToken,
   setInterviewQuestions,
   clearInterviewQuestions,
-  setInterviewParts,
+  setInterviewCategories,
+  setCheckedCategories,
 } = actions;
 export default reducer;
 
-export function loadQuestions() {
-  return async (dispatch) => {
-    const questions = await fetchQuestions();
+export function loadInterviewQuestions() {
+  return async (dispatch, getState) => {
+    const { interview } = getState();
+
+    const questions = await fetchInterviewQuestions(interview);
 
     dispatch(clearInterviewQuestions());
     dispatch(setInterviewQuestions(questions));
   };
 }
 
-export function loadParts() {
+export function loadInterviewCategories() {
   return async (dispatch) => {
-    const parts = await fetchParts();
+    const categories = await fetchInterviewCategories();
 
-    dispatch(setInterviewParts(parts));
+    dispatch(setInterviewCategories(categories));
   };
 }

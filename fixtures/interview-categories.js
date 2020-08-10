@@ -1,0 +1,27 @@
+const interviewCategories = [
+  {
+    id: 1,
+    name: 'Database',
+  },
+  {
+    id: 2,
+    name: 'Network',
+  },
+  {
+    id: 3,
+    name: 'Operation System',
+  },
+  {
+    id: 4,
+    name: 'Javascript',
+  },
+  {
+    id: 5,
+    name: 'FrontEnd',
+  },
+  {
+    id: 6,
+    name: 'Ios',
+  },
+];
+export default interviewCategories;
