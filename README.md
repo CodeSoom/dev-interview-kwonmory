@@ -1,22 +1,12 @@
-# KWONMORY REACT PROJECT
+# 인따뷰(Inttaview) REACT 프로젝트
 
-## Know Answer
+서비스 소개와 그 외 자료는 [노션 링크](https://www.notion.so/morymory/Inttaview-5343f2bbeb6d4e328799d68d68f24dd9)를 통해 볼 수 있습니다.
 
-Interview For Developer Helper
+프로젝트가 마무리 된다면 노션에 있던 자료는 깃 허브에 옮길 예정입니다.
 
-개발자 인터뷰 준비를 도와주기 위한 사이트!
+API는 따로 운영하지 않아서 git-pages에선 아직 제대로 보이지 않습니다.
 
-## 개발 중 제한 조건
-
-* 커밋은 의미 단위로 커밋한다.
-* 모든 기능은 TDD로 구현한다.
-* `if`는 사용할 수 있어도 `else` 사용하실 수 없다. `GuardClauses` 방법을 사용한다.
-* `switch`는 사용하실 수 없다.
-* `let`은 사용하실 수 없다. `const`만을 사용하여 문제를 해결하라.
-* 함수 이름과 변수 이름에 줄임말은 사용하실 수 없다. 길더라도 명확하게 써라.
-* indent(인덴트, 들여쓰기) depth를 1로 유지해라.
-  예를 들어, for문 안에 if문이 있으면 indent depth는 2입니다.
-  depth를 줄이는 좋은 방법은 함수(또는 메소드)를 분리하면 된다.
+현재는 webpack을 이용하여 mock api를 이용하고 있습니다.
 
 ## 설치하기
 
