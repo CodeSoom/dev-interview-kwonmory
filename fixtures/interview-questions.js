@@ -18,6 +18,10 @@ const interviewQuestions = [
         name: 'database',
       },
     ],
+    reputation: {
+      like: 10,
+      unlike: 5,
+    },
     created_at: '2019-01-30 17:37:07',
     updated_at: '2019-01-30 17:37:07',
   },
@@ -54,6 +58,10 @@ const interviewQuestions = [
         name: 'javascript',
       },
     ],
+    reputation: {
+      like: 1,
+      unlike: 2,
+    },
     created_at: '2019-03-30 17:37:07',
     updated_at: '2019-03-30 17:37:07',
   },
@@ -72,6 +80,10 @@ const interviewQuestions = [
         name: 'operation system',
       },
     ],
+    reputation: {
+      like: 0,
+      unlike: 0,
+    },
     created_at: '2019-03-30 17:37:07',
     updated_at: '2019-03-30 17:37:07',
   },
@@ -90,6 +102,10 @@ const interviewQuestions = [
         name: 'network',
       },
     ],
+    reputation: {
+      like: 100,
+      unlike: 55,
+    },
     created_at: '2019-05-30 17:37:07',
     updated_at: '2019-05-30 17:37:07',
   },
