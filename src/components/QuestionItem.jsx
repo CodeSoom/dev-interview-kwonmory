@@ -2,59 +2,89 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp, faThumbsDown } from '@fortawesome/free-regular-svg-icons';
 
-const ItemStyled = styled.li`
-  border-top: 0.0625rem solid #D7E2EB;
-  padding: 1rem 0 2rem 0;
-  position: relative;
+const ItemStyled = styled.li({
+  borderTop: '0.0625rem solid #D7E2EB',
+  padding: '1rem 0 2rem 0',
+  position: 'relative',
+  display: 'flex',
+  justifyContent: 'space-between',
 
-  h2 {
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
+  '&::before': {
+    content: "''",
+    display: 'block',
+    position: 'absolute',
+    top: '-0.025rem',
+    backgroundColor: '#2196F3',
+    left: 0,
+    width: '4.5rem',
+    height: '0.1875rem',
+  },
+});
 
-  ul {
-    margin-top: 0.625rem;
-    li {
-      color: #B2C0CC;
-      text-transform: capitalize;
-      font-weight: 400;
-    }
-  }
+const ReputationStyled = styled.div({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  span: {
+    margin: '0 10px',
+  },
+});
 
-  ::before {
-    content: '';
-    display: block;
-    position: absolute;
-    top: -0.025rem;
-    background-color: #2196F3;
-    left: 0;
-    width: 4.5rem;
-    height: 0.1875rem;
-  }
-`;
+const DescriptionStyled = styled.div({
+  h2: {
+    fontSize: '1.2rem',
+    fontWeight: 500,
+  },
+  ul: {
+    marginTop: '0.625rem',
+    li: {
+      color: '#B2C0CC',
+      textTransform: 'capitalize',
+      fontWeight: 400,
+    },
+  },
+});
 
-const AStyled = styled(Link)`
-  text-decoration: none;
-  color: #263747;
-  :hover {
-    color: #2196F3;
-  }
-`;
+const CategoriesStyled = styled.ul({
+  display: 'flex',
+});
+
+const CategoryStyled = styled.li({
+  marginRight: '10px',
+});
 
 const QuestionItem = ({ question }) => (
   <ItemStyled key={question.id}>
-    <AStyled to="#">
+    <DescriptionStyled>
       <h2>
         {question.title}
       </h2>
-      <ul>
+      <CategoriesStyled>
         {question.categories && question.categories.map((category) => (
-          <li key={category.id}>{category.name}</li>
+          <CategoryStyled key={`${question.id}-categories-${category.id}`}>
+            •
+            {' '}
+            {category.name}
+          </CategoryStyled>
         ))}
-      </ul>
-    </AStyled>
+      </CategoriesStyled>
+    </DescriptionStyled>
+    <ReputationStyled>
+      <span className="like">
+        <FontAwesomeIcon size="lg" icon={faThumbsUp} />
+        {' '}
+        {question.reputation?.like || 0}
+      </span>
+      <span className="unlike">
+        {' '}
+        <FontAwesomeIcon size="lg" icon={faThumbsDown} />
+        {' '}
+        {question.reputation?.unlike || 0}
+      </span>
+    </ReputationStyled>
   </ItemStyled>
 );
 
