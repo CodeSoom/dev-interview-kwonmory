@@ -18,6 +18,30 @@
         "name": "database"
       }
     ],
+    "reputation": {
+      "like": 10,
+      "unlike": 5
+    },
+    "opinion": [
+      {
+        "id": 1, 
+        "userId": 1,
+        "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+        "reputation": {
+          "like": 10,
+          "unlike": 22
+        }
+      },
+      {
+        "id": 2, 
+        "userId": 1,
+        "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+        "reputation": {
+          "like": 10,
+          "unlike": 22
+        }
+      }
+    ],
     "created_at": "2019-01-30 17:37:07",
     "updated_at": "2019-01-30 17:37:07"
   },
@@ -36,6 +60,11 @@
         "name": "database"
       }
     ],
+    "reputation": {
+      "like": 1,
+      "unlike": 5
+    },
+    "opinion": [],
     "created_at": "2019-02-30 17:37:07",
     "updated_at": "2019-02-30 17:37:07"
   },
@@ -54,6 +83,19 @@
         "name": "javascript"
       }
     ],
+    "reputation": {
+      "like": 123,
+      "unlike": 0
+    },
+    "opinion": [{
+      "id": 5, 
+      "userId": 1,
+      "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+      "reputation": {
+        "like": 10,
+        "unlike": 22
+      }
+    }],
     "created_at": "2019-03-30 17:37:07",
     "updated_at": "2019-03-30 17:37:07"
   },
@@ -72,6 +114,19 @@
         "name": "operation system"
       }
     ],
+    "reputation": {
+      "like": 0,
+      "unlike": 5
+    },
+    "opinion": [{
+      "id": 7, 
+      "userId": 1,
+      "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+      "reputation": {
+        "like": 10,
+        "unlike": 22
+      }
+    }],
     "created_at": "2019-03-30 17:37:07",
     "updated_at": "2019-03-30 17:37:07"
   },
@@ -90,12 +145,25 @@
         "name": "network"
       }
     ],
+    "reputation": {
+      "like": 1,
+      "unlike": 1
+    },
+    "opinion": [{
+      "id": 3, 
+      "userId": 1,
+      "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+      "reputation": {
+        "like": 10,
+        "unlike": 22
+      }
+    }],
     "created_at": "2019-05-30 17:37:07",
     "updated_at": "2019-05-30 17:37:07"
   },
   {
     "id": 6,
-    "title": "HTTP의 문제점에 대해서 설명해주세요.",
+    "title": "추상 클래스에 대해서 소개해주세요.",
     "contributor": [
       {
         "id": 1,
@@ -105,15 +173,28 @@
     "categories": [
       {
         "id": 1,
-        "name": "network"
+        "name": "oop"
       }
     ],
+    "reputation": {
+      "like": 10,
+      "unlike": 5
+    },
+    "opinion": [{
+      "id": 10, 
+      "userId": 1,
+      "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+      "reputation": {
+        "like": 10,
+        "unlike": 22
+      }
+    }],
     "created_at": "2019-05-30 17:37:07",
     "updated_at": "2019-05-30 17:37:07"
   },
   {
     "id": 7,
-    "title": "HTTP의 문제점에 대해서 설명해주세요.",
+    "title": "시스템 콜은 언제 발생하나요?",
     "contributor": [
       {
         "id": 1,
@@ -123,15 +204,28 @@
     "categories": [
       {
         "id": 1,
-        "name": "network"
+        "name": "operation system"
       }
     ],
+    "reputation": {
+      "like": 10,
+      "unlike": 5
+    },
+    "opinion": [{
+      "id": 11, 
+      "userId": 1,
+      "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+      "reputation": {
+        "like": 10,
+        "unlike": 22
+      }
+    }],
     "created_at": "2019-05-30 17:37:07",
     "updated_at": "2019-05-30 17:37:07"
   },
   {
     "id": 8,
-    "title": "HTTP의 문제점에 대해서 설명해주세요.",
+    "title": "교착상태는 어떻게 일어나나요?",
     "contributor": [
       {
         "id": 1,
@@ -141,15 +235,28 @@
     "categories": [
       {
         "id": 1,
-        "name": "network"
+        "name": "operation system"
       }
     ],
+    "reputation": {
+      "like": 10,
+      "unlike": 5
+    },
+    "opinion": [{
+      "id": 12, 
+      "userId": 1,
+      "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+      "reputation": {
+        "like": 10,
+        "unlike": 22
+      }
+    }],
     "created_at": "2019-05-30 17:37:07",
     "updated_at": "2019-05-30 17:37:07"
   },
   {
     "id": 9,
-    "title": "HTTP의 문제점에 대해서 설명해주세요.",
+    "title": "RIP 방식에 대해서 소개해주세요.",
     "contributor": [
       {
         "id": 1,
@@ -162,12 +269,16 @@
         "name": "network"
       }
     ],
+    "reputation": {
+      "like": 10,
+      "unlike": 5
+    },
     "created_at": "2019-05-30 17:37:07",
     "updated_at": "2019-05-30 17:37:07"
   },
   {
     "id": 10,
-    "title": "HTTP의 문제점에 대해서 설명해주세요.",
+    "title": "콜백함수에 대해서 소개해주세요.",
     "contributor": [
       {
         "id": 1,
@@ -177,15 +288,32 @@
     "categories": [
       {
         "id": 1,
-        "name": "network"
+        "name": "javascript"
+      },
+      {
+        "id": 1,
+        "name": "함수형언어"
       }
     ],
+    "reputation": {
+      "like": 10,
+      "unlike": 5
+    },
+    "opinion": [{
+      "id": 14, 
+      "userId": 1,
+      "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+      "reputation": {
+        "like": 10,
+        "unlike": 22
+      }
+    }],
     "created_at": "2019-05-30 17:37:07",
     "updated_at": "2019-05-30 17:37:07"
   },
   {
     "id": 11,
-    "title": "HTTP의 문제점에 대해서 설명해주세요.",
+    "title": "이벤트 루프에 대해서 소개해주세요.",
     "contributor": [
       {
         "id": 1,
@@ -195,15 +323,28 @@
     "categories": [
       {
         "id": 1,
-        "name": "network"
+        "name": "javascript"
       }
     ],
+    "reputation": {
+      "like": 10,
+      "unlike": 5
+    },
+    "opinion": [{
+      "id": 15, 
+      "userId": 1,
+      "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+      "reputation": {
+        "like": 10,
+        "unlike": 22
+      }
+    }],
     "created_at": "2019-05-30 17:37:07",
     "updated_at": "2019-05-30 17:37:07"
   },
   {
     "id": 12,
-    "title": "HTTP의 문제점에 대해서 설명해주세요.",
+    "title": "네이버에 사이트에 들어갔을 때, 어떤 일이 일어나나요?",
     "contributor": [
       {
         "id": 1,
@@ -214,14 +355,31 @@
       {
         "id": 1,
         "name": "network"
+      },
+      {
+        "id": 10,
+        "name": "동작원리"
       }
     ],
+    "reputation": {
+      "like": 1022,
+      "unlike": 5
+    },
+    "opinion": [{
+      "id": 16, 
+      "userId": 1,
+      "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+      "reputation": {
+        "like": 10,
+        "unlike": 22
+      }
+    }],
     "created_at": "2019-05-30 17:37:07",
     "updated_at": "2019-05-30 17:37:07"
   },
   {
     "id": 13,
-    "title": "HTTP의 문제점에 대해서 설명해주세요.",
+    "title": "컨텍스트 스위칭은 무엇이나요?",
     "contributor": [
       {
         "id": 1,
@@ -231,15 +389,24 @@
     "categories": [
       {
         "id": 1,
-        "name": "network"
+        "name": "operation system"
       }
     ],
+    "opinion": [{
+      "id": 17, 
+      "userId": 1,
+      "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+      "reputation": {
+        "like": 10,
+        "unlike": 22
+      }
+    }],
     "created_at": "2019-05-30 17:37:07",
     "updated_at": "2019-05-30 17:37:07"
   },
   {
     "id": 14,
-    "title": "HTTP의 문제점에 대해서 설명해주세요.",
+    "title": "프로세스와 스레드의 차이가 무엇인가요?",
     "contributor": [
       {
         "id": 1,
@@ -249,15 +416,28 @@
     "categories": [
       {
         "id": 1,
-        "name": "network"
+        "name": "operation system"
       }
     ],
+    "reputation": {
+      "like": 10,
+      "unlike": 5
+    },
+    "opinion": [{
+      "id": 19, 
+      "userId": 1,
+      "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+      "reputation": {
+        "like": 10,
+        "unlike": 22
+      }
+    }],
     "created_at": "2019-05-30 17:37:07",
     "updated_at": "2019-05-30 17:37:07"
   },
   {
     "id": 15,
-    "title": "HTTP의 문제점에 대해서 설명해주세요.",
+    "title": "트랜젝션이 무엇인가요?",
     "contributor": [
       {
         "id": 1,
@@ -267,15 +447,28 @@
     "categories": [
       {
         "id": 1,
-        "name": "network"
+        "name": "database"
       }
     ],
+    "reputation": {
+      "like": 10,
+      "unlike": 5
+    },
+    "opinion": [{
+      "id": 22, 
+      "userId": 1,
+      "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+      "reputation": {
+        "like": 10,
+        "unlike": 22
+      }
+    }],
     "created_at": "2019-05-30 17:37:07",
     "updated_at": "2019-05-30 17:37:07"
   },
   {
     "id": 16,
-    "title": "HTTP의 문제점에 대해서 설명해주세요.",
+    "title": "정규화는 무엇이고 언제 사용하면 좋을까요?",
     "contributor": [
       {
         "id": 1,
@@ -285,15 +478,28 @@
     "categories": [
       {
         "id": 1,
-        "name": "network"
+        "name": "database"
       }
     ],
+    "reputation": {
+      "like": 10,
+      "unlike": 5
+    },
+    "opinion": [{
+      "id": 23, 
+      "userId": 1,
+      "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+      "reputation": {
+        "like": 10,
+        "unlike": 22
+      }
+    }],
     "created_at": "2019-05-30 17:37:07",
     "updated_at": "2019-05-30 17:37:07"
   },
   {
     "id": 17,
-    "title": "HTTP의 문제점에 대해서 설명해주세요.",
+    "title": "3-way-handshake 아는 것에 대해서 다 말하시오",
     "contributor": [
       {
         "id": 1,
@@ -306,12 +512,25 @@
         "name": "network"
       }
     ],
+    "reputation": {
+      "like": 10,
+      "unlike": 5
+    },
+    "opinion": [{
+      "id": 24, 
+      "userId": 1,
+      "content": "어머어머 이건 뭐고 저건 뭐고 요건 뭐다.",
+      "reputation": {
+        "like": 10,
+        "unlike": 22
+      }
+    }],
     "created_at": "2019-05-30 17:37:07",
     "updated_at": "2019-05-30 17:37:07"
   },
   {
     "id": 18,
-    "title": "HTTP의 문제점에 대해서 설명해주세요.",
+    "title": "해시에 대해서 소개해주세요.",
     "contributor": [
       {
         "id": 1,
@@ -321,9 +540,14 @@
     "categories": [
       {
         "id": 1,
-        "name": "network"
+        "name": "data structure"
       }
     ],
+    "reputation": {
+      "like": 10,
+      "unlike": 5
+    },
+    "opinion": [],
     "created_at": "2019-05-30 17:37:07",
     "updated_at": "2019-05-30 17:37:07"
   }

@@ -1,3 +1,5 @@
+const baseURL = 'http://localhost:8080/api';
+
 export async function fetchInterviewQuestions(data) {
   const queryObj = { };
 
@@ -5,7 +7,7 @@ export async function fetchInterviewQuestions(data) {
     queryObj.categories = data.checkedCategories;
   }
 
-  const url = 'http://localhost:8080/api/interview/questions';
+  const url = `${baseURL}/interview/questions`;
   const response = await fetch(url, {
     method: 'POST',
     headers: {
@@ -19,7 +21,7 @@ export async function fetchInterviewQuestions(data) {
 }
 
 export async function fetchInterviewCategories() {
-  const url = 'http://localhost:8080/api/interview/categories';
+  const url = `${baseURL}/interview/categories`;
   const response = await fetch(url);
   const data = await response.json();
   return data;
