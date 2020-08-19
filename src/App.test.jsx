@@ -60,4 +60,11 @@ describe('App', () => {
       });
     });
   });
+  describe('with path not found page', () => {
+    it('renders 404 page', () => {
+      const { container } = renderApp(['/no-page-path']);
+
+      expect(container).toHaveTextContent(404);
+    });
+  });
 });

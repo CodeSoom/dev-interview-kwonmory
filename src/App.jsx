@@ -6,6 +6,7 @@ import { Switch, Route } from 'react-router-dom';
 
 import HeaderContainer from './containers/common/HeaderContainer';
 import InterviewPracticePage from './pages/InterviewPracticePage';
+import NotFoundPage from './pages/NotFoundPage';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -21,6 +22,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={tempMainPage} />
         <Route exact path="/interviews/practice" component={InterviewPracticePage} />
+        <Route exact component={NotFoundPage} />
       </Switch>
     </Wrapper>
   </>
