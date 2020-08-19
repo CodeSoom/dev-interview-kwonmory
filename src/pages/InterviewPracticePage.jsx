@@ -64,9 +64,9 @@ const InterviewPracticePage = () => (
   <Wrapper>
     <Banner>
       <div>
-        <h2>What is Best answer?</h2>
+        <h2>스스로 문제에 대한 답을 찾아보세요</h2>
         <DivisionBarStyled />
-        <p>Think About it</p>
+        <p>그것이 여러분을 성장 시킵니다</p>
       </div>
     </Banner>
     <ContentArea>
