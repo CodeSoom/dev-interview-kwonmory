@@ -9,6 +9,8 @@ import reducer,
   clearInterviewQuestions,
   setInterviewCategories,
   setCheckedCategories,
+  setInterviews,
+  loadInterviews,
   loadInterviewQuestions,
   loadInterviewCategories,
 } from './reducer';
@@ -25,6 +27,7 @@ describe('reducer', () => {
       questions: [],
       categories: [],
     },
+    interviews: [],
     accessToken: '',
   };
 
@@ -65,10 +68,21 @@ describe('reducer', () => {
   });
 
   describe('setCheckedCategories', () => {
-    const list = ['name'];
-    const state = reducer(initialState, setCheckedCategories(list));
+    const categories = ['name'];
+    const state = reducer(initialState, setCheckedCategories(categories));
 
-    expect(state.interview.checkedCategories).toEqual(list);
+    expect(state.interview.checkedCategories).toEqual(categories);
+  });
+
+  describe('setInterviews', () => {
+    const interviews = [{
+      id: 1,
+      title: '인터뷰에 도전하라',
+    }];
+
+    const state = reducer(initialState, setInterviews(interviews));
+
+    expect(state.interviews).toEqual(interviews);
   });
 
   describe('loadCategories', () => {
@@ -107,6 +121,23 @@ describe('reducer', () => {
 
       expect(actions[0]).toEqual(clearInterviewQuestions());
       expect(actions[1]).toEqual(setInterviewQuestions([]));
+    });
+  });
+
+  describe('loadInterviews', () => {
+    beforeEach(() => {
+      store = mockStore({
+        interviews: [],
+      });
+      fetch.mockResponseOnce(JSON.stringify([]));
+    });
+
+    it('dispatchs setInterviews', async () => {
+      await store.dispatch(loadInterviews());
+
+      const actions = store.getActions();
+
+      expect(actions[0]).toEqual(setInterviews([]));
     });
   });
 });
