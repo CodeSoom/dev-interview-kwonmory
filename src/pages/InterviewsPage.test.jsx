@@ -33,8 +33,8 @@ describe('InterviewsPage', () => {
     expect(dispatch).toBeCalled();
   });
 
-  context('with interview list', () => {
-    it('redners interviews', () => {
+  context('with interviews', () => {
+    it('renders interviews', () => {
       given('interviews', () => mockInterviews);
       const { container } = renderInterviewsPage();
 
@@ -42,8 +42,8 @@ describe('InterviewsPage', () => {
     });
   });
 
-  context('without interview list', () => {
-    it('renders empty message in the interview list', () => {
+  context('without interviews', () => {
+    it('renders empty message in the interview page', () => {
       const { container } = renderInterviewsPage();
 
       expect(container).toHaveTextContent('인터뷰 리스트가 없습니다');
