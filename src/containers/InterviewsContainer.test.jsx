@@ -33,21 +33,4 @@ describe('InterviewsContainer', () => {
 
     expect(dispatch).toBeCalled();
   });
-
-  context('with interviews', () => {
-    it('renders interviews', () => {
-      given('interviews', () => mockInterviews);
-      const { container } = renderInterviewsContainer();
-
-      expect(container).not.toHaveTextContent('인터뷰 리스트가 없습니다');
-    });
-  });
-
-  context('without interviews', () => {
-    it('renders empty message in the interview page', () => {
-      const { container } = renderInterviewsContainer();
-
-      expect(container).toHaveTextContent('인터뷰 리스트가 없습니다');
-    });
-  });
 });

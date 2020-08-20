@@ -2,9 +2,17 @@ import React, { useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import styled from '@emotion/styled';
+
 import { loadInterviews } from '../modules/reducer';
 
 import { get } from '../modules/utils';
+
+import Interviews from '../components/Interviews';
+
+const Wrapper = styled.div({
+
+});
 
 const InterivewsContainer = () => {
   const dispatch = useDispatch();
@@ -15,18 +23,10 @@ const InterivewsContainer = () => {
 
   const interviews = useSelector(get('interviews'));
 
-  if (!interviews || interviews.length === 0) {
-    return (
-      <div>
-        인터뷰 리스트가 없습니다.
-      </div>
-    );
-  }
-
   return (
-    <div>
-      {JSON.stringify(interviews)}
-    </div>
+    <Wrapper>
+      <Interviews interviews={interviews} />
+    </Wrapper>
   );
 };
 
