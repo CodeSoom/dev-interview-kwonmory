@@ -8,8 +8,6 @@ import { MemoryRouter } from 'react-router-dom';
 
 import InterviewsContainer from './InterviewsContainer';
 
-import mockInterviews from '../../fixtures/interviews';
-
 function renderInterviewsContainer() {
   return render(<MemoryRouter><InterviewsContainer /></MemoryRouter>);
 }
