@@ -1,22 +1,24 @@
 import {
   fetchInterviewQuestions,
   fetchInterviewCategories,
+  fetchInterviews,
 } from './api';
 
-import interviewQuestions from '../../fixtures/interview-questions';
-import interviewCategories from '../../fixtures/interview-categories';
+import mockInterviewQuestions from '../../fixtures/interview-questions';
+import mockInterviewCategories from '../../fixtures/interview-categories';
+import mockInterviews from '../../fixtures/interviews';
 
 describe('api', () => {
   describe('fetchInterviewQuestions', () => {
     beforeEach(() => {
-      fetch.mockResponseOnce(JSON.stringify(interviewQuestions));
+      fetch.mockResponseOnce(JSON.stringify(mockInterviewQuestions));
     });
 
     context('with query data', () => {
       it('returns questions', async () => {
         const questions = await fetchInterviewQuestions();
 
-        expect(questions).toEqual(interviewQuestions);
+        expect(questions).toEqual(mockInterviewQuestions);
       });
     });
 
@@ -27,20 +29,32 @@ describe('api', () => {
         };
         const questions = await fetchInterviewQuestions(data);
 
-        expect(questions).toEqual(interviewQuestions);
+        expect(questions).toEqual(mockInterviewQuestions);
       });
     });
   });
 
   describe('fetchInterviewCategories', () => {
     beforeEach(() => {
-      fetch.mockResponseOnce(JSON.stringify(interviewCategories));
+      fetch.mockResponseOnce(JSON.stringify(mockInterviewCategories));
     });
 
     it('returns questions', async () => {
       const categories = await fetchInterviewCategories();
 
-      expect(categories).toEqual(interviewCategories);
+      expect(categories).toEqual(mockInterviewCategories);
+    });
+  });
+
+  describe('fetchInterviews', () => {
+    beforeEach(() => {
+      fetch.mockResponseOnce(JSON.stringify(mockInterviews));
+    });
+
+    it('returns interviews', async () => {
+      const interviews = await fetchInterviews();
+
+      expect(interviews).toEqual(mockInterviews);
     });
   });
 });

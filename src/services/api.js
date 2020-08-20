@@ -26,3 +26,10 @@ export async function fetchInterviewCategories() {
   const data = await response.json();
   return data;
 }
+
+export async function fetchInterviews() {
+  const url = `${baseURL}/interviews`;
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+}

@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import {
   fetchInterviewCategories,
   fetchInterviewQuestions,
+  fetchInterviews,
 } from '../services/api';
 
 const { actions, reducer } = createSlice({
@@ -12,6 +13,7 @@ const { actions, reducer } = createSlice({
       questions: [],
       categories: [],
     },
+    interviews: [],
     accessToken: '',
   },
   reducers: {
@@ -57,6 +59,12 @@ const { actions, reducer } = createSlice({
         },
       };
     },
+    setInterviews(state, { payload: interviews }) {
+      return {
+        ...state,
+        interviews,
+      };
+    },
   },
 });
 
@@ -66,6 +74,7 @@ export const {
   clearInterviewQuestions,
   setInterviewCategories,
   setCheckedCategories,
+  setInterviews,
 } = actions;
 export default reducer;
 
@@ -87,3 +96,9 @@ export function loadInterviewCategories() {
     dispatch(setInterviewCategories(categories));
   };
 }
+
+export const loadInterviews = () => async (dispatch) => {
+  const interviews = await fetchInterviews();
+
+  dispatch(setInterviews(interviews));
+};
