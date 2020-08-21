@@ -11,7 +11,8 @@ import { get } from '../modules/utils';
 import Interviews from '../components/Interviews';
 
 const Wrapper = styled.div({
-
+  display: 'flex',
+  justifyContent: 'center',
 });
 
 const InterivewsContainer = () => {

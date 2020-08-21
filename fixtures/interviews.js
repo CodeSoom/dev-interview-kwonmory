@@ -2,6 +2,7 @@ const interview = [
   {
     id: 1,
     title: '주니어 프론트엔드 개발자라면!',
+    description: '주니어 개발자분들께서 도전할만한 인터뷰 문제입니다.',
     hit: 5682,
     image: [{
       id: 1,
@@ -22,6 +23,7 @@ const interview = [
   {
     id: 2,
     title: '주니어 백엔드 개발자를 위한 인터뷰',
+    description: '주니어 개발자분들께서 도전할만한 인터뷰 문제입니다.',
     hit: 346,
     image: [{
       id: 1,
@@ -42,6 +44,7 @@ const interview = [
   {
     id: 3,
     title: '기초 자바스크립트에 대해서 얼마나 아시나요?',
+    description: '자바스크립트 실력을 향상 시켜주는 인터뷰즈입니다!',
     hit: 1222,
     image: [{
       id: 1,
