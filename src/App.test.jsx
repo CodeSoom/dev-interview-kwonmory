@@ -11,6 +11,8 @@ import { interviewQuestionsTerms } from '../fixtures/term';
 
 import App from './App';
 
+import mockInterviews from '../fixtures/interviews';
+
 jest.mock('react-redux');
 
 function renderApp(path = ['/']) {
@@ -31,6 +33,7 @@ describe('App', () => {
         questions: given.questions || [],
         categories: given.categories || [],
       },
+      interviews: given.interviews || [],
       accessToken: given.accessToken || '',
     }));
   });
@@ -60,6 +63,26 @@ describe('App', () => {
       });
     });
   });
+
+  describe('with path "/interviews"', () => {
+    context('with interviews', () => {
+      it('renders interviews', () => {
+        given('interviews', () => mockInterviews);
+        const { container } = renderApp(['/interviews']);
+
+        expect(container).not.toHaveTextContent('인터뷰 리스트가 없습니다');
+      });
+    });
+
+    context('without interviews', () => {
+      it('renders empty message in the interview page', () => {
+        const { container } = renderApp(['/interviews']);
+
+        expect(container).toHaveTextContent('인터뷰 리스트가 없습니다');
+      });
+    });
+  });
+
   describe('with path not found page', () => {
     it('renders 404 page', () => {
       const { container } = renderApp(['/no-page-path']);

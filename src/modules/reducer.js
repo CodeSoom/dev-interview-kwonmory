@@ -97,8 +97,10 @@ export function loadInterviewCategories() {
   };
 }
 
-export const loadInterviews = () => async (dispatch) => {
-  const interviews = await fetchInterviews();
+export function loadInterviews() {
+  return async (dispatch) => {
+    const interviews = await fetchInterviews();
 
-  dispatch(setInterviews(interviews));
-};
+    dispatch(setInterviews(interviews));
+  };
+}
