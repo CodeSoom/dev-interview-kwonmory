@@ -97,7 +97,7 @@ const InterviewsItem = ({ interviews }) => (
   <>
     <InterviewsItemStyled>
       <div className="interviews__image">
-        <img src={interviews.image[0].url} alt={interviews.image[0].alt} />
+        <img src={interviews?.image?.[0]?.url || '../assets/images/interviews-default.png'} alt={interviews?.image?.[0]?.alt || '디폴트 이미지'} />
       </div>
       <div className="interviews__information">
         <div className="interviews__description">
