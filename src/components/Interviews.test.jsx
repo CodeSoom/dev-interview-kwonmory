@@ -2,12 +2,13 @@ import React from 'react';
 
 import { render } from '@testing-library/react';
 
+import { MemoryRouter } from 'react-router-dom';
 import mockInterview from '../../fixtures/interviews';
 
 import Interviews from './Interviews';
 
 function renderInterviews({ interviews }) {
-  return render(<Interviews interviews={interviews} />);
+  return render(<MemoryRouter><Interviews interviews={interviews} /></MemoryRouter>);
 }
 
 describe('Interviews', () => {

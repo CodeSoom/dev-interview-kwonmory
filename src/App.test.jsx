@@ -76,6 +76,7 @@ describe('App', () => {
 
     context('without interviews', () => {
       it('renders empty message in the interview page', () => {
+        given('interviews', () => []);
         const { container } = renderApp(['/interviews']);
 
         expect(container).toHaveTextContent('인터뷰 리스트가 없습니다');
