@@ -15,17 +15,17 @@ const Wrapper = styled.div({
   display: 'flex',
   alignItems: 'center',
   width: '100%',
-  minHeight: '3.8rem',
+  minHeight: '5.3rem',
   borderBottom: '1px solid #dfe6e9',
   backgroundImage: 'linear-gradient(128deg, #6a80f8 6%, #4a65f6 91%)',
+
+  '@media (max-width: 48rem)': {
+    minHeight: '3.7rem',
+  },
 });
 
-const HeaderLeftStyled = styled.div({
+const HeaderTopStyled = styled.div({
   width: '8.125rem',
-
-  '.logo': {
-    marginRight: '1.5rem',
-  },
 
   '@media (max-width: 48rem)': {
     position: 'absolute',
@@ -34,10 +34,12 @@ const HeaderLeftStyled = styled.div({
   },
 });
 
-const HeaderRightStyled = styled.div({
+const HeaderBottomStyled = styled.div({
   display: 'flex',
   justifyContent: 'space-between',
   flex: 1,
+  marginTop: '.5rem',
+  marginBottom: '.5rem',
 
   'ul:last-child li a': {
     fontSize: '1rem',
@@ -52,6 +54,7 @@ const HeaderRightStyled = styled.div({
 const HeaderStyled = styled.div({
   display: 'flex',
   justifyContent: 'space-between',
+  flexDirection: 'column',
   alignItems: 'center',
   width: '100%',
   padding: '0.4rem 1.5rem',
@@ -66,7 +69,7 @@ const HeaderStyled = styled.div({
       display: 'block',
       width: '100%',
 
-      [HeaderRightStyled]: {
+      [HeaderBottomStyled]: {
         display: 'block',
         marginTop: '4rem',
 
@@ -162,7 +165,7 @@ const DividerStyeld = styled.li({
   backgroundColor: 'rgba(255, 255, 255, 0.6)',
 
   '@media (max-width: 48rem)': {
-    display: 'none',
+    display: 'none !important',
   },
 });
 
@@ -173,13 +176,13 @@ const Header = ({ dropDownMenuActive, onDropdownMenuActive }) => (
         dropDownMenuActive={dropDownMenuActive}
         className={classNames({ dropDownMenuActive })}
       >
-        <HeaderLeftStyled>
+        <HeaderTopStyled>
           <LogoLinkStyled to="/" className="logo">
             <FontAwesomeIcon icon={faFeather} />
             <LogoTextStyled>Inttaview</LogoTextStyled>
           </LogoLinkStyled>
-        </HeaderLeftStyled>
-        <HeaderRightStyled>
+        </HeaderTopStyled>
+        <HeaderBottomStyled>
           <MenuListStyled>
             <MenuListItemStyeld>
               <MenuLinkStyled to="/interviews" exact activeClassName="selected">인터뷰즈</MenuLinkStyled>
@@ -189,12 +192,7 @@ const Header = ({ dropDownMenuActive, onDropdownMenuActive }) => (
               <MenuLinkStyled to="/interviews/practice" exact activeClassName="selected">인터뷰연습</MenuLinkStyled>
             </MenuListItemStyeld>
           </MenuListStyled>
-          <MenuListStyled>
-            <MenuListItemStyeld>
-              <MenuLinkStyled to="/" exact activeClassName="selected">서비스소개</MenuLinkStyled>
-            </MenuListItemStyeld>
-          </MenuListStyled>
-        </HeaderRightStyled>
+        </HeaderBottomStyled>
         <HamburgerButton
           active={dropDownMenuActive}
           onClick={onDropdownMenuActive}
