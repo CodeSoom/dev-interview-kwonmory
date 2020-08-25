@@ -7,147 +7,136 @@ import styled from '@emotion/styled';
 import classNames from 'classnames';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFeather, faSignOutAlt, faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { faFeather } from '@fortawesome/free-solid-svg-icons';
 
 import HamburgerButton from './HamburgerButton';
 
-const HeaderStyled = styled.div`
-  display: flex;
-  align-items: center;
-  min-height: 3.8rem;
-  width: 100%;
-  background-image: linear-gradient(128deg, #6a80f8 6%, #4a65f6 91%);
-  border-bottom: 1px solid #dfe6e9;
-`;
+const Wrapper = styled.div({
+  display: 'flex',
+  alignItems: 'center',
+  width: '100%',
+  minHeight: '3.8rem',
+  borderBottom: '1px solid #dfe6e9',
+  backgroundImage: 'linear-gradient(128deg, #6a80f8 6%, #4a65f6 91%)',
+});
 
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.4rem 1.5rem;
-  width: 100%;
-  
-  & .active {
-    border-bottom: '2px solid #fff';
-    color: '#fff';
-  }
+const HeaderLeftStyled = styled.div({
+  width: '8.125rem',
 
-  & .header__left {
-    width: 8.125rem;
+  '.logo': {
+    marginRight: '1.5rem',
+  },
 
-    .logo {
-      margin-right: 1.5rem;
-    }
-  }
+  '@media (max-width: 48rem)': {
+    position: 'absolute',
+    top: '14px',
+    left: '22px',
+  },
+});
 
-  & .header__right {
-    flex:1;
-    display: flex;
-    justify-content: space-between;
+const HeaderRightStyled = styled.div({
+  display: 'flex',
+  justifyContent: 'space-between',
+  flex: 1,
 
-    ul:last-child li a {
-      font-size: .8rem;
-      color: #fff;
-    }
-  }
+  'ul:last-child li a': {
+    fontSize: '1rem',
+    color: '#fff',
+  },
 
-  @media (max-width: 48rem) {
-    & .header__left {
-      position: absolute;
-      top: 14px;
-      left: 22px;
-    }
+  '@media (max-width: 48rem)': {
+    display: 'none',
+  },
+});
 
-    & .header__right {
-      display: none;
-    }
+const HeaderStyled = styled.div({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  width: '100%',
+  padding: '0.4rem 1.5rem',
 
-    &.dropDownMenuActive {
-      display: block;
-      width: 100%;
+  '& .active': {
+    borderBottom: '2px solid #fff',
+    color: '#fff',
+  },
 
-      & .header__right {
-      display: block;
-      margin-top: 4rem;
+  '@media (max-width: 48rem)': {
+    '&.dropDownMenuActive': {
+      display: 'block',
+      width: '100%',
 
-      ul {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+      [HeaderRightStyled]: {
+        display: 'block',
+        marginTop: '4rem',
 
-        &:first-of-type {
-          padding-bottom: 1rem;
-          margin-bottom: 1rem;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.6);
-        }
+        ul: {
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'center',
 
-        li {
-          display: block;
-          margin-bottom: 0.6rem;
+          '&:first-of-type': {
+            paddingBottom: '1rem',
+            marginBottom: '1rem',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.6)',
+          },
 
-          &.divider {
-            display: none;
-          }
+          li: {
+            display: 'block',
+            marginBottom: '0.6rem',
 
-          a {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.875rem;
+            a: {
+              color: 'rgba(255, 255, 255, 0.6)',
+              fontSize: '0.875rem',
 
-            &:hover {
-             color: #fff; 
-            }
+              '&:hover': {
+                color: '#fff',
+              },
 
-            &.selected {
-              color: #fff;
-            }
-          }
-        }
-      }
-    }
-  }
-}
-`;
+              '&.selected': {
+                color: '#fff',
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+});
 
-const LogoLinkStyled = styled(NavLink)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 2rem;
-  color: #fff;
-  border: 2px solid #fff;
-  border-radius: .6rem;
-  border-bottom-right-radius: 0rem;
-  padding: 0.3rem;
-  text-decoration: none;
+const LogoLinkStyled = styled(NavLink)({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  height: '2rem',
+  padding: '0.3rem',
+  color: '#fff',
+  border: '2px solid #fff',
+  borderRadius: '.6rem',
+  borderBottomRightRadius: '0rem',
+  textDecoration: 'none',
+});
 
-  .logo-text {
-    font-size: .8rem;
-    margin-left: .3rem;
-    font-family: 'Orbitron', sans-serif;
-  }
-`;
+const LogoTextStyled = styled.span({
+  fontSize: '.8rem',
+  marginLeft: '.3rem',
+  fontFamily: "'Orbitron', sans-serif",
+});
 
-const MenuListStyled = styled.ul`
-  display: flex;
-  align-items: center;
-  color: rgba(255,255,255,0.6);
+const MenuListStyled = styled.ul({
+  display: 'flex',
+  alignItems: 'center',
+  color: 'rgb(255,255,255,0.6)',
 
-  li {
-    font-size: 1rem;
-    font-weight: 500;
-  }
+  '.active': {
+    color: '#fff',
+  },
+});
 
-  .active {
-    color: #fff;
-  }
-
-  .divider {
-    width: 0.0825rem;
-    height: .8rem;
-    background-color: rgba(255, 255, 255, 0.6);
-    margin: 0.2rem 0.5rem 0 0.5rem;
-  }
-`;
+const MenuListItemStyeld = styled.li({
+  fontSize: '1rem',
+  fontWeight: 500,
+});
 
 const MenuLinkStyled = styled(NavLink)`
   padding: 0.25rem .5rem;
@@ -166,61 +155,52 @@ const MenuLinkStyled = styled(NavLink)`
   }
 `;
 
-const MenuLinkIconStyled = styled(NavLink)`
-  padding: 0 0.7rem;
+const DividerStyeld = styled.li({
+  width: '0.0825rem',
+  height: '.8rem',
+  margin: '0.2rem 0.5rem 0 0.5rem',
+  backgroundColor: 'rgba(255, 255, 255, 0.6)',
 
-  svg {
-    font-size: 1.2rem;
-    color: rgba(255,255,255,0.7);
-    &:hover {
-      color: #fff;
-    }
-  }
-`;
+  '@media (max-width: 48rem)': {
+    display: 'none',
+  },
+});
 
-const Header = ({ login, dropDownMenuActive, onDropdownMenuActive }) => (
+const Header = ({ dropDownMenuActive, onDropdownMenuActive }) => (
   <>
-    <HeaderStyled>
-      <Wrapper className={classNames({ dropDownMenuActive })}>
-        <div className="header__left">
+    <Wrapper>
+      <HeaderStyled
+        dropDownMenuActive={dropDownMenuActive}
+        className={classNames({ dropDownMenuActive })}
+      >
+        <HeaderLeftStyled>
           <LogoLinkStyled to="/" className="logo">
             <FontAwesomeIcon icon={faFeather} />
-            <span className="logo-text">Inttaview</span>
+            <LogoTextStyled>Inttaview</LogoTextStyled>
           </LogoLinkStyled>
-        </div>
-        <div className="header__right">
-          <MenuListStyled className="header__menus">
-            <li>
-              <MenuLinkStyled to="/" exact activeClassName="selected">서비스소개</MenuLinkStyled>
-            </li>
-            <li>
+        </HeaderLeftStyled>
+        <HeaderRightStyled>
+          <MenuListStyled>
+            <MenuListItemStyeld>
               <MenuLinkStyled to="/interviews" exact activeClassName="selected">인터뷰즈</MenuLinkStyled>
-            </li>
-            <li className="divider" />
-            <li>
+            </MenuListItemStyeld>
+            <DividerStyeld />
+            <MenuListItemStyeld>
               <MenuLinkStyled to="/interviews/practice" exact activeClassName="selected">인터뷰연습</MenuLinkStyled>
-            </li>
+            </MenuListItemStyeld>
           </MenuListStyled>
-          <MenuListStyled className="header__menus">
-            {login ? (
-              <>
-                <li><MenuLinkIconStyled to="/profile"><FontAwesomeIcon icon={faAddressCard} /></MenuLinkIconStyled></li>
-                <li><MenuLinkIconStyled to="/logout"><FontAwesomeIcon icon={faSignOutAlt} /></MenuLinkIconStyled></li>
-              </>
-            ) : (
-              <>
-                <li><MenuLinkStyled to="/login">로그인</MenuLinkStyled></li>
-                <li><MenuLinkStyled to="/register">회원가입</MenuLinkStyled></li>
-              </>
-            )}
+          <MenuListStyled>
+            <MenuListItemStyeld>
+              <MenuLinkStyled to="/" exact activeClassName="selected">서비스소개</MenuLinkStyled>
+            </MenuListItemStyeld>
           </MenuListStyled>
-        </div>
+        </HeaderRightStyled>
         <HamburgerButton
           active={dropDownMenuActive}
           onClick={onDropdownMenuActive}
         />
-      </Wrapper>
-    </HeaderStyled>
+      </HeaderStyled>
+    </Wrapper>
   </>
 );
 

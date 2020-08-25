@@ -5,11 +5,10 @@ import { render, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import Header from './Header';
 
-function renderHeader({ token, dropdownMenuActive, handleDropdownMenuActive }) {
+function renderHeader({ dropdownMenuActive, handleDropdownMenuActive }) {
   return render(
     <MemoryRouter>
       <Header
-        login={token}
         dropdownMenuActive={dropdownMenuActive}
         onDropdownMenuActive={handleDropdownMenuActive}
       />
@@ -19,36 +18,19 @@ function renderHeader({ token, dropdownMenuActive, handleDropdownMenuActive }) {
 
 describe('Header', () => {
   const handleDropdownMenuActive = jest.fn();
-  context('with login', () => {
-    it('renders "로그아웃" 메뉴', () => {
-      const { container } = renderHeader({
-        token: 'ACCESS_TOKEN',
-        dropdownMenuActive: true,
-        handleDropdownMenuActive,
-      });
 
-      expect(container).not.toHaveTextContent('로그인');
+  it('renders Header', () => {
+    const { container } = renderHeader({
+      dropdownMenuActive: false,
+      handleDropdownMenuActive,
     });
-  });
 
-  context('without login', () => {
-    it('renders Header', () => {
-      const { container } = renderHeader({
-        token: '',
-        dropdownMenuActive: false,
-        handleDropdownMenuActive,
-      });
+    expect(container).toHaveTextContent('서비스소개');
+    expect(container).toHaveTextContent('인터뷰즈');
+    expect(container).toHaveTextContent('인터뷰연습');
 
-      expect(container).toHaveTextContent('서비스소개');
-      expect(container).toHaveTextContent('인터뷰즈');
-      expect(container).toHaveTextContent('인터뷰연습');
+    fireEvent.click(container.querySelector('button'));
 
-      expect(container.querySelector('.logo')).not.toBeNull();
-      expect(container.querySelector('button')).not.toBeNull();
-
-      fireEvent.click(container.querySelector('button'));
-
-      expect(handleDropdownMenuActive).toBeCalled();
-    });
+    expect(handleDropdownMenuActive).toBeCalled();
   });
 });

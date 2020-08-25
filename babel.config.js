@@ -10,4 +10,5 @@ module.exports = {
     ],
     '@babel/react',
   ],
+  plugins: ['emotion'],
 };
