@@ -2,8 +2,6 @@ import React, { useState as useStateMock } from 'react';
 
 import { fireEvent, render } from '@testing-library/react';
 
-import { useDispatch } from 'react-redux';
-
 import { MemoryRouter } from 'react-router-dom';
 
 import HeaderContainer from './HeaderContainer';
