@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import './index.css';
+import './css/react-transitions.css';
 
 import store from './modules/store';
 
@@ -15,7 +16,9 @@ ReactDOM.render(
   (
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <div className="transition-container fade-in">
+          <App />
+        </div>
       </BrowserRouter>
     </Provider>
   ),
