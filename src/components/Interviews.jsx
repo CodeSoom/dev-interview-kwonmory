@@ -10,17 +10,17 @@ const Wrapper = styled.div({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  maxWidth: '900px',
-  padding: '15px',
+  maxWidth: '64rem',
   width: '100%',
+  padding: '15px',
 });
 
 const InterviewsListWrapperStyled = styled.ul({
-  width: '100%',
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  flexDirection: 'column',
+  flexWrap: 'wrap',
+  width: '100%',
 });
 
 const Interviews = ({ interviews }) => {

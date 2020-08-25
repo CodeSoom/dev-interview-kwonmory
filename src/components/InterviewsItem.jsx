@@ -8,115 +8,120 @@ import _ from 'lodash';
 
 const InterviewsItemStyled = styled.li({
   display: 'flex',
-  margin: '1rem 0',
   justifyContent: 'space-between',
-  width: '100%',
+  alignItems: 'center',
+  flexDirection: 'column',
+  maxWidth: '20rem',
+  minWidth: '20rem',
+  minHeight: '23rem',
+  maxHeight: '23rem',
+  margin: '1rem .2rem',
+});
 
-  '.interviews__image': {
-    width: '200px',
-    height: '150px',
-    img: {
-      width: '100%',
-      height: '100%',
-      borderRadius: '5px',
-    },
-  },
-  '.interviews__information': {
-    padding: '.5rem 2rem',
-    flex: 1,
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    '.interviews__description': {
-      h2: {
-        fontSize: '1.25rem',
-        color: '#263747',
-        fontWeight: '700',
-        marginBottom: '1rem',
-      },
-      p: {
-        color: '#98A8B9',
-        fontSize: '.9rem',
-        marginBottom: '1rem',
-      },
-    },
-    '.interviews__tags': {
-      span: {
-        display: 'inline-block',
-        fontSize: '.75rem',
-        borderRadius: '0.25rem',
-        fontWeight: 700,
-        color: '#263747',
-        marginRight: '.5rem',
-      },
-    },
-  },
-  '.interivews__enter-button': {
-    display: 'flex',
-    alignItems: 'flex-end',
-    a: {
-      display: 'inline-block',
-      width: '7.25rem',
-      height: '2rem',
-      border: '2px solid #768bfa',
-      padding: '.3rem',
-      textAlign: 'center',
-      color: '#fff',
-      textDecoration: 'none',
-      background: '#768bfa',
-      borderRadius: '.3rem',
-      '&:hover': {
-        background: '#fff',
-        color: '#768bfa',
-      },
-    },
-  },
-  '@media (max-width: 48rem)': {
-    '&': {
-      flexDirection: 'column',
-      alignItems: 'center',
-      '.interviews__information': {
-        marginBottom: '1rem',
-        '.interviews__description': {
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-        },
-        '.interviews__tags': {
-          display: 'flex',
-          justifyContent: 'flex-end',
-        },
-      },
-      paddingBottom: '1rem',
-      borderBottom: '1px solid rgba(0,0,0,0.1)',
-    },
+const InterviewsImagesStyled = styled.div({
+  display: 'flex',
+  justifyContent: 'center',
+  width: '300px',
+  height: '200px',
+  img: {
+    width: '100%',
+    height: '100%',
+    borderRadius: '5px',
   },
 });
-const InterviewsItem = ({ interviews }) => (
-  <>
-    <InterviewsItemStyled>
-      <div className="interviews__image">
-        <img src={interviews?.image?.[0]?.url || '../assets/images/interviews-default.png'} alt={interviews?.image?.[0]?.alt || '디폴트 이미지'} />
-      </div>
-      <div className="interviews__information">
-        <div className="interviews__description">
-          <h2>{interviews?.title || '제목이 없습니다!'}</h2>
-          <p>
-            {_.truncate(interviews?.description || '설명이 없습니다!', {
-              length: 100,
-            })}
-          </p>
-        </div>
-        <div className="interviews__tags">
-          {interviews?.tags?.map((tag) => <span key={tag.id}>{tag.title}</span>)}
-        </div>
-      </div>
-      <div className="interivews__enter-button">
-        <Link to="/">도전하기</Link>
-      </div>
-    </InterviewsItemStyled>
-  </>
-);
+
+const InterviewsTitleStyled = styled.h2({
+  marginTop: '.7rem',
+  marginBottom: '1rem',
+  fontSize: '1.25rem',
+  fontWeight: '700',
+  color: '#263747',
+  lineHeight: '1.3',
+});
+
+const InterviewsDescriptionStyled = styled.p({
+  width: '100%',
+  marginBottom: '1rem',
+  padding: '0 .5rem',
+  color: '#98A8B9',
+  fontSize: '.9rem',
+});
+
+const InterviewsActiveStyled = styled.div({
+  display: 'flex',
+  justifyContent: 'space-between',
+  width: '100%',
+  padding: '0 .5rem',
+});
+
+const InterviewsTagsStyled = styled.div({
+  display: 'flex',
+  alignItems: 'center',
+
+  span: {
+    display: 'inline-block',
+    fontSize: '.75rem',
+    borderRadius: '0.25rem',
+    fontWeight: 700,
+    color: '#263747',
+    marginRight: '.5rem',
+    textTransform: 'uppercase',
+  },
+});
+
+const InterviewsActiveButtonStyled = styled.div({
+
+});
+
+const LikeStyled = styled(Link)({
+  display: 'inline-block',
+  width: '7.25rem',
+  height: '2rem',
+  padding: '.3rem',
+  border: '2px solid #768bfa',
+  textAlign: 'center',
+  borderRadius: '.3rem',
+  textDecoration: 'none',
+  background: '#768bfa',
+  color: '#fff',
+  '&:hover': {
+    background: '#fff',
+    color: '#768bfa',
+  },
+});
+
+const InterviewsItem = ({ interviews }) => {
+  const DEFAULT_IMAGE = '../assets/images/interviews-default.png';
+  const image = interviews.image?.[0]?.url || DEFAULT_IMAGE;
+  const imageAtl = interviews?.image?.[0]?.alt || '디폴트 이미지';
+
+  return (
+    <>
+      <InterviewsItemStyled>
+        <InterviewsImagesStyled>
+          <img src={image} alt={imageAtl} />
+        </InterviewsImagesStyled>
+        <InterviewsTitleStyled>
+          {_.truncate(interviews?.title || '제목이 없습니다!', {
+            length: 40,
+          })}
+        </InterviewsTitleStyled>
+        <InterviewsDescriptionStyled>
+          {_.truncate(interviews?.description || '설명이 없습니다!', {
+            length: 100,
+          })}
+        </InterviewsDescriptionStyled>
+        <InterviewsActiveStyled>
+          <InterviewsTagsStyled>
+            {interviews?.tags?.map((tag) => <span key={tag.id}>{tag.title}</span>)}
+          </InterviewsTagsStyled>
+          <InterviewsActiveButtonStyled>
+            <LikeStyled to="/">도전하기</LikeStyled>
+          </InterviewsActiveButtonStyled>
+        </InterviewsActiveStyled>
+      </InterviewsItemStyled>
+    </>
+  );
+};
 
 export default InterviewsItem;
