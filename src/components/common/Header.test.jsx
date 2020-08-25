@@ -25,7 +25,6 @@ describe('Header', () => {
       handleDropdownMenuActive,
     });
 
-    expect(container).toHaveTextContent('서비스소개');
     expect(container).toHaveTextContent('인터뷰즈');
     expect(container).toHaveTextContent('인터뷰연습');
 
