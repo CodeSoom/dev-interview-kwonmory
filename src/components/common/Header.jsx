@@ -41,11 +41,6 @@ const HeaderBottomStyled = styled.div({
   marginTop: '.5rem',
   marginBottom: '.5rem',
 
-  'ul:last-child li a': {
-    fontSize: '1rem',
-    color: '#fff',
-  },
-
   '@media (max-width: 48rem)': {
     display: 'none',
   },
