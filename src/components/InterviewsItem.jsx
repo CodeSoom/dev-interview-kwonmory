@@ -2,8 +2,6 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-import { Link } from 'react-router-dom';
-
 import _ from 'lodash';
 
 const InterviewsItemStyled = styled.li({
@@ -73,7 +71,7 @@ const InterviewsActiveButtonStyled = styled.div({
 
 });
 
-const LikeStyled = styled(Link)({
+const ButtonStyled = styled.button({
   display: 'inline-block',
   width: '7.25rem',
   height: '2rem',
@@ -84,13 +82,14 @@ const LikeStyled = styled(Link)({
   textDecoration: 'none',
   background: '#768bfa',
   color: '#fff',
+  cursor: 'pointer',
   '&:hover': {
     background: '#fff',
     color: '#768bfa',
   },
 });
 
-const InterviewsItem = ({ interviews }) => {
+const InterviewsItem = ({ interviews, onStartButton }) => {
   const DEFAULT_IMAGE = '../assets/images/interviews-default.png';
   const image = interviews.image?.[0]?.url || DEFAULT_IMAGE;
   const imageAtl = interviews?.image?.[0]?.alt || '디폴트 이미지';
@@ -116,7 +115,7 @@ const InterviewsItem = ({ interviews }) => {
             {interviews?.tags?.map((tag) => <span key={tag.id}>{tag.title}</span>)}
           </InterviewsTagsStyled>
           <InterviewsActiveButtonStyled>
-            <LikeStyled to="/">도전하기</LikeStyled>
+            <ButtonStyled onClick={() => onStartButton(interviews.id)}>도전하기</ButtonStyled>
           </InterviewsActiveButtonStyled>
         </InterviewsActiveStyled>
       </InterviewsItemStyled>

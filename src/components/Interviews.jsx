@@ -23,7 +23,7 @@ const InterviewsListWrapperStyled = styled.ul({
   width: '100%',
 });
 
-const Interviews = ({ interviews }) => {
+const Interviews = ({ interviews, onStartButton }) => {
   if (_.isEmpty(interviews)) {
     return (
       <Wrapper>
@@ -39,6 +39,7 @@ const Interviews = ({ interviews }) => {
           <InterviewsItem
             interviews={interview}
             key={interview.id}
+            onStartButton={onStartButton}
           />
         ))}
       </InterviewsListWrapperStyled>

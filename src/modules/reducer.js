@@ -82,6 +82,13 @@ const { actions, reducer } = createSlice({
         selectedQuizId,
       };
     },
+    clearQuiz(state) {
+      return {
+        ...state,
+        quiz: {},
+        selectedQuizId: null,
+      };
+    },
   },
 });
 
@@ -94,6 +101,7 @@ export const {
   setInterviews,
   setQuiz,
   setSelectedQuizId,
+  clearQuiz,
 } = actions;
 export default reducer;
 

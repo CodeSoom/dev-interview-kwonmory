@@ -1,12 +1,16 @@
 import React from 'react';
 
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
 import { MemoryRouter } from 'react-router-dom';
 
 import InterviewsContainer from './InterviewsContainer';
+
+import mockInterview from '../../fixtures/interviews';
+
+import { setSelectedQuizId } from '../modules/reducer';
 
 function renderInterviewsContainer() {
   return render(<MemoryRouter><InterviewsContainer /></MemoryRouter>);
@@ -29,6 +33,20 @@ describe('InterviewsContainer', () => {
   it('calls interviews data', () => {
     renderInterviewsContainer();
 
-    expect(dispatch).toBeCalled();
+    expect(dispatch).toBeCalledTimes(2);
+  });
+
+  context('when click "도전하기" button', () => {
+    given('interviews', () => mockInterview);
+
+    it('dispatches setSelectedQuizId', async () => {
+      const { container } = renderInterviewsContainer();
+
+      fireEvent.click(container.querySelector('button'));
+
+      expect.assertions(1);
+
+      await expect(dispatch).toBeCalledWith(setSelectedQuizId(1));
+    });
   });
 });

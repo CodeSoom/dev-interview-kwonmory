@@ -1,14 +1,22 @@
 import React from 'react';
 
-import { render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
+
 import mockInterview from '../../fixtures/interviews';
 
 import Interviews from './Interviews';
 
-function renderInterviews({ interviews }) {
-  return render(<MemoryRouter><Interviews interviews={interviews} /></MemoryRouter>);
+function renderInterviews({ interviews, button }) {
+  return render(
+    <MemoryRouter>
+      <Interviews
+        interviews={interviews}
+        onStartButton={button}
+      />
+    </MemoryRouter>,
+  );
 }
 
 describe('Interviews', () => {
@@ -40,6 +48,21 @@ describe('Interviews', () => {
       const { container } = renderInterviews({ interviews });
 
       expect(container).toHaveTextContent('인터뷰 리스트가 없습니다');
+    });
+  });
+
+  context('when click "도전하기" button', () => {
+    it('calls button event', () => {
+      const interviews = mockInterview;
+      const button = jest.fn();
+
+      const { getAllByText } = renderInterviews({ interviews, button });
+
+      expect(getAllByText('도전하기')[0]).not.toBeNull();
+
+      fireEvent.click(getAllByText('도전하기')[0]);
+
+      expect(button).toBeCalled();
     });
   });
 });

@@ -8,7 +8,7 @@ import styled from '@emotion/styled';
 
 import { get } from '../modules/utils';
 
-import { loadQuiz, setSelectedQuizId } from '../modules/reducer'; // TODO setSelectedQuied 나중에 삭제해야함
+import { loadQuiz } from '../modules/reducer'; // TODO setSelectedQuied 나중에 삭제해야함
 
 import QuizErrorMessage from '../components/quiz/QuizErrorMessage';
 import QuizHeaderContainer from '../containers/common/QuizHeaderContainer';
@@ -22,7 +22,6 @@ const InterviewsIntroPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setSelectedQuizId(1)); // TODO 나중에 삭제해야함
     dispatch(loadQuiz());
   }, []);
 

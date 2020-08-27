@@ -206,6 +206,9 @@ const QuizIntro = ({ quiz }) => (
             {' '}
             이상 작성하셔야합니다.
           </li>
+          <li>
+            4. 크롬 브라우저와 PC 환경을 권장합니다.
+          </li>
         </ol>
       </InformationStyled>
     </SubInformationStyled>
