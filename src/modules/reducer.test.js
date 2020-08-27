@@ -11,6 +11,7 @@ import reducer,
   setCheckedCategories,
   setInterviews,
   setQuiz,
+  clearQuiz,
   loadInterviews,
   loadInterviewQuestions,
   loadInterviewCategories,
@@ -56,59 +57,82 @@ describe('reducer', () => {
   });
 
   describe('setInterviewQuestions', () => {
-    const state = reducer(initialState, setInterviewQuestions(mockInterviewQuestions));
+    it('set interviews questions', () => {
+      const state = reducer(initialState, setInterviewQuestions(mockInterviewQuestions));
 
-    expect(state.interview.questions).toEqual(mockInterviewQuestions);
+      expect(state.interview.questions).toEqual(mockInterviewQuestions);
+    });
   });
 
   describe('clearInterviewQuestions', () => {
-    const state = reducer(initialState, clearInterviewQuestions());
+    it('clear interviews questions', () => {
+      const state = reducer(initialState, clearInterviewQuestions());
 
-    expect(state.interview.questions).toEqual([]);
+      expect(state.interview.questions).toEqual([]);
+    });
   });
 
   describe('setInterviewCategories', () => {
-    const state = reducer(initialState, setInterviewCategories(mockInterviewCategories));
+    it('set interviews categories', () => {
+      const state = reducer(initialState, setInterviewCategories(mockInterviewCategories));
 
-    expect(state.interview.categories).toEqual(mockInterviewCategories);
+      expect(state.interview.categories).toEqual(mockInterviewCategories);
+    });
   });
 
   describe('setCheckedCategories', () => {
-    const categories = ['name'];
-    const state = reducer(initialState, setCheckedCategories(categories));
+    it('set checked categories', () => {
+      const categories = ['name'];
+      const state = reducer(initialState, setCheckedCategories(categories));
 
-    expect(state.interview.checkedCategories).toEqual(categories);
+      expect(state.interview.checkedCategories).toEqual(categories);
+    });
   });
 
   describe('setInterviews', () => {
-    const interviews = [{
-      id: 1,
-      title: '인터뷰에 도전하라',
-    }];
+    it('set interviews', () => {
+      const interviews = [{
+        id: 1,
+        title: '인터뷰에 도전하라',
+      }];
 
-    const state = reducer(initialState, setInterviews(interviews));
+      const state = reducer(initialState, setInterviews(interviews));
 
-    expect(state.interviews).toEqual(interviews);
+      expect(state.interviews).toEqual(interviews);
+    });
   });
 
   describe('setQuiz', () => {
-    const quiz = [
-      {
-        id: 1,
-        title: 'what',
-      },
-    ];
-    const state = reducer(initialState, setQuiz(quiz));
+    it('set quiz', () => {
+      const quiz = [
+        {
+          id: 1,
+          title: 'what',
+        },
+      ];
+      const state = reducer(initialState, setQuiz(quiz));
 
-    expect(state.quiz).toEqual(quiz);
+      expect(state.quiz).toEqual(quiz);
+    });
   });
 
   describe('setSelectedQuizId', () => {
-    const id = 1;
+    it('set selected quiz id', () => {
+      const id = 1;
 
-    const state = reducer(initialState, setSelectedQuizId(id));
+      const state = reducer(initialState, setSelectedQuizId(id));
 
-    expect(state.selectedQuizId).toBe(id);
+      expect(state.selectedQuizId).toBe(id);
+    });
+  });
+
+  describe('clearQuiz', () => {
+    it('clear quiz', () => {
+      const state = reducer(initialState, clearQuiz());
+
+      expect(state.selectedQuizId).toBe(null);
+      expect(state.quiz).toEqual({});
+    });
   });
 
   describe('loadCategories', () => {
