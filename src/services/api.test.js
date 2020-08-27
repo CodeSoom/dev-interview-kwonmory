@@ -2,11 +2,13 @@ import {
   fetchInterviewQuestions,
   fetchInterviewCategories,
   fetchInterviews,
+  fetchQuiz,
 } from './api';
 
 import mockInterviewQuestions from '../../fixtures/interview-questions';
 import mockInterviewCategories from '../../fixtures/interview-categories';
 import mockInterviews from '../../fixtures/interviews';
+import mockQuiz from '../../fixtures/quiz';
 
 describe('api', () => {
   describe('fetchInterviewQuestions', () => {
@@ -55,6 +57,22 @@ describe('api', () => {
       const interviews = await fetchInterviews();
 
       expect(interviews).toEqual(mockInterviews);
+    });
+  });
+
+  describe('fetchQuiz', () => {
+    const mockQuizData = mockQuiz.quiz;
+
+    beforeEach(() => {
+      fetch.mockResponseOnce(JSON.stringify(mockQuizData));
+    });
+
+    it('returns quiz', async () => {
+      const FIRST_INTERVIEWS = 1;
+
+      const quiz = await fetchQuiz({ id: FIRST_INTERVIEWS });
+
+      expect(quiz).toEqual(mockQuizData);
     });
   });
 });
