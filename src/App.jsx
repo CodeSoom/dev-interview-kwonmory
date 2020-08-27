@@ -8,22 +8,27 @@ import HeaderContainer from './containers/common/HeaderContainer';
 import InterviewPracticePage from './pages/InterviewPracticePage';
 import NotFoundPage from './pages/NotFoundPage';
 import InterviewsPage from './pages/InterviewsPage';
+import InterviewsIntroPage from './pages/InterviewsIntroPage';
 
 const Wrapper = styled.div`
   height: 100vh;
   /* background-image: linear-gradient(128deg, #6a80f8 6%, #4a65f6 91%); */
 `;
 
-const tempMainPage = () => (<></>);
+const tempMainPage = () => (
+  <>
+    <HeaderContainer />
+  </>
+);
 
 const App = () => (
   <>
     <Wrapper>
-      <HeaderContainer />
       <Switch>
         <Route exact path="/" component={tempMainPage} />
         <Route exact path="/interviews" component={InterviewsPage} />
         <Route exact path="/interviews/practice" component={InterviewPracticePage} />
+        <Route exact path="/interviews/quiz" component={InterviewsIntroPage} />
         <Route exact component={NotFoundPage} />
       </Switch>
     </Wrapper>
