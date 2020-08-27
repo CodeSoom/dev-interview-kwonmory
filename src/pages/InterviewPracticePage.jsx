@@ -2,6 +2,8 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
+import HeaderContainer from '../containers/common/HeaderContainer';
+
 import InterviewCategoriesContainer from '../containers/InterviewCategoriesContainer';
 import InterviewQuestionsContainer from '../containers/InterviewQuestionsContainer';
 
@@ -61,19 +63,22 @@ const Banner = styled.div`
 `;
 
 const InterviewPracticePage = () => (
-  <Wrapper>
-    <Banner>
-      <div>
-        <h2>스스로 문제에 대한 답을 찾아보세요</h2>
-        <DivisionBarStyled />
-        <p>그것이 여러분을 성장 시킵니다</p>
-      </div>
-    </Banner>
-    <ContentArea>
-      <InterviewCategoriesContainer />
-      <InterviewQuestionsContainer />
-    </ContentArea>
-  </Wrapper>
+  <>
+    <HeaderContainer />
+    <Wrapper>
+      <Banner>
+        <div>
+          <h2>스스로 문제에 대한 답을 찾아보세요</h2>
+          <DivisionBarStyled />
+          <p>그것이 여러분을 성장 시킵니다</p>
+        </div>
+      </Banner>
+      <ContentArea>
+        <InterviewCategoriesContainer />
+        <InterviewQuestionsContainer />
+      </ContentArea>
+    </Wrapper>
+  </>
 );
 
 export default InterviewPracticePage;

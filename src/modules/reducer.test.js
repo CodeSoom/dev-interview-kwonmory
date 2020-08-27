@@ -4,19 +4,23 @@ import { getDefaultMiddleware } from '@reduxjs/toolkit';
 
 import reducer,
 {
+  clearInterviewQuestions,
   setAccessToken,
   setInterviewQuestions,
-  clearInterviewQuestions,
   setInterviewCategories,
   setCheckedCategories,
   setInterviews,
+  setQuiz,
   loadInterviews,
   loadInterviewQuestions,
   loadInterviewCategories,
+  loadQuiz,
+  setSelectedQuizId,
 } from './reducer';
 
-import interviewQuestions from '../../fixtures/interview-questions';
-import interviewCategories from '../../fixtures/interview-categories';
+import mockInterviewQuestions from '../../fixtures/interview-questions';
+import mockInterviewCategories from '../../fixtures/interview-categories';
+import mockQuiz from '../../fixtures/quiz';
 
 const mockStore = configureStore([...getDefaultMiddleware()]);
 
@@ -28,6 +32,8 @@ describe('reducer', () => {
       categories: [],
     },
     interviews: [],
+    selectedQuizId: null,
+    quiz: {},
     accessToken: '',
   };
 
@@ -50,9 +56,9 @@ describe('reducer', () => {
   });
 
   describe('setInterviewQuestions', () => {
-    const state = reducer(initialState, setInterviewQuestions(interviewQuestions));
+    const state = reducer(initialState, setInterviewQuestions(mockInterviewQuestions));
 
-    expect(state.interview.questions).toEqual(interviewQuestions);
+    expect(state.interview.questions).toEqual(mockInterviewQuestions);
   });
 
   describe('clearInterviewQuestions', () => {
@@ -62,9 +68,9 @@ describe('reducer', () => {
   });
 
   describe('setInterviewCategories', () => {
-    const state = reducer(initialState, setInterviewCategories(interviewCategories));
+    const state = reducer(initialState, setInterviewCategories(mockInterviewCategories));
 
-    expect(state.interview.categories).toEqual(interviewCategories);
+    expect(state.interview.categories).toEqual(mockInterviewCategories);
   });
 
   describe('setCheckedCategories', () => {
@@ -83,6 +89,26 @@ describe('reducer', () => {
     const state = reducer(initialState, setInterviews(interviews));
 
     expect(state.interviews).toEqual(interviews);
+  });
+
+  describe('setQuiz', () => {
+    const quiz = [
+      {
+        id: 1,
+        title: 'what',
+      },
+    ];
+    const state = reducer(initialState, setQuiz(quiz));
+
+    expect(state.quiz).toEqual(quiz);
+  });
+
+  describe('setSelectedQuizId', () => {
+    const id = 1;
+
+    const state = reducer(initialState, setSelectedQuizId(id));
+
+    expect(state.selectedQuizId).toBe(id);
   });
 
   describe('loadCategories', () => {
@@ -138,6 +164,49 @@ describe('reducer', () => {
       const actions = store.getActions();
 
       expect(actions[0]).toEqual(setInterviews([]));
+    });
+  });
+
+  describe('loadQuiz', () => {
+    beforeEach(() => {
+      store = mockStore({
+        quiz: {},
+        selectedQuizId: given.selectedQuizId || null,
+      });
+    });
+
+    context('with selectedQuizId', () => {
+      beforeEach(() => {
+        fetch.mockResponseOnce(JSON.stringify(mockQuiz));
+      });
+
+      const SELECTED_QUIZ_ID = 1;
+      given('selectedQuizId', () => SELECTED_QUIZ_ID);
+
+      it('dispatchs setQuiz', async () => {
+        await store.dispatch(loadQuiz());
+
+        const actions = store.getActions();
+
+        expect(actions[0])
+          .toEqual(setQuiz(mockQuiz));
+      });
+    });
+    context('without selectedQuizId', () => {
+      beforeEach(() => {
+        fetch.mockResponseOnce(JSON.stringify(null));
+      });
+
+      const SELECTED_QUIZ_ID = null;
+      given('selectedQuizId', () => SELECTED_QUIZ_ID);
+
+      it('not dispatch setQuiz', async () => {
+        await store.dispatch(loadQuiz());
+
+        const actions = store.getActions();
+
+        expect(actions[0]).toEqual(setQuiz({}));
+      });
     });
   });
 });

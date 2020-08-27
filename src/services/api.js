@@ -1,14 +1,19 @@
 const baseURL = 'http://localhost:8080/api';
 
-export async function fetchInterviewQuestions(data) {
+const request = async (url, options = {}) => {
+  const response = await fetch(`${baseURL}${url}`, options);
+  const data = await response.json();
+  return data;
+};
+
+export async function fetchInterviewQuestions(interview) {
   const queryObj = { };
 
-  if (data && data.checkedCategories) {
-    queryObj.categories = data.checkedCategories;
+  if (interview?.checkedCategories) {
+    queryObj.categories = interview.checkedCategories;
   }
 
-  const url = `${baseURL}/interview/questions`;
-  const response = await fetch(url, {
+  const data = await request('/interview/questions', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -16,20 +21,24 @@ export async function fetchInterviewQuestions(data) {
     referrer: 'no-referrer',
     body: JSON.stringify(queryObj),
   });
-  const output = await response.json();
-  return output;
+
+  return data;
 }
 
 export async function fetchInterviewCategories() {
-  const url = `${baseURL}/interview/categories`;
-  const response = await fetch(url);
-  const data = await response.json();
+  const data = await request('/interview/categories');
+
   return data;
 }
 
 export async function fetchInterviews() {
-  const url = `${baseURL}/interviews`;
-  const response = await fetch(url);
-  const data = await response.json();
+  const data = await request('/interviews');
+
+  return data;
+}
+
+export async function fetchQuiz({ id }) {
+  const data = await request(`/quiz/${id}`);
+
   return data;
 }

@@ -1,9 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import _ from 'lodash';
+
 import {
   fetchInterviewCategories,
   fetchInterviewQuestions,
   fetchInterviews,
+  fetchQuiz,
 } from '../services/api';
 
 const { actions, reducer } = createSlice({
@@ -14,6 +17,8 @@ const { actions, reducer } = createSlice({
       categories: [],
     },
     interviews: [],
+    selectedQuizId: null,
+    quiz: {},
     accessToken: '',
   },
   reducers: {
@@ -65,6 +70,18 @@ const { actions, reducer } = createSlice({
         interviews,
       };
     },
+    setQuiz(state, { payload: quiz }) {
+      return {
+        ...state,
+        quiz,
+      };
+    },
+    setSelectedQuizId(state, { payload: selectedQuizId }) {
+      return {
+        ...state,
+        selectedQuizId,
+      };
+    },
   },
 });
 
@@ -75,6 +92,8 @@ export const {
   setInterviewCategories,
   setCheckedCategories,
   setInterviews,
+  setQuiz,
+  setSelectedQuizId,
 } = actions;
 export default reducer;
 
@@ -102,5 +121,16 @@ export function loadInterviews() {
     const interviews = await fetchInterviews();
 
     dispatch(setInterviews(interviews));
+  };
+}
+
+export function loadQuiz() {
+  return async (dispatch, getState) => {
+    const { selectedQuizId } = getState();
+
+    const quiz = await fetchQuiz({ id: selectedQuizId });
+
+    if (_.isEmpty(quiz)) dispatch(setQuiz({}));
+    else dispatch(setQuiz(quiz));
   };
 }
