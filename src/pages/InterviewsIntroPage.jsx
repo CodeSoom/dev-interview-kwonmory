@@ -13,6 +13,7 @@ import { loadQuiz } from '../modules/reducer'; // TODO setSelectedQuied 나중�
 import QuizErrorMessage from '../components/quiz/QuizErrorMessage';
 import QuizHeaderContainer from '../containers/common/QuizHeaderContainer';
 import QuizIntroContainer from '../containers/quiz/QuizIntroContainer';
+import InterviewsLayout from '../layout/InterviewsLayout';
 
 const Wrapper = styled.div({
   backgroundColor: '#121212',
@@ -29,18 +30,20 @@ const InterviewsIntroPage = () => {
 
   if (_.isEmpty(quiz)) {
     return (
-      <Wrapper>
-        <QuizHeaderContainer />
-        <QuizErrorMessage />
-      </Wrapper>
+      <InterviewsLayout>
+        <Wrapper>
+          <QuizErrorMessage />
+        </Wrapper>
+      </InterviewsLayout>
     );
   }
 
   return (
-    <Wrapper>
-      <QuizHeaderContainer />
-      <QuizIntroContainer />
-    </Wrapper>
+    <InterviewsLayout>
+      <Wrapper>
+        <QuizIntroContainer />
+      </Wrapper>
+    </InterviewsLayout>
   );
 };
 
