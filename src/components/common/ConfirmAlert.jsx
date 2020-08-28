@@ -64,7 +64,7 @@ const ConfirmAlert = ({
         type="button"
         onClick={() => {
           if (onHandleConfirm) onHandleConfirm();
-          onClose();
+          if (onClose) onClose();
         }}
       >
         {confirmMessage}
