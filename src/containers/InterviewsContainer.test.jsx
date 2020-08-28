@@ -40,9 +40,10 @@ describe('InterviewsContainer', () => {
     given('interviews', () => mockInterview);
 
     it('dispatches setSelectedQuizId', async () => {
-      const { container } = renderInterviewsContainer();
+      const { container, getByText } = renderInterviewsContainer();
 
       fireEvent.click(container.querySelector('button'));
+      fireEvent.click(getByText('해볼래요'));
 
       expect.assertions(1);
 

@@ -58,6 +58,7 @@ describe('QuizHeaderContainer', () => {
       const { getByText } = renderQuizHeaderContainer();
 
       fireEvent.click(getByText('나가기'));
+      fireEvent.click(getByText('예'));
 
       expect(mockHistory).toBeCalledWith('/interviews');
     });

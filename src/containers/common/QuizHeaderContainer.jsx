@@ -1,12 +1,15 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 
 import { useSelector } from 'react-redux';
+
+import { confirmAlert } from 'react-confirm-alert';
 
 import { useLocation, useHistory } from 'react-router-dom';
 
 import { get } from '../../modules/utils';
 
 import QuizHeader from '../../components/common/QuizHeader';
+import ConfirmAlert from '../../components/common/ConfirmAlert';
 
 const QuizHeaderContainer = () => {
   const location = useLocation();
@@ -14,16 +17,20 @@ const QuizHeaderContainer = () => {
   const currentStep = useSelector(get('currentStep'));
   const quiz = useSelector(get('quiz'));
 
-  useEffect(() => {
-    const unblock = history.block('나가시겠습니까?');
-
-    return () => {
-      unblock();
-    };
-  }, [history]);
-
   const handleExit = useCallback(() => {
-    history.push('/interviews');
+    confirmAlert({
+      customUI: ({ onClose }) => (
+        <ConfirmAlert
+          onClose={onClose}
+          message="나가시겠습니까?"
+          confirmMessage="예"
+          closeMessage="아니요"
+          onHandleConfirm={() => {
+            history.push('/interviews');
+          }}
+        />
+      ),
+    });
   }, []);
 
   return (
