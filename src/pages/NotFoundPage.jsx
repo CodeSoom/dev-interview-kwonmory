@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-import HeaderContainer from '../containers/common/HeaderContainer';
+import BaseLayout from '../layout/BaseLayout';
 
 const Wrapper = styled.div`
   display: flex;
@@ -18,14 +18,12 @@ const Wrapper = styled.div`
 `;
 
 const NotFoundDispaly = () => (
-
-  <>
-    <HeaderContainer />
+  <BaseLayout>
     <Wrapper>
       <h2>404</h2>
       <p>페이지가 존재하지 않습니다.</p>
     </Wrapper>
-  </>
+  </BaseLayout>
 );
 
 export default NotFoundDispaly;

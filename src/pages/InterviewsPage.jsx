@@ -1,13 +1,12 @@
 import React from 'react';
 
-import HeaderContainer from '../containers/common/HeaderContainer';
 import InterviewsContainer from '../containers/InterviewsContainer';
+import BaseLayout from '../layout/BaseLayout';
 
 const InterviewsPage = () => (
-  <div>
-    <HeaderContainer />
+  <BaseLayout>
     <InterviewsContainer />
-  </div>
+  </BaseLayout>
 );
 
 export default InterviewsPage;

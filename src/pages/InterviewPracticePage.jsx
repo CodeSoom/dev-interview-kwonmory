@@ -2,10 +2,10 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-import HeaderContainer from '../containers/common/HeaderContainer';
-
 import InterviewCategoriesContainer from '../containers/InterviewCategoriesContainer';
 import InterviewQuestionsContainer from '../containers/InterviewQuestionsContainer';
+
+import BaseLayout from '../layout/BaseLayout';
 
 const Wrapper = styled.div`
   margin: 0 2.5rem;
@@ -63,8 +63,7 @@ const Banner = styled.div`
 `;
 
 const InterviewPracticePage = () => (
-  <>
-    <HeaderContainer />
+  <BaseLayout>
     <Wrapper>
       <Banner>
         <div>
@@ -78,7 +77,7 @@ const InterviewPracticePage = () => (
         <InterviewQuestionsContainer />
       </ContentArea>
     </Wrapper>
-  </>
+  </BaseLayout>
 );
 
 export default InterviewPracticePage;
