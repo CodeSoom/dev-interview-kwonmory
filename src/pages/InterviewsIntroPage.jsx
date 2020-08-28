@@ -11,7 +11,6 @@ import { get } from '../modules/utils';
 import { loadQuiz } from '../modules/reducer'; // TODO setSelectedQuied 나중에 삭제해야함
 
 import QuizErrorMessage from '../components/quiz/QuizErrorMessage';
-import QuizHeaderContainer from '../containers/common/QuizHeaderContainer';
 import QuizIntroContainer from '../containers/quiz/QuizIntroContainer';
 import InterviewsLayout from '../layout/InterviewsLayout';
 
