@@ -24,16 +24,21 @@ describe('InterviewsIntroPage', () => {
     useSelector.mockImplementation((selector) => selector({
       selectedQuizId: given.selectedQuizId || null,
       quiz: given.quiz || {},
+      currentStep: given.currentStep || null,
     }));
   });
 
   it('calls quiz data', () => {
+    given('quiz', () => mockQuiz);
+
     renderInterviewsIntroPage();
 
     expect(dispatch).toBeCalled();
   });
 
   it('renders exit buttons', () => {
+    given('quiz', () => mockQuiz);
+
     const { container } = renderInterviewsIntroPage();
 
     expect(container).toHaveTextContent('나가기');

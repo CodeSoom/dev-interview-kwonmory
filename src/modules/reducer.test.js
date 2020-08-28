@@ -12,6 +12,7 @@ import reducer,
   setInterviews,
   setQuiz,
   clearQuiz,
+  setCurrentStep,
   loadInterviews,
   loadInterviewQuestions,
   loadInterviewCategories,
@@ -35,6 +36,7 @@ describe('reducer', () => {
     interviews: [],
     selectedQuizId: null,
     quiz: {},
+    currentStep: null,
     accessToken: '',
   };
 
@@ -132,6 +134,15 @@ describe('reducer', () => {
 
       expect(state.selectedQuizId).toBe(null);
       expect(state.quiz).toEqual({});
+    });
+  });
+
+  describe('setCurrentStep', () => {
+    it('set current quiz step', () => {
+      const SECOND_STEP = 2;
+      const state = reducer(initialState, setCurrentStep(SECOND_STEP));
+
+      expect(state.currentStep).toBe(2);
     });
   });
 

@@ -15,7 +15,6 @@ import QuizIntroContainer from '../containers/quiz/QuizIntroContainer';
 import InterviewsLayout from '../layout/InterviewsLayout';
 
 const Wrapper = styled.div({
-  backgroundColor: '#121212',
 });
 
 const InterviewsIntroPage = () => {
