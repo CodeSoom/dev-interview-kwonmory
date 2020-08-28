@@ -19,7 +19,7 @@ const { actions, reducer } = createSlice({
     interviews: [],
     selectedQuizId: null,
     quiz: {},
-    currentStep: null,
+    currentStep: 1,
     accessToken: '',
   },
   reducers: {

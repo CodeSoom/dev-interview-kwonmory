@@ -36,7 +36,7 @@ describe('reducer', () => {
     interviews: [],
     selectedQuizId: null,
     quiz: {},
-    currentStep: null,
+    currentStep: 1,
     accessToken: '',
   };
 
