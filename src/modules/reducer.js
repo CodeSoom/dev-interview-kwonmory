@@ -19,6 +19,7 @@ const { actions, reducer } = createSlice({
     interviews: [],
     selectedQuizId: null,
     quiz: {},
+    currentStep: null,
     accessToken: '',
   },
   reducers: {
@@ -89,6 +90,12 @@ const { actions, reducer } = createSlice({
         selectedQuizId: null,
       };
     },
+    setCurrentStep(state, { payload: currentStep }) {
+      return {
+        ...state,
+        currentStep,
+      };
+    },
   },
 });
 
@@ -102,6 +109,7 @@ export const {
   setQuiz,
   setSelectedQuizId,
   clearQuiz,
+  setCurrentStep,
 } = actions;
 export default reducer;
 

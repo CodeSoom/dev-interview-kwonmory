@@ -4,20 +4,19 @@ import styled from '@emotion/styled';
 
 import BaseLayout from '../layout/BaseLayout';
 
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  flex-direction: column;
-  margin-top: -2rem;
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-`;
+const Wrapper = styled.div({
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  height: '80vh',
+  flexDirection: 'column',
+  h2: {
+    fontSize: '2rem',
+    marginBottom: '1rem',
+  },
+});
 
-const NotFoundDispaly = () => (
+const NotFoundPage = () => (
   <BaseLayout>
     <Wrapper>
       <h2>404</h2>
@@ -26,4 +25,4 @@ const NotFoundDispaly = () => (
   </BaseLayout>
 );
 
-export default NotFoundDispaly;
+export default NotFoundPage;

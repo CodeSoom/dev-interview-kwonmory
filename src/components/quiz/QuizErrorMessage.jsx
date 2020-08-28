@@ -9,7 +9,8 @@ const Wrapper = styled.div({
   justifyContent: 'center',
   alignItems: 'center',
   color: '#fff',
-  height: 'calc(100% - 2rem)',
+  height: '80vh',
+  marginTop: '4rem',
 
   h2: {
     fontSize: '3rem',
