@@ -1,7 +1,6 @@
 import React from 'react';
 
 import styled from '@emotion/styled';
-import { keyframes } from '@emotion/core';
 
 const Wrapper = styled.div({
   display: 'flex',
@@ -11,6 +10,7 @@ const Wrapper = styled.div({
   color: '#fff',
   height: '80vh',
   marginTop: '4rem',
+  userSelect: 'none',
 
   h2: {
     fontSize: '3rem',
@@ -21,25 +21,14 @@ const Wrapper = styled.div({
   },
 });
 
-const bounce = keyframes`
-  0% {
-    opacity: .5;
-  }
-  50% {
-  opacity: 1;
-  }
-  100% {
-  opacity: .5;
-  }
-`;
-
 const CharacterStyled = styled.img({
-  width: '150px',
-  animation: `${bounce} 1s ease-in-out infinite`,
+  width: '11rem',
+  background: '#fff',
+  borderRadius: '1rem',
 });
 
 const QuizErrorMessage = () => {
-  const IMAGE = '../assets/images/avichu.png';
+  const IMAGE = 'https://svgsilh.com/svg/1770788.svg';
 
   return (
     <>
