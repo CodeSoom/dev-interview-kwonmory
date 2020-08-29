@@ -1,7 +1,5 @@
 import React from 'react';
 
-import { Link } from 'react-router-dom';
-
 import styled from '@emotion/styled';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -82,7 +80,7 @@ const Divider = styled.div({
   backgroundColor: '#D7E2EB',
 });
 
-const NextButtonStyled = styled(Link)({
+const NextButtonStyled = styled.button({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
@@ -92,9 +90,11 @@ const NextButtonStyled = styled(Link)({
   textDecoration: 'none',
   border: '0.125rem solid #546EF6',
   borderRadius: '.5rem',
+  outline: 'none',
   color: '#fff',
   fontWeight: '600',
   boxShadow: '0 2px 3px rgba(0, 0, 0, 0.22), 0 1px 4px rgba(0, 0, 0, 0.44)',
+  cursor: 'pointer',
 
   '&:hover': {
     backgroundColor: '#fff',
@@ -103,7 +103,7 @@ const NextButtonStyled = styled(Link)({
 
 });
 
-const QuizIntro = ({ quiz }) => (
+const QuizIntro = ({ quiz, onStartButton }) => (
   <Wrapper>
     <MainInformationStyled>
       <TitleStyled>{quiz.title}</TitleStyled>
@@ -213,7 +213,7 @@ const QuizIntro = ({ quiz }) => (
       </InformationStyled>
     </SubInformationStyled>
 
-    <NextButtonStyled to="/">시작하기</NextButtonStyled>
+    <NextButtonStyled type="button" onClick={onStartButton}>알겠습니다</NextButtonStyled>
   </Wrapper>
 );
 

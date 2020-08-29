@@ -1,11 +1,16 @@
 @import 'reset-css';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
+@import 'react-confirm-alert/src/react-confirm-alert.css';
 
 * {
-  box-sizing: border-box;  
+  box-sizing: border-box;
 }
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
+}
+
+.react-confirm-alert-overlay {
+  background: rgba(0, 0, 0, 0.5);
 }

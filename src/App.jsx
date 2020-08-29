@@ -9,6 +9,7 @@ import InterviewPracticePage from './pages/InterviewPracticePage';
 import NotFoundPage from './pages/NotFoundPage';
 import InterviewsPage from './pages/InterviewsPage';
 import InterviewsIntroPage from './pages/InterviewsIntroPage';
+import InterviewsProblemPage from './pages/InterviewsProblemPage';
 
 const Wrapper = styled.div`
   height: 100vh;
@@ -29,6 +30,7 @@ const App = () => (
         <Route exact path="/interviews" component={InterviewsPage} />
         <Route exact path="/interviews/practice" component={InterviewPracticePage} />
         <Route exact path="/interviews/quiz" component={InterviewsIntroPage} />
+        <Route exact path="/interviews/quiz/problem" component={InterviewsProblemPage} />
         <Route exact component={NotFoundPage} />
       </Switch>
     </Wrapper>
