@@ -58,6 +58,8 @@ describe('InterviewsIntroPage', () => {
     it('renders start buttons', () => {
       const { container } = renderInterviewsIntroPage();
 
+      const QUIZ_SIZE = mockQuiz.problems.length;
+      expect(container).toHaveTextContent(QUIZ_SIZE);
       expect(container).toHaveTextContent('시작');
     });
   });

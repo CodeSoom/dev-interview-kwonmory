@@ -15,6 +15,7 @@ import QuizIntroContainer from '../containers/quiz/QuizIntroContainer';
 import InterviewsLayout from '../layout/InterviewsLayout';
 
 const Wrapper = styled.div({
+  // height: 'calc(100vh - 3.1rem)',
 });
 
 const InterviewsIntroPage = () => {

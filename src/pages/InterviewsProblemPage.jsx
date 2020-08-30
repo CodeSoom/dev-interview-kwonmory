@@ -1,4 +1,6 @@
-import React, { useCallback } from 'react';
+import React, {
+  useState, useCallback, useEffect, useRef,
+} from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -6,36 +8,76 @@ import { useHistory } from 'react-router-dom';
 
 import _ from 'lodash';
 
+import styled from '@emotion/styled';
 import { setSelectedQuizId } from '../modules/reducer';
 
 import InterviewsLayout from '../layout/InterviewsLayout';
 
-import { get } from '../modules/utils';
 import QuizErrorMessage from '../components/quiz/QuizErrorMessage';
+import ButtonStyled from '../components/common/ButtonStyled';
 
-const isHaveNextProblem = (currentStep, problems) => (currentStep < problems.length);
+import { get } from '../modules/utils';
 
-// TODO 컴포넌트 분리해줘야함
+const Wrapper = styled.div({
+  display: 'flex',
+  justifyContent: 'space-around',
+  alignItems: 'center',
+  flexDirection: 'column',
+  height: 'calc(100vh - 3.1rem)',
+});
+
+const QuizStyled = styled.div({
+  fontSize: '3rem',
+  color: '#fff',
+});
+
+const QuizTimerStyled = styled.div({
+  color: '#fff',
+  opacity: '0.8',
+});
 
 const InterviewsProblemPage = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
+
   const quiz = useSelector(get('quiz'));
   const currentStep = useSelector(get('currentStep'));
-  const history = useHistory();
-  const currentQuiz = quiz?.problems?.[currentStep - 1];
 
-  // const limitTime = quiz.limit_second; // TODO 추후 사용할 예정
+  const currentQuiz = quiz.problems?.[currentStep - 1];
 
-  const handleGoNextProblem = useCallback(() => {
-    if (isHaveNextProblem(currentStep, quiz.problems)) {
-      dispatch(setSelectedQuizId(Number(currentStep) + 1));
-      history.push('/interviews/problem/feedback');
+  const limitTime = quiz.limit_second;
+
+  const [time, setTime] = useState(limitTime);
+  const [isError, setIsError] = useState(false);
+
+  const timerRef = useRef(0);
+
+  useEffect(() => {
+    if (Number.isInteger(time)) {
+      timerRef.current = setInterval(() => {
+        setTime((previousTime) => previousTime - 1);
+      }, 1000);
+    } else {
+      setIsError(true);
     }
 
-    // TODO: 마무리 페이지로 넘어가는 로직 작성
-  }, [history, currentStep, quiz, currentQuiz]);
+    return () => {
+      clearInterval(timerRef.current);
+    };
+  }, []);
 
-  if (_.isEmpty(quiz)) {
+  useEffect(() => {
+    if (time <= 0) {
+      history.push('/interviews/problem/feedback');
+    }
+  }, [time]);
+
+  const handleGoNextProblem = useCallback(() => {
+    dispatch(setSelectedQuizId(Number(currentStep) + 1));
+    history.push('/interviews/problem/feedback');
+  }, [currentStep, quiz, currentQuiz]);
+
+  if (_.isEmpty(quiz) || isError) {
     return (
       <InterviewsLayout>
         <QuizErrorMessage />
@@ -45,11 +87,20 @@ const InterviewsProblemPage = () => {
 
   return (
     <InterviewsLayout>
-      Q.
-      {' '}
-      {currentQuiz.title}
-
-      <button type="button" onClick={handleGoNextProblem}>다음으로</button>
+      <Wrapper>
+        <QuizTimerStyled>
+          남은시간 :
+          {' '}
+          {time}
+          초
+        </QuizTimerStyled>
+        <QuizStyled>
+          Q.
+          {' '}
+          {currentQuiz?.title || '오류가 발생했습니다.'}
+        </QuizStyled>
+        <ButtonStyled type="button" onClick={handleGoNextProblem}>다음문제</ButtonStyled>
+      </Wrapper>
     </InterviewsLayout>
   );
 };

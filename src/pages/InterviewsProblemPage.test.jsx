@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { render, fireEvent } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
 
 import { MemoryRouter } from 'react-router-dom';
 
@@ -14,7 +15,10 @@ function renderInterviewsProblemPage() {
   return render(<MemoryRouter><InterviewsProblemPage /></MemoryRouter>);
 }
 
+jest.useFakeTimers();
+
 const mockHistory = jest.fn();
+const mockSetState = jest.fn();
 
 jest.mock('react-redux');
 jest.mock('react-router-dom', () => ({
@@ -30,6 +34,7 @@ describe('InterviewsProblemPage', () => {
 
   beforeEach(() => {
     mockHistory.mockClear();
+    mockSetState.mockClear();
 
     useDispatch.mockImplementation(() => dispatch);
     useSelector.mockImplementation((selector) => selector({
@@ -65,9 +70,32 @@ describe('InterviewsProblemPage', () => {
     });
   });
 
+  context('when time is 0', () => {
+    beforeEach(() => {
+      const changed = {
+        id: 10,
+        limit_second: 0,
+      };
+      given('quiz', () => changed);
+    });
+
+    it('calls history push', () => {
+      renderInterviewsProblemPage();
+
+      expect(mockHistory).toBeCalledWith('/interviews/problem/feedback');
+    });
+  });
+
   context('when rendered', () => {
-    it('runs timer', () => {
-      // TODO
+    given('quiz', () => mockQuiz);
+
+    it('runs timer', async () => {
+      act(() => {
+        renderInterviewsProblemPage();
+        jest.runTimersToTime(10000);
+      });
+
+      expect(setTimeout).toHaveBeenCalled();
     });
   });
 
@@ -82,7 +110,7 @@ describe('InterviewsProblemPage', () => {
     it('calls history push', () => {
       const { getByText } = renderInterviewsProblemPage();
 
-      fireEvent.click(getByText('다음으로'));
+      fireEvent.click(getByText('다음문제'));
 
       expect(mockHistory).toBeCalledWith('/interviews/problem/feedback');
     });
@@ -90,23 +118,9 @@ describe('InterviewsProblemPage', () => {
     it('dispatches setting currentStep', () => {
       const { getByText } = renderInterviewsProblemPage();
 
-      fireEvent.click(getByText('다음으로'));
+      fireEvent.click(getByText('다음문제'));
 
       expect(dispatch).toBeCalled();
-    });
-  });
-
-  context('when click "다음 버튼" with last problem', () => {
-    const LAST_STEP = 2;
-    given('quiz', () => mockQuiz);
-    given('currentStep', () => LAST_STEP);
-
-    it('not calls history push and dispatch', () => {
-      const { getByText } = renderInterviewsProblemPage();
-
-      fireEvent.click(getByText('다음으로'));
-
-      expect(mockHistory).not.toBeCalledWith('/interviews/problem/feedback');
     });
   });
 });

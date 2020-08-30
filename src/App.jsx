@@ -12,7 +12,7 @@ import InterviewsIntroPage from './pages/InterviewsIntroPage';
 import InterviewsProblemPage from './pages/InterviewsProblemPage';
 
 const Wrapper = styled.div`
-  height: 100vh;
+  //height: 100vh;
   /* background-image: linear-gradient(128deg, #6a80f8 6%, #4a65f6 91%); */
 `;
 
