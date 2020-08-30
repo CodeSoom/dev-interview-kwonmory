@@ -14,3 +14,9 @@ body {
 .react-confirm-alert-overlay {
   background: rgba(0, 0, 0, 0.5);
 }
+.react-confirm-alert-overlay {
+  -webkit-animation: react-confirm-alert-fadeIn 0.1s 0.1s forwards;
+  -moz-animation: react-confirm-alert-fadeIn 0.1s 0.1s forwards;
+  -o-animation: react-confirm-alert-fadeIn 0.1s 0.1s forwards;
+  animation: react-confirm-alert-fadeIn 0.1s 0.1s forwards;
+}
