@@ -61,7 +61,7 @@ describe('api', () => {
   });
 
   describe('fetchQuiz', () => {
-    const mockQuizData = mockQuiz.quiz;
+    const mockQuizData = mockQuiz.problems;
 
     beforeEach(() => {
       fetch.mockResponseOnce(JSON.stringify(mockQuizData));

@@ -61,7 +61,7 @@ describe('InterviewsProblemPage', () => {
     it('renders problems number 1', () => {
       const { container } = renderInterviewsProblemPage();
 
-      expect(container).toHaveTextContent(mockQuiz.quiz[0].title);
+      expect(container).toHaveTextContent(mockQuiz.problems[0].title);
     });
   });
 

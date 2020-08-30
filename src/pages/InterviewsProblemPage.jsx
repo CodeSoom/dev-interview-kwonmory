@@ -13,7 +13,7 @@ import InterviewsLayout from '../layout/InterviewsLayout';
 import { get } from '../modules/utils';
 import QuizErrorMessage from '../components/quiz/QuizErrorMessage';
 
-const isHaveNextProblem = (currentStep, quiz) => (currentStep < quiz.length);
+const isHaveNextProblem = (currentStep, problems) => (currentStep < problems.length);
 
 // TODO 컴포넌트 분리해줘야함
 
@@ -22,12 +22,12 @@ const InterviewsProblemPage = () => {
   const quiz = useSelector(get('quiz'));
   const currentStep = useSelector(get('currentStep'));
   const history = useHistory();
-  const currentQuiz = quiz?.quiz?.[currentStep - 1];
+  const currentQuiz = quiz?.problems?.[currentStep - 1];
 
   // const limitTime = quiz.limit_second; // TODO 추후 사용할 예정
 
   const handleGoNextProblem = useCallback(() => {
-    if (isHaveNextProblem(currentStep, quiz.quiz)) {
+    if (isHaveNextProblem(currentStep, quiz.problems)) {
       dispatch(setSelectedQuizId(Number(currentStep) + 1));
       history.push('/interviews/problem/feedback');
     }
