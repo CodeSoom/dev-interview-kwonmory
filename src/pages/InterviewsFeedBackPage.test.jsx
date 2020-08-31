@@ -80,21 +80,12 @@ describe('InterviewsFeedBackPage', () => {
     given('quiz', () => mockQuiz);
     given('currentStep', () => mockQuiz.problems.length);
 
-    it('calls history-push method', () => {
+    it('calls history-push method and dispatches saveFeedback', () => {
       const { getByText } = renderInterviewsFeedBackPage();
 
       fireEvent.click(getByText('다음문제'));
 
-      expect(dispatch).toBeCalledTimes(2);
-      expect(mockHistory).toBeCalledWith('/interviews/quiz/problem/finish');
-    });
-
-    it('dispatches saveFeedback', () => {
-      const { getByText } = renderInterviewsFeedBackPage();
-
-      fireEvent.click(getByText('다음문제'));
-
-      expect(dispatch).toBeCalledTimes(2);
+      expect(dispatch).toBeCalledTimes(1);
       expect(mockHistory).toBeCalledWith('/interviews/quiz/problem/finish');
     });
   });

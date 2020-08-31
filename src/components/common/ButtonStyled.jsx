@@ -15,6 +15,7 @@ const ButtonStyled = styled.button({
   fontWeight: '600',
   boxShadow: '0 2px 3px rgba(0, 0, 0, 0.22), 0 1px 4px rgba(0, 0, 0, 0.44)',
   cursor: 'pointer',
+  userSelect: 'none',
 
   '&:hover': {
     backgroundColor: '#fff',
