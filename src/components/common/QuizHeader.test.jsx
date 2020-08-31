@@ -56,11 +56,13 @@ describe('QuizHeader', () => {
 
   context('when not path "/interviews/quiz"', () => {
     it('renders base information plus problems information', () => {
+      const PROBLEMS_SIZE = 2;
       const PATH = 'interviews/quiz/problems';
       const { container } = renderQuizHeader({ PATH, quiz: mockQuiz });
 
       expect(container).toHaveTextContent('나가기');
       expect(container).toHaveTextContent(/step/);
+      expect(container).toHaveTextContent(PROBLEMS_SIZE);
       expect(container).toHaveTextContent('주니어 프론트엔드 개발자라면!');
     });
   });

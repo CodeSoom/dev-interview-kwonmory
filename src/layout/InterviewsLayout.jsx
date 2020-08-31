@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 import QuizHeaderContainer from '../containers/common/QuizHeaderContainer';
 
 const Wrapper = styled.div({
-  height: '100%',
+  height: '100vh',
   backgroundColor: '#202B3D',
 });
 

@@ -5,6 +5,8 @@ import styled from '@emotion/styled';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
 
+import ButtonStyled from '../common/ButtonStyled';
+
 const Wrapper = styled.div({
   display: 'flex',
   flexDirection: 'column',
@@ -80,29 +82,6 @@ const Divider = styled.div({
   backgroundColor: '#D7E2EB',
 });
 
-const NextButtonStyled = styled.button({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  width: '7rem',
-  height: '2.5rem',
-  backgroundColor: '#546EF6',
-  textDecoration: 'none',
-  border: '0.125rem solid #546EF6',
-  borderRadius: '.5rem',
-  outline: 'none',
-  color: '#fff',
-  fontWeight: '600',
-  boxShadow: '0 2px 3px rgba(0, 0, 0, 0.22), 0 1px 4px rgba(0, 0, 0, 0.44)',
-  cursor: 'pointer',
-
-  '&:hover': {
-    backgroundColor: '#fff',
-    color: '#546EF6',
-  },
-
-});
-
 const QuizIntro = ({ quiz, onStartButton }) => (
   <Wrapper>
     <MainInformationStyled>
@@ -111,7 +90,7 @@ const QuizIntro = ({ quiz, onStartButton }) => (
       <SubDescriptionStyled>
         문제는 총
         {' '}
-        <span>{quiz.quiz?.length}</span>
+        <span>{quiz.problems?.length}</span>
         {' '}
         문제로 구성되어있습니다.
       </SubDescriptionStyled>
@@ -213,7 +192,7 @@ const QuizIntro = ({ quiz, onStartButton }) => (
       </InformationStyled>
     </SubInformationStyled>
 
-    <NextButtonStyled type="button" onClick={onStartButton}>알겠습니다</NextButtonStyled>
+    <ButtonStyled type="button" onClick={onStartButton}>알겠습니다</ButtonStyled>
   </Wrapper>
 );
 

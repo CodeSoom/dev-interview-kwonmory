@@ -64,7 +64,7 @@ const QuizHeader = ({
           {' '}
           /
           {' '}
-          {quiz?.quiz?.length || 0}
+          {quiz?.problems?.length || 0}
         </StepStyled>
       </div>
       <ExitButtonStyled onClick={onExit}>나가기</ExitButtonStyled>

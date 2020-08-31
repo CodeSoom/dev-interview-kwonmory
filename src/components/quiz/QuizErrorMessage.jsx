@@ -7,9 +7,9 @@ const Wrapper = styled.div({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
+  padding: '1rem',
   color: '#fff',
-  height: '80vh',
-  marginTop: '4rem',
+  height: 'calc(100vh - 3.1rem)',
   userSelect: 'none',
 
   h2: {
