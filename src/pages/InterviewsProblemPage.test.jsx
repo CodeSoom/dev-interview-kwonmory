@@ -82,7 +82,7 @@ describe('InterviewsProblemPage', () => {
     it('calls history push', () => {
       renderInterviewsProblemPage();
 
-      expect(mockHistory).toBeCalledWith('/interviews/problem/feedback');
+      expect(mockHistory).toBeCalledWith('/interviews/quiz/problem/feedback');
     });
   });
 
@@ -112,15 +112,7 @@ describe('InterviewsProblemPage', () => {
 
       fireEvent.click(getByText('다음문제'));
 
-      expect(mockHistory).toBeCalledWith('/interviews/problem/feedback');
-    });
-
-    it('dispatches setting currentStep', () => {
-      const { getByText } = renderInterviewsProblemPage();
-
-      fireEvent.click(getByText('다음문제'));
-
-      expect(dispatch).toBeCalled();
+      expect(mockHistory).toBeCalledWith('/interviews/quiz/problem/feedback');
     });
   });
 });

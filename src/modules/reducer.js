@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import produce from 'immer';
+
 import _ from 'lodash';
 
 import {
@@ -96,6 +98,13 @@ const { actions, reducer } = createSlice({
         currentStep,
       };
     },
+    saveFeedback(state, { payload: { problemsIndex, feedback } }) {
+      const nextState = produce(state, (draftState) => {
+        // eslint-disable-next-line no-param-reassign
+        draftState.quiz.problems[problemsIndex].feedback = feedback;
+      });
+      return nextState;
+    },
   },
 });
 
@@ -110,6 +119,7 @@ export const {
   setSelectedQuizId,
   clearQuiz,
   setCurrentStep,
+  saveFeedback,
 } = actions;
 export default reducer;
 
