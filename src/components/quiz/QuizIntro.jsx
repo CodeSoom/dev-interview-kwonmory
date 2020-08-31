@@ -179,14 +179,7 @@ const QuizIntro = ({ quiz, onStartButton }) => (
             2. 타이머 시간이 0초가 되면 자동으로 다음으로 넘어갑니다.
           </li>
           <li>
-            3. 피드백은 최소
-            {' '}
-            <span>10글자</span>
-            {' '}
-            이상 작성하셔야합니다.
-          </li>
-          <li>
-            4. 크롬 브라우저와 PC 환경을 권장합니다.
+            3. 크롬 브라우저와 PC 환경을 권장합니다.
           </li>
         </ol>
       </InformationStyled>
