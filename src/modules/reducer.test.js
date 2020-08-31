@@ -14,6 +14,7 @@ import reducer,
   clearQuiz,
   setCurrentStep,
   saveFeedback,
+  setLoading,
   loadInterviews,
   loadInterviewQuestions,
   loadInterviewCategories,
@@ -27,6 +28,8 @@ import mockQuiz from '../../fixtures/quiz';
 
 const mockStore = configureStore([...getDefaultMiddleware()]);
 
+jest.useFakeTimers();
+
 describe('reducer', () => {
   let store;
   const initialState = {
@@ -39,6 +42,7 @@ describe('reducer', () => {
     quiz: {},
     currentStep: 1,
     accessToken: '',
+    loading: false,
   };
 
   context('without state', () => {
@@ -175,6 +179,14 @@ describe('reducer', () => {
     });
   });
 
+  describe('setLoading', () => {
+    it('setting loading state', () => {
+      const state = reducer(initialState, setLoading(true));
+
+      expect(state.loading).toBeTruthy();
+    });
+  });
+
   describe('loadCategories', () => {
     beforeEach(() => {
       store = mockStore({
@@ -190,7 +202,11 @@ describe('reducer', () => {
 
       const actions = store.getActions();
 
-      expect(actions[0]).toEqual(setInterviewCategories([]));
+      jest.advanceTimersByTime(600);
+
+      expect(actions[0]).toEqual(setLoading(true));
+      expect(actions[1]).toEqual(setInterviewCategories([]));
+      expect(actions[2]).toEqual(setLoading(false));
     });
   });
 
@@ -209,8 +225,12 @@ describe('reducer', () => {
 
       const actions = store.getActions();
 
-      expect(actions[0]).toEqual(clearInterviewQuestions());
-      expect(actions[1]).toEqual(setInterviewQuestions([]));
+      jest.advanceTimersByTime(1000);
+
+      expect(actions[0]).toEqual(setLoading(true));
+      expect(actions[1]).toEqual(clearInterviewQuestions());
+      expect(actions[2]).toEqual(setInterviewQuestions([]));
+      expect(actions[3]).toEqual(setLoading(false));
     });
   });
 
@@ -227,7 +247,11 @@ describe('reducer', () => {
 
       const actions = store.getActions();
 
-      expect(actions[0]).toEqual(setInterviews([]));
+      jest.advanceTimersByTime(600);
+
+      expect(actions[0]).toEqual(setLoading(true));
+      expect(actions[1]).toEqual(setInterviews([]));
+      expect(actions[2]).toEqual(setLoading(false));
     });
   });
 
@@ -252,8 +276,12 @@ describe('reducer', () => {
 
         const actions = store.getActions();
 
-        expect(actions[0])
+        jest.advanceTimersByTime(600);
+
+        expect(actions[0]).toEqual(setLoading(true));
+        expect(actions[1])
           .toEqual(setQuiz(mockQuiz));
+        expect(actions[2]).toEqual(setLoading(false));
       });
     });
     context('without selectedQuizId', () => {
@@ -269,7 +297,11 @@ describe('reducer', () => {
 
         const actions = store.getActions();
 
-        expect(actions[0]).toEqual(setQuiz({}));
+        jest.advanceTimersByTime(600);
+
+        expect(actions[0]).toEqual(setLoading(true));
+        expect(actions[1]).toEqual(setQuiz({}));
+        expect(actions[2]).toEqual(setLoading(false));
       });
     });
   });

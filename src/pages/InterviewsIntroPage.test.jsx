@@ -25,6 +25,7 @@ describe('InterviewsIntroPage', () => {
       selectedQuizId: given.selectedQuizId || null,
       quiz: given.quiz || {},
       currentStep: given.currentStep || null,
+      loading: given.loading || false,
     }));
   });
 
@@ -81,6 +82,17 @@ describe('InterviewsIntroPage', () => {
       const { container } = renderInterviewsIntroPage();
 
       expect(container).toHaveTextContent('문제가 발생했습니다');
+    });
+  });
+
+  context('when empty quiz and loading', () => {
+    given('loading', () => true);
+    given('quiz', () => {});
+
+    it('renders just header area', () => {
+      const { container } = renderInterviewsIntroPage();
+
+      expect(container).toHaveTextContent('인터뷰즈');
     });
   });
 });

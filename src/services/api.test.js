@@ -3,6 +3,7 @@ import {
   fetchInterviewCategories,
   fetchInterviews,
   fetchQuiz,
+  request,
 } from './api';
 
 import mockInterviewQuestions from '../../fixtures/interview-questions';
@@ -11,6 +12,20 @@ import mockInterviews from '../../fixtures/interviews';
 import mockQuiz from '../../fixtures/quiz';
 
 describe('api', () => {
+  describe('request', () => {
+    beforeEach(() => {
+      fetch.mockReject(new Error('foo'));
+    });
+
+    context('when error network', () => {
+      it('returns null', async () => {
+        const requestResult = await request();
+
+        expect(requestResult).toBeNull();
+      });
+    });
+  });
+
   describe('fetchInterviewQuestions', () => {
     beforeEach(() => {
       fetch.mockResponseOnce(JSON.stringify(mockInterviewQuestions));

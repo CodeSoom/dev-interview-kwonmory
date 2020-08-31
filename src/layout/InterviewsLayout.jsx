@@ -1,6 +1,14 @@
 import React from 'react';
+
 import styled from '@emotion/styled';
+
+import { useSelector } from 'react-redux';
+
 import QuizHeaderContainer from '../containers/common/QuizHeaderContainer';
+
+import { get } from '../modules/utils';
+
+import Loadding from '../components/common/Loading';
 
 const Wrapper = styled.div({
   minHeight: '100vh',
@@ -9,11 +17,18 @@ const Wrapper = styled.div({
 
 const InterviewsLayout = ({
   children,
-}) => (
-  <Wrapper>
-    <QuizHeaderContainer />
-    {children}
-  </Wrapper>
-);
+}) => {
+  const loading = useSelector(get('loading'));
+
+  return (
+    <>
+      <Loadding flag={loading} />
+      <Wrapper>
+        <QuizHeaderContainer />
+        {children}
+      </Wrapper>
+    </>
+  );
+};
 
 export default InterviewsLayout;

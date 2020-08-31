@@ -50,6 +50,7 @@
     "react-redux": "^7.2.1",
     "react-router-dom": "^5.2.0",
     "react-simple-image-slider": "^1.0.4",
+    "react-spinners": "^0.9.0",
     "react-test-renderer": "^16.13.1",
     "redux": "^4.0.5",
     "reset-css": "^5.0.1",
