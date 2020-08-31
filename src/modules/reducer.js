@@ -90,6 +90,7 @@ const { actions, reducer } = createSlice({
         ...state,
         quiz: {},
         selectedQuizId: null,
+        currentStep: 1,
       };
     },
     setCurrentStep(state, { payload: currentStep }) {

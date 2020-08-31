@@ -27,7 +27,8 @@ const Wrapper = styled.div({
   justifyContent: 'space-around',
   alignItems: 'center',
   flexDirection: 'column',
-  height: 'calc(100% - 3.1rem)',
+  height: 'calc(100vh - 3.1rem)',
+  padding: '1rem',
 });
 
 const FeedBackNotice = styled.div({
@@ -51,8 +52,6 @@ const InterviewsFeedBackPage = () => {
     dispatch(saveFeedback({ problemsIndex, feedback }));
 
     if (quiz.problems.length === currentStep) {
-      dispatch(setCurrentStep(Number(currentStep) + 1));
-
       history.push('/interviews/quiz/problem/finish');
 
       return;

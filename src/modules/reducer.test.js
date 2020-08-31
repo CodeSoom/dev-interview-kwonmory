@@ -135,6 +135,7 @@ describe('reducer', () => {
 
       expect(state.selectedQuizId).toBe(null);
       expect(state.quiz).toEqual({});
+      expect(state.currentStep).toEqual(1);
     });
   });
 

@@ -11,6 +11,8 @@ import InterviewsPage from './pages/InterviewsPage';
 import InterviewsIntroPage from './pages/InterviewsIntroPage';
 import InterviewsProblemPage from './pages/InterviewsProblemPage';
 import InterviewsFeedBackPage from './pages/InterviewsFeedBackPage';
+import InterviewsFinishPage from './pages/InterviewsFinishPage';
+import InterviewsCheckPage from './pages/InterviewsCheckPage';
 
 const Wrapper = styled.div`
   //height: 100vh;
@@ -33,6 +35,8 @@ const App = () => (
         <Route exact path="/interviews/quiz" component={InterviewsIntroPage} />
         <Route exact path="/interviews/quiz/problem" component={InterviewsProblemPage} />
         <Route exact path="/interviews/quiz/problem/feedback" component={InterviewsFeedBackPage} />
+        <Route exact path="/interviews/quiz/problem/finish" component={InterviewsFinishPage} />
+        <Route exact path="/interviews/quiz/problem/check" component={InterviewsCheckPage} />
         <Route exact component={NotFoundPage} />
       </Switch>
     </Wrapper>
