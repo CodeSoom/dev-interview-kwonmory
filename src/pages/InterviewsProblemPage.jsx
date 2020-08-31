@@ -2,14 +2,13 @@ import React, {
   useState, useCallback, useEffect, useRef,
 } from 'react';
 
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import { useHistory } from 'react-router-dom';
 
 import _ from 'lodash';
 
 import styled from '@emotion/styled';
-import { setSelectedQuizId } from '../modules/reducer';
 
 import InterviewsLayout from '../layout/InterviewsLayout';
 
@@ -37,7 +36,6 @@ const QuizTimerStyled = styled.div({
 });
 
 const InterviewsProblemPage = () => {
-  const dispatch = useDispatch();
   const history = useHistory();
 
   const quiz = useSelector(get('quiz'));
@@ -68,13 +66,12 @@ const InterviewsProblemPage = () => {
 
   useEffect(() => {
     if (time <= 0) {
-      history.push('/interviews/problem/feedback');
+      history.push('/interviews/quiz/problem/feedback');
     }
   }, [time]);
 
   const handleGoNextProblem = useCallback(() => {
-    dispatch(setSelectedQuizId(Number(currentStep) + 1));
-    history.push('/interviews/problem/feedback');
+    history.push('/interviews/quiz/problem/feedback');
   }, [currentStep, quiz, currentQuiz]);
 
   if (_.isEmpty(quiz) || isError) {

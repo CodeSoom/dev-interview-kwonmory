@@ -17,6 +17,7 @@ function renderQuizHeaderContainer() {
   return render(
     <MemoryRouter
       getUserConfirmation={(message, callback) => {
+        // eslint-disable-next-line no-alert
         const allowTransition = window.confirm(message);
         callback(allowTransition);
       }}

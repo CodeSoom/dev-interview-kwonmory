@@ -13,6 +13,7 @@ import reducer,
   setQuiz,
   clearQuiz,
   setCurrentStep,
+  saveFeedback,
   loadInterviews,
   loadInterviewQuestions,
   loadInterviewCategories,
@@ -41,7 +42,7 @@ describe('reducer', () => {
   };
 
   context('without state', () => {
-    it('returns inistialState', () => {
+    it('returns initialState', () => {
       const state = reducer(undefined, { type: 'action' });
 
       expect(state).toEqual(initialState);
@@ -146,6 +147,33 @@ describe('reducer', () => {
     });
   });
 
+  describe('saveFeedback', () => {
+    it('save feedback', () => {
+      const FEED_BACK_TEXT = '나는 신이 될꺼야';
+      const PROBLEMS_INDEX = 0;
+      const customInitialState = {
+        quiz: {
+          problems: [
+            {
+              id: 1,
+              title: '첫번째 퀴즈',
+            },
+          ],
+        },
+      };
+
+      const state = reducer(
+        customInitialState,
+        saveFeedback({
+          problemsIndex: PROBLEMS_INDEX,
+          feedback: FEED_BACK_TEXT,
+        }),
+      );
+
+      expect(state.quiz.problems[PROBLEMS_INDEX].feedback).toBe(FEED_BACK_TEXT);
+    });
+  });
+
   describe('loadCategories', () => {
     beforeEach(() => {
       store = mockStore({
@@ -156,7 +184,7 @@ describe('reducer', () => {
       fetch.mockResponseOnce(JSON.stringify([]));
     });
 
-    it('dispatchs setInterviewCategories', async () => {
+    it('dispatches setInterviewCategories', async () => {
       await store.dispatch(loadInterviewCategories());
 
       const actions = store.getActions();
@@ -175,7 +203,7 @@ describe('reducer', () => {
       fetch.mockResponseOnce(JSON.stringify([]));
     });
 
-    it('dispatchs clearInterviewQuestions and setInterviewQuestions', async () => {
+    it('dispatches clearInterviewQuestions and setInterviewQuestions', async () => {
       await store.dispatch(loadInterviewQuestions());
 
       const actions = store.getActions();
@@ -193,7 +221,7 @@ describe('reducer', () => {
       fetch.mockResponseOnce(JSON.stringify([]));
     });
 
-    it('dispatchs setInterviews', async () => {
+    it('dispatches setInterviews', async () => {
       await store.dispatch(loadInterviews());
 
       const actions = store.getActions();

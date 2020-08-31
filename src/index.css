@@ -1,7 +1,8 @@
-@import 'reset-css';
+@import '~reset-css';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&display=swap');
-@import 'react-confirm-alert/src/react-confirm-alert.css';
+@import '~react-confirm-alert/src/react-confirm-alert.css';
+@import '~react-quill/dist/quill.bubble.css';
 
 * {
   box-sizing: border-box;
@@ -19,4 +20,11 @@ body {
   -moz-animation: react-confirm-alert-fadeIn 0.1s 0.1s forwards;
   -o-animation: react-confirm-alert-fadeIn 0.1s 0.1s forwards;
   animation: react-confirm-alert-fadeIn 0.1s 0.1s forwards;
+}
+
+.ql-editor {
+  min-width: 60vw;
+  min-height: 50vh;
+  border-radius: .3rem;
+  background-color: #fff;
 }
