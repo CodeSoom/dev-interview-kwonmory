@@ -23,6 +23,7 @@ const { actions, reducer } = createSlice({
     quiz: {},
     currentStep: 1,
     accessToken: '',
+    loading: false,
   },
   reducers: {
     setAccessToken(state, { payload: accessToken }) {
@@ -106,6 +107,12 @@ const { actions, reducer } = createSlice({
       });
       return nextState;
     },
+    setLoading(state, { payload: flag }) {
+      return {
+        ...state,
+        loading: flag,
+      };
+    },
   },
 });
 
@@ -121,33 +128,52 @@ export const {
   clearQuiz,
   setCurrentStep,
   saveFeedback,
+  setLoading,
 } = actions;
 export default reducer;
 
 export function loadInterviewQuestions() {
   return async (dispatch, getState) => {
+    dispatch(setLoading(true));
+
     const { interview } = getState();
 
     const questions = await fetchInterviewQuestions(interview);
 
     dispatch(clearInterviewQuestions());
     dispatch(setInterviewQuestions(questions));
+
+    setTimeout(() => {
+      dispatch(setLoading(false));
+    }, 800);
   };
 }
 
 export function loadInterviewCategories() {
   return async (dispatch) => {
+    dispatch(setLoading(true));
+
     const categories = await fetchInterviewCategories();
 
     dispatch(setInterviewCategories(categories));
+
+    setTimeout(() => {
+      dispatch(setLoading(false));
+    }, 100);
   };
 }
 
 export function loadInterviews() {
   return async (dispatch) => {
+    dispatch(setLoading(true));
+
     const interviews = await fetchInterviews();
 
     dispatch(setInterviews(interviews));
+
+    setTimeout(() => {
+      dispatch(setLoading(false));
+    }, 100);
   };
 }
 
@@ -155,9 +181,15 @@ export function loadQuiz() {
   return async (dispatch, getState) => {
     const { selectedQuizId } = getState();
 
+    dispatch(setLoading(true));
+
     const quiz = await fetchQuiz({ id: selectedQuizId });
 
     if (_.isEmpty(quiz)) dispatch(setQuiz({}));
     else dispatch(setQuiz(quiz));
+
+    setTimeout(() => {
+      dispatch(setLoading(false));
+    }, 100);
   };
 }

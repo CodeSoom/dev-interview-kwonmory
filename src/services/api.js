@@ -1,9 +1,13 @@
 const baseURL = 'http://localhost:8080/api';
 
-const request = async (url, options = {}) => {
-  const response = await fetch(`${baseURL}${url}`, options);
-  const data = await response.json();
-  return data;
+export const request = async (url, options = {}) => {
+  try {
+    const response = await fetch(`${baseURL}${url}`, options);
+    const data = await response.json();
+    return data;
+  } catch (e) {
+    return null;
+  }
 };
 
 export async function fetchInterviewQuestions(interview) {

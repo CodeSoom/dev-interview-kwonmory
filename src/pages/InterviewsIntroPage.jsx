@@ -26,6 +26,15 @@ const InterviewsIntroPage = () => {
   }, []);
 
   const quiz = useSelector(get('quiz'));
+  const loading = useSelector(get('loading'));
+
+  if (loading && _.isEmpty(quiz)) {
+    return (
+      <>
+        <InterviewsLayout />
+      </>
+    );
+  }
 
   if (_.isEmpty(quiz)) {
     return (
