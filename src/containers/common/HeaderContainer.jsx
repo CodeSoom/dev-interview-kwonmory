@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 
 import Header from '../../components/common/Header';
 
 const HeaderContainer = () => {
   const [dropDownMenuActive, setDropdownMenuActive] = useState(false);
 
-  const handleDropdownMenuActive = () => {
+  const handleDropdownMenuActive = useCallback(() => {
     setDropdownMenuActive(!dropDownMenuActive);
-  };
+  }, [dropDownMenuActive]);
 
   return (
     <Header

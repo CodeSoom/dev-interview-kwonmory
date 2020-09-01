@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { useSelector } from 'react-redux';
 
@@ -17,9 +17,9 @@ const InterviewsCheckContainer = () => {
   const history = useHistory();
   const { problems } = useSelector(get('quiz'));
 
-  const handleMoveInterviewsPage = () => {
+  const handleMoveInterviewsPage = useCallback(() => {
     history.push('/interviews');
-  };
+  }, []);
 
   if (_.isEmpty(problems)) {
     return (
