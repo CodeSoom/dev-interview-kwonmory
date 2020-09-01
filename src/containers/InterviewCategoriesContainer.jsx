@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
@@ -17,7 +17,7 @@ const InterviewCategoriesContainer = () => {
 
   const { categories } = useSelector(get('interview'));
 
-  const handleCheckBox = () => {
+  const handleCheckBox = useCallback(() => {
     const checked = document.querySelectorAll("input[type='checkbox']:checked");
     const checkedList = [];
     checked.forEach((v) => {
@@ -25,7 +25,7 @@ const InterviewCategoriesContainer = () => {
     });
     dispatch(setCheckedCategories(checkedList));
     dispatch(loadInterviewQuestions());
-  };
+  }, []);
 
   return (
     <>

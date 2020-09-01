@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { useSelector } from 'react-redux';
 
@@ -23,7 +23,7 @@ const QuizIntroContainer = () => {
   const history = useHistory();
   const quiz = useSelector(get('quiz'));
 
-  const handleStartButton = () => {
+  const handleStartButton = useCallback(() => {
     confirmAlert({
       customUI: ({ onClose }) => (
         <ConfirmAlert
@@ -37,7 +37,7 @@ const QuizIntroContainer = () => {
         />
       ),
     });
-  };
+  }, []);
 
   return (
     <Wrapper>

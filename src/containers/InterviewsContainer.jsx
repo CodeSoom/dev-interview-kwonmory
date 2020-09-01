@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useCallback, useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -32,7 +32,7 @@ const InterviewsContainer = () => {
 
   const interviews = useSelector(get('interviews'));
 
-  const handleStartButton = async (id) => {
+  const handleStartButton = useCallback(async (id) => {
     await confirmAlert({
       customUI: ({ onClose }) => (
         <ConfirmAlert
@@ -47,7 +47,7 @@ const InterviewsContainer = () => {
         />
       ),
     });
-  };
+  }, []);
 
   return (
     <Wrapper>
