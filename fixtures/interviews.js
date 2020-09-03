@@ -3,6 +3,7 @@ const mockInterviews = [
     id: 1,
     title: '주니어 프론트엔드 개발자라면!',
     description: '주니어 개발자분들께서 도전할만한 인터뷰 문제입니다.',
+    source: 'test',
     image: {
       id: 1,
       url: 'https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/02/Blog_Front-End-Dev.jpg.webp',
