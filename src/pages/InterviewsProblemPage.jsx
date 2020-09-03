@@ -23,11 +23,15 @@ const Wrapper = styled.div({
   alignItems: 'center',
   flexDirection: 'column',
   height: 'calc(100vh - 3.1rem)',
+  padding: '1rem',
 });
 
 const QuizStyled = styled.div({
-  fontSize: '3rem',
+  fontSize: '2rem',
   color: '#fff',
+  textAlign: 'center',
+  lineHeight: 1.3,
+  wordBreak: 'keep-all',
 });
 
 const QuizTimerStyled = styled.div({
