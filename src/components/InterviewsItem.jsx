@@ -13,7 +13,7 @@ const InterviewsItemStyled = styled.li({
   minWidth: '20rem',
   minHeight: '23rem',
   maxHeight: '23rem',
-  margin: '1rem .2rem',
+  margin: '1.5rem .2rem',
 });
 
 const InterviewsImagesStyled = styled.div({
@@ -65,6 +65,12 @@ const InterviewsTagsStyled = styled.div({
     marginRight: '.5rem',
     textTransform: 'uppercase',
   },
+  a: {
+    fontSize: '.75rem',
+    fontWeight: 700,
+    color: '#263747',
+    textDecoration: 'none',
+  },
 });
 
 const InterviewsActiveButtonStyled = styled.div({
@@ -113,6 +119,7 @@ const InterviewsItem = ({ interviews, onStartButton }) => {
         <InterviewsActiveStyled>
           <InterviewsTagsStyled>
             {interviews?.tags?.map((tag) => <span key={tag.id}>{tag.title}</span>)}
+            {interviews?.source && <a href={interviews.source} target="_blank" rel="noreferrer">출처</a>}
           </InterviewsTagsStyled>
           <InterviewsActiveButtonStyled>
             <ButtonStyled onClick={() => onStartButton(interviews.id)}>도전하기</ButtonStyled>
