@@ -2,6 +2,8 @@ import configureStore from 'redux-mock-store';
 
 import { getDefaultMiddleware } from '@reduxjs/toolkit';
 
+import _ from 'lodash';
+
 import reducer,
 {
   clearInterviewQuestions,
@@ -24,7 +26,7 @@ import reducer,
 
 import mockInterviewQuestions from '../../fixtures/interview-questions';
 import mockInterviewCategories from '../../fixtures/interview-categories';
-import mockQuiz from '../../fixtures/quiz';
+import mockInterviews from '../../fixtures/interviews';
 
 const mockStore = configureStore([...getDefaultMiddleware()]);
 
@@ -256,23 +258,17 @@ describe('reducer', () => {
   });
 
   describe('loadQuiz', () => {
-    beforeEach(() => {
-      store = mockStore({
-        quiz: {},
-        selectedQuizId: given.selectedQuizId || null,
-      });
-    });
-
     context('with selectedQuizId', () => {
       beforeEach(() => {
-        fetch.mockResponseOnce(JSON.stringify(mockQuiz));
+        store = mockStore({
+          quiz: {},
+          selectedQuizId: 1,
+          interviews: mockInterviews,
+        });
       });
 
-      const SELECTED_QUIZ_ID = 1;
-      given('selectedQuizId', () => SELECTED_QUIZ_ID);
-
-      it('dispatchs setQuiz', async () => {
-        await store.dispatch(loadQuiz());
+      it('dispatchs setQuiz', () => {
+        store.dispatch(loadQuiz());
 
         const actions = store.getActions();
 
@@ -280,20 +276,19 @@ describe('reducer', () => {
 
         expect(actions[0]).toEqual(setLoading(true));
         expect(actions[1])
-          .toEqual(setQuiz(mockQuiz));
+          .toEqual(setQuiz(_.head(mockInterviews.filter((interview) => interview.id === 1))));
         expect(actions[2]).toEqual(setLoading(false));
       });
     });
+
     context('without selectedQuizId', () => {
       beforeEach(() => {
-        fetch.mockResponseOnce(JSON.stringify(null));
+        store = mockStore({
+        });
       });
 
-      const SELECTED_QUIZ_ID = null;
-      given('selectedQuizId', () => SELECTED_QUIZ_ID);
-
-      it('not dispatch setQuiz', async () => {
-        await store.dispatch(loadQuiz());
+      it('not dispatch setQuiz', () => {
+        store.dispatch(loadQuiz());
 
         const actions = store.getActions();
 

@@ -8,7 +8,6 @@ import {
   fetchInterviewCategories,
   fetchInterviewQuestions,
   fetchInterviews,
-  fetchQuiz,
 } from '../services/api';
 
 const { actions, reducer } = createSlice({
@@ -179,11 +178,12 @@ export function loadInterviews() {
 
 export function loadQuiz() {
   return async (dispatch, getState) => {
-    const { selectedQuizId } = getState();
-
+    const { selectedQuizId, interviews } = getState();
     dispatch(setLoading(true));
 
-    const quiz = await fetchQuiz({ id: selectedQuizId });
+    const quiz = !_.isEmpty(interviews)
+      ? _.head(interviews.filter((interview) => interview.id === selectedQuizId))
+      : {};
 
     if (_.isEmpty(quiz)) dispatch(setQuiz({}));
     else dispatch(setQuiz(quiz));
