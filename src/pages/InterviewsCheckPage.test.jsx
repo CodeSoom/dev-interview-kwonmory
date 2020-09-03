@@ -40,6 +40,7 @@ describe('InterviewsCheckPage', () => {
   beforeEach(() => {
     useSelector.mockImplementation((selector) => selector({
       quiz: given.quiz || {},
+      currentStep: 1,
     }));
   });
 

@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import QuizHeader from './QuizHeader';
 
-import mockQuiz from '../../../fixtures/quiz';
+import mockInterviews from '../../../fixtures/interviews';
 
 function renderQuizHeader({ PATH, button = null, quiz = null }) {
   return render(
@@ -56,9 +56,9 @@ describe('QuizHeader', () => {
 
   context('when not path "/interviews/quiz"', () => {
     it('renders base information plus problems information', () => {
-      const PROBLEMS_SIZE = 2;
+      const PROBLEMS_SIZE = mockInterviews[0].problems.length;
       const PATH = 'interviews/quiz/problems';
-      const { container } = renderQuizHeader({ PATH, quiz: mockQuiz });
+      const { container } = renderQuizHeader({ PATH, quiz: mockInterviews[0] });
 
       expect(container).toHaveTextContent('나가기');
       expect(container).toHaveTextContent(/step/);
