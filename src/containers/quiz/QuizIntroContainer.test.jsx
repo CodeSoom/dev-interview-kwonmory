@@ -44,7 +44,6 @@ describe('QuizIntroContainer', () => {
 
     expect(container).toHaveTextContent(mockQuiz.title);
     expect(container).toHaveTextContent(mockQuiz.description);
-    expect(container).toHaveTextContent(mockQuiz.limit_second);
   });
 
   context('when click "시작하기" button', () => {

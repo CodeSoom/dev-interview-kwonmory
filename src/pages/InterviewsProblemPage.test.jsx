@@ -66,21 +66,24 @@ describe('InterviewsProblemPage', () => {
     it('renders problems number 1', () => {
       const { container } = renderInterviewsProblemPage();
 
-      expect(container).toHaveTextContent(mockQuiz.problems[0].title);
+      expect(container).toHaveTextContent(mockQuiz.problems[FIRST_STEP - 1].title);
     });
   });
 
   context('when time is 0', () => {
     beforeEach(() => {
-      const changed = {
-        id: 10,
-        limit_second: 0,
-      };
-      given('quiz', () => changed);
+      const FIRST_STEP = 1;
+      const FIRST_INTERVIEWS = 1;
+      given('quiz', () => mockQuiz);
+      given('currentStep', () => FIRST_STEP);
+      given('selectedQuizId', () => FIRST_INTERVIEWS);
     });
 
     it('calls history push', () => {
-      renderInterviewsProblemPage();
+      act(() => {
+        renderInterviewsProblemPage();
+        jest.advanceTimersByTime(310000);
+      });
 
       expect(mockHistory).toBeCalledWith('/interviews/quiz/problem/feedback');
     });

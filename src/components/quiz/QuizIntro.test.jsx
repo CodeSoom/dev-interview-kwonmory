@@ -14,6 +14,5 @@ describe('QuizIntro', () => {
 
     expect(container).toHaveTextContent(mockQuiz.title);
     expect(container).toHaveTextContent(mockQuiz.description);
-    expect(container).toHaveTextContent(mockQuiz.limit_second);
   });
 });

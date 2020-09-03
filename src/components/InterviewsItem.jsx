@@ -91,8 +91,8 @@ const ButtonStyled = styled.button({
 
 const InterviewsItem = ({ interviews, onStartButton }) => {
   const DEFAULT_IMAGE = '../assets/images/interviews-default.png';
-  const image = interviews.image?.[0]?.url || DEFAULT_IMAGE;
-  const imageAtl = interviews?.image?.[0]?.alt || '디폴트 이미지';
+  const image = interviews.image?.url || DEFAULT_IMAGE;
+  const imageAtl = interviews?.image?.alt || '디폴트 이미지';
 
   return (
     <>

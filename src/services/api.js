@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:8080/api';
+const baseURL = 'http://localhost:8080/data';
 
 export const request = async (url, options = {}) => {
   try {
@@ -10,6 +10,13 @@ export const request = async (url, options = {}) => {
   }
 };
 
+export async function fetchInterviews() {
+  const data = await request('/interviews.json');
+
+  return data;
+}
+
+// deprecated
 export async function fetchInterviewQuestions(interview) {
   const queryObj = { };
 
@@ -29,20 +36,9 @@ export async function fetchInterviewQuestions(interview) {
   return data;
 }
 
+// deprecated
 export async function fetchInterviewCategories() {
   const data = await request('/interview/categories');
-
-  return data;
-}
-
-export async function fetchInterviews() {
-  const data = await request('/interviews');
-
-  return data;
-}
-
-export async function fetchQuiz({ id }) {
-  const data = await request(`/quiz/${id}`);
 
   return data;
 }

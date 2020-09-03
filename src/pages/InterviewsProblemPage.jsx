@@ -41,23 +41,18 @@ const InterviewsProblemPage = () => {
   const quiz = useSelector(get('quiz'));
   const currentStep = useSelector(get('currentStep'));
 
-  const currentQuiz = quiz.problems?.[currentStep - 1];
+  const currentQuiz = quiz?.problems?.[currentStep - 1];
 
-  const limitTime = quiz.limit_second;
+  const limitTime = currentQuiz?.limit_second || quiz?.default_limit_second || 300;
 
   const [time, setTime] = useState(limitTime);
-  const [isError, setIsError] = useState(false);
 
   const timerRef = useRef(0);
 
   useEffect(() => {
-    if (Number.isInteger(time)) {
-      timerRef.current = setInterval(() => {
-        setTime((previousTime) => previousTime - 1);
-      }, 1000);
-    } else {
-      setIsError(true);
-    }
+    timerRef.current = setInterval(() => {
+      setTime((previousTime) => previousTime - 1);
+    }, 1000);
 
     return () => {
       clearInterval(timerRef.current);
@@ -74,7 +69,7 @@ const InterviewsProblemPage = () => {
     history.push('/interviews/quiz/problem/feedback');
   }, [currentStep, quiz, currentQuiz]);
 
-  if (_.isEmpty(quiz) || isError) {
+  if (_.isEmpty(currentQuiz)) {
     return (
       <InterviewsLayout>
         <QuizErrorMessage />
@@ -94,7 +89,7 @@ const InterviewsProblemPage = () => {
         <QuizStyled>
           Q.
           {' '}
-          {currentQuiz?.title || '오류가 발생했습니다.'}
+          {currentQuiz?.title}
         </QuizStyled>
         <ButtonStyled type="button" onClick={handleGoNextProblem}>다음문제</ButtonStyled>
       </Wrapper>
