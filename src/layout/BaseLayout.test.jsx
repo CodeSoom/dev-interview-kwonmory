@@ -10,7 +10,6 @@ describe('BaseLayout', () => {
   it('renders BasicLayout', () => {
     const { container } = render(<MemoryRouter><BaseLayout /></MemoryRouter>);
 
-    expect(container).toHaveTextContent('인터뷰즈');
-    expect(container).toHaveTextContent('인터뷰연습');
+    expect(container).toHaveTextContent('시작하기');
   });
 });

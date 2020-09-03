@@ -7,7 +7,7 @@ import styled from '@emotion/styled';
 import classNames from 'classnames';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFeather } from '@fortawesome/free-solid-svg-icons';
+import { faHippo } from '@fortawesome/free-solid-svg-icons';
 
 import HamburgerButton from './HamburgerButton';
 
@@ -15,7 +15,8 @@ const Wrapper = styled.div({
   display: 'flex',
   alignItems: 'center',
   width: '100%',
-  minHeight: '5.3rem',
+  minHeight: '3.3rem',
+  padding: '0 2rem',
   borderBottom: '1px solid #dfe6e9',
   backgroundImage: 'linear-gradient(128deg, #6a80f8 6%, #4a65f6 91%)',
 
@@ -24,8 +25,8 @@ const Wrapper = styled.div({
   },
 });
 
-const HeaderTopStyled = styled.div({
-  width: '8.125rem',
+const HeaderLeftStyled = styled.div({
+  width: '8.5rem',
 
   '@media (max-width: 48rem)': {
     position: 'absolute',
@@ -34,10 +35,9 @@ const HeaderTopStyled = styled.div({
   },
 });
 
-const HeaderBottomStyled = styled.div({
+const HeaderRightStyled = styled.div({
   display: 'flex',
   justifyContent: 'space-between',
-  flex: 1,
   marginTop: '.5rem',
   marginBottom: '.5rem',
 
@@ -49,7 +49,6 @@ const HeaderBottomStyled = styled.div({
 const HeaderStyled = styled.div({
   display: 'flex',
   justifyContent: 'space-between',
-  flexDirection: 'column',
   alignItems: 'center',
   width: '100%',
   padding: '0.4rem 1.5rem',
@@ -64,7 +63,7 @@ const HeaderStyled = styled.div({
       display: 'block',
       width: '100%',
 
-      [HeaderBottomStyled]: {
+      [HeaderRightStyled]: {
         display: 'block',
         marginTop: '4rem',
 
@@ -84,15 +83,12 @@ const HeaderStyled = styled.div({
             marginBottom: '0.6rem',
 
             a: {
-              color: 'rgba(255, 255, 255, 0.6)',
               fontSize: '0.875rem',
 
               '&:hover': {
+                backgroundColor: 'transparent',
                 color: '#fff',
-              },
-
-              '&.selected': {
-                color: '#fff',
+                border: '2px solid rgba(255, 255, 255, 0.6)',
               },
             },
           },
@@ -109,16 +105,15 @@ const LogoLinkStyled = styled(NavLink)({
   height: '2rem',
   padding: '0.3rem',
   color: '#fff',
-  border: '2px solid #fff',
-  borderRadius: '.6rem',
-  borderBottomRightRadius: '0rem',
   textDecoration: 'none',
 });
 
 const LogoTextStyled = styled.span({
-  fontSize: '.8rem',
   marginLeft: '.3rem',
+  fontSize: '1rem',
+  fontWeight: '700',
   fontFamily: "'Orbitron', sans-serif",
+  letterSpacing: '0.125rem',
 });
 
 const MenuListStyled = styled.ul({
@@ -136,31 +131,19 @@ const MenuListItemStyeld = styled.li({
   fontWeight: 500,
 });
 
-const MenuLinkStyled = styled(NavLink)`
-  padding: 0.25rem .5rem;
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: 500;
-  font-size: 1rem;
-  text-decoration: none;
+const MenuLinkStyled = styled(NavLink)({
+  padding: '0.2rem 1rem',
+  color: '#657CF7',
+  fontWeight: 600,
+  fontSize: '1rem',
+  textDecoration: 'none',
+  backgroundColor: '#fff',
+  borderRadius: '.2rem',
 
-  &:hover {
-    color: #fff;
-  }
-
-  &.selected {
-    color: #fff;
-    border-bottom: 2px solid #fff;
-  }
-`;
-
-const DividerStyeld = styled.li({
-  width: '0.0825rem',
-  height: '.8rem',
-  margin: '0.2rem 0.5rem 0 0.5rem',
-  backgroundColor: 'rgba(255, 255, 255, 0.6)',
-
-  '@media (max-width: 48rem)': {
-    display: 'none !important',
+  '&:hover': {
+    backgroundColor: 'transparent',
+    color: '#fff',
+    border: '2px solid rgba(255, 255, 255, 0.6)',
   },
 });
 
@@ -171,23 +154,19 @@ const Header = ({ dropDownMenuActive, onDropdownMenuActive }) => (
         dropDownMenuActive={dropDownMenuActive}
         className={classNames({ dropDownMenuActive })}
       >
-        <HeaderTopStyled>
+        <HeaderLeftStyled>
           <LogoLinkStyled to="/" className="logo">
-            <FontAwesomeIcon icon={faFeather} />
-            <LogoTextStyled>Inttaview</LogoTextStyled>
+            <FontAwesomeIcon icon={faHippo} />
+            <LogoTextStyled>체크유얼셀프</LogoTextStyled>
           </LogoLinkStyled>
-        </HeaderTopStyled>
-        <HeaderBottomStyled>
+        </HeaderLeftStyled>
+        <HeaderRightStyled>
           <MenuListStyled>
             <MenuListItemStyeld>
-              <MenuLinkStyled to="/interviews" exact activeClassName="selected">인터뷰즈</MenuLinkStyled>
-            </MenuListItemStyeld>
-            <DividerStyeld />
-            <MenuListItemStyeld>
-              <MenuLinkStyled to="/interviews/practice" exact activeClassName="selected">인터뷰연습</MenuLinkStyled>
+              <MenuLinkStyled to="/interviews" exact activeClassName="selected">시작하기</MenuLinkStyled>
             </MenuListItemStyeld>
           </MenuListStyled>
-        </HeaderBottomStyled>
+        </HeaderRightStyled>
         <HamburgerButton
           active={dropDownMenuActive}
           onClick={onDropdownMenuActive}

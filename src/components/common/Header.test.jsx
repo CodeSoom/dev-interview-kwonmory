@@ -25,9 +25,6 @@ describe('Header', () => {
       handleDropdownMenuActive,
     });
 
-    expect(container).toHaveTextContent('인터뷰즈');
-    expect(container).toHaveTextContent('인터뷰연습');
-
     fireEvent.click(container.querySelector('button'));
 
     expect(handleDropdownMenuActive).toBeCalled();
