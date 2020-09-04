@@ -7,7 +7,7 @@ import HeaderContainer from '../containers/common/HeaderContainer';
 
 import Loadding from '../components/common/Loading';
 
-import { get } from '../modules/utils';
+import { get } from '../utils';
 
 const Wrapper = styled.div({
 

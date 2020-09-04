@@ -8,9 +8,9 @@ import styled from '@emotion/styled';
 
 import { confirmAlert } from 'react-confirm-alert';
 
-import { get } from '../../modules/utils';
+import { get } from '../../utils';
 
-import QuizIntro from '../../components/quiz/QuizIntro';
+import QuizIntro from '../../components/interviews/QuizIntro';
 import ConfirmAlert from '../../components/common/ConfirmAlert';
 
 const Wrapper = styled.div({

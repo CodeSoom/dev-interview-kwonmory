@@ -5,7 +5,7 @@ import { render, fireEvent } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import InterviewsItem from './InterviewsItem';
 
-import mockInterviews from '../../fixtures/interviews';
+import mockInterviews from '../../../fixtures/interviews';
 
 function renderInterviewsItem(interviews, button = null) {
   return render(

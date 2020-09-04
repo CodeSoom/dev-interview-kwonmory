@@ -12,10 +12,10 @@ import styled from '@emotion/styled';
 
 import InterviewsLayout from '../../layout/InterviewsLayout';
 
-import QuizErrorMessage from '../../components/quiz/QuizErrorMessage';
+import QuizErrorMessage from '../../components/interviews/QuizErrorMessage';
 import ButtonStyled from '../../components/common/ButtonStyled';
 
-import { get } from '../../modules/utils';
+import { get } from '../../utils';
 
 const Wrapper = styled.div({
   display: 'flex',

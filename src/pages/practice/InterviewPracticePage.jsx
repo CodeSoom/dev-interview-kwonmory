@@ -2,8 +2,8 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-import InterviewCategoriesContainer from '../../containers/InterviewCategoriesContainer';
-import InterviewQuestionsContainer from '../../containers/InterviewQuestionsContainer';
+import InterviewCategoriesContainer from '../../containers/practice/InterviewCategoriesContainer';
+import InterviewQuestionsContainer from '../../containers/practice/InterviewQuestionsContainer';
 
 import BaseLayout from '../../layout/BaseLayout';
 

@@ -6,7 +6,7 @@ import { confirmAlert } from 'react-confirm-alert';
 
 import { useLocation, useHistory } from 'react-router-dom';
 
-import { get } from '../../modules/utils';
+import { get } from '../../utils';
 
 import QuizHeader from '../../components/common/QuizHeader';
 import ConfirmAlert from '../../components/common/ConfirmAlert';

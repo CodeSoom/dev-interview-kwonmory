@@ -4,7 +4,7 @@ import styled from '@emotion/styled';
 
 import InterviewsLayout from '../../layout/InterviewsLayout';
 
-import InterviewsCheckContainer from '../../containers/quiz/InterviewsCheckContainer';
+import InterviewsCheckContainer from '../../containers/interviews/InterviewsCheckContainer';
 
 const Wrapper = styled.div({
   display: 'flex',

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 import QuizHeaderContainer from '../containers/common/QuizHeaderContainer';
 
-import { get } from '../modules/utils';
+import { get } from '../utils';
 
 import Loadding from '../components/common/Loading';
 

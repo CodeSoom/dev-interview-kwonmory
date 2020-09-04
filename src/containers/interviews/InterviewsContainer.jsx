@@ -9,12 +9,12 @@ import styled from '@emotion/styled';
 import { confirmAlert } from 'react-confirm-alert';
 import {
   loadInterviews, clearQuiz, setSelectedQuizId,
-} from '../modules/reducer';
+} from '../../modules/reducer';
 
-import { get } from '../modules/utils';
+import { get } from '../../utils';
 
-import Interviews from '../components/Interviews';
-import ConfirmAlert from '../components/common/ConfirmAlert';
+import Interviews from '../../components/interviews/Interviews';
+import ConfirmAlert from '../../components/common/ConfirmAlert';
 
 const Wrapper = styled.div({
   display: 'flex',

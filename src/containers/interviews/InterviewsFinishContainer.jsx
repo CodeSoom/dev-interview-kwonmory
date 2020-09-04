@@ -7,10 +7,10 @@ import _ from 'lodash';
 import { useSelector } from 'react-redux';
 
 import InterviewsLayout from '../../layout/InterviewsLayout';
-import QuizErrorMessage from '../../components/quiz/QuizErrorMessage';
-import InterviewsFinish from '../../components/quiz/InterviewsFinish';
+import QuizErrorMessage from '../../components/interviews/QuizErrorMessage';
+import InterviewsFinish from '../../components/interviews/InterviewsFinish';
 
-import { get } from '../../modules/utils';
+import { get } from '../../utils';
 
 const InterviewsFinishContainer = () => {
   const history = useHistory();

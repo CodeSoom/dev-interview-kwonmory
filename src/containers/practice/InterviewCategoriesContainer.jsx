@@ -2,11 +2,11 @@ import React, { useCallback, useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import { loadInterviewCategories, loadInterviewQuestions, setCheckedCategories } from '../modules/reducer';
+import { loadInterviewCategories, loadInterviewQuestions, setCheckedCategories } from '../../modules/reducer';
 
-import { get } from '../modules/utils';
+import { get } from '../../utils';
 
-import InterviewCategories from '../components/InterviewCategories';
+import InterviewCategories from '../../components/practice/InterviewCategories';
 
 const InterviewCategoriesContainer = () => {
   const dispatch = useDispatch();

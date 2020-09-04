@@ -3,32 +3,29 @@ import React from 'react';
 import { render } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
+import InterviewQuestions from './InterviewQuestions';
 
-import QuestionList from './QuestionList';
+import interviewQuestions from '../../../fixtures/interview-questions';
 
-import interviewQuestions from '../../fixtures/interview-questions';
+import { interviewQuestionsTerms } from '../../../fixtures/term';
 
-import { interviewQuestionsTerms } from '../../fixtures/term';
-
-function renderQuestionList(questions) {
-  return render(<MemoryRouter><QuestionList questions={questions} /></MemoryRouter>);
+function renderInterviewQuestions(questions) {
+  return render(<MemoryRouter><InterviewQuestions questions={questions} /></MemoryRouter>);
 }
 
-describe('QuestionList', () => {
+describe('InterviewQuestions', () => {
   context('with questions', () => {
     it('renders questions', () => {
-      const { container } = renderQuestionList(interviewQuestions);
+      const { container } = renderInterviewQuestions(interviewQuestions);
 
       expect(container).toHaveTextContent('인덱스(Index)란 무엇인가');
       expect(container).toHaveTextContent('database');
-
-      expect(container.querySelector('.questions')).not.toBeNull();
     });
   });
 
   context('without questions', () => {
     it('renders not questions and redners empty message', () => {
-      const { container } = renderQuestionList([]);
+      const { container } = renderInterviewQuestions([]);
 
       expect(container).not.toHaveTextContent('인덱스(Index)란 무엇인가');
       expect(container).not.toHaveTextContent('database');

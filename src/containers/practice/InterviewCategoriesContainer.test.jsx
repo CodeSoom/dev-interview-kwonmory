@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { useSelector, useDispatch } from 'react-redux';
 
-import interviewCateogries from '../../fixtures/interview-categories';
+import interviewCateogries from '../../../fixtures/interview-categories';
 
 import InterviewCategoriesContainer from './InterviewCategoriesContainer';
 

@@ -6,12 +6,12 @@ import _ from 'lodash';
 
 import { useHistory } from 'react-router-dom';
 
-import { get } from '../../modules/utils';
+import { get } from '../../utils';
 
 import InterviewsLayout from '../../layout/InterviewsLayout';
-import QuizErrorMessage from '../../components/quiz/QuizErrorMessage';
+import QuizErrorMessage from '../../components/interviews/QuizErrorMessage';
 
-import InterviewsCheck from '../../components/quiz/InterviewsCheck';
+import InterviewsCheck from '../../components/interviews/InterviewsCheck';
 
 const InterviewsCheckContainer = () => {
   const history = useHistory();

@@ -8,15 +8,15 @@ import { useHistory } from 'react-router-dom';
 
 import _ from 'lodash';
 
-import { get } from '../../modules/utils';
+import { get } from '../../utils';
 
 import { saveFeedback, setCurrentStep } from '../../modules/reducer';
 
 import InterviewsLayout from '../../layout/InterviewsLayout';
 
-import QuizErrorMessage from '../../components/quiz/QuizErrorMessage';
+import QuizErrorMessage from '../../components/interviews/QuizErrorMessage';
 
-import InterviewsFeedBack from '../../components/quiz/InterviewsFeedBack';
+import InterviewsFeedBack from '../../components/interviews/InterviewsFeedBack';
 
 const InterviewsFeedBackContainer = () => {
   const dispatch = useDispatch();

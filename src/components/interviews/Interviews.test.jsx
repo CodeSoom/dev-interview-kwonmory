@@ -4,7 +4,7 @@ import { fireEvent, render } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
 
-import mockInterview from '../../fixtures/interviews';
+import mockInterview from '../../../fixtures/interviews';
 
 import Interviews from './Interviews';
 

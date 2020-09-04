@@ -4,7 +4,7 @@ import { render, fireEvent } from '@testing-library/react';
 
 import CategoriesList from './CategoriesList';
 
-import interviewCategories from '../../fixtures/interview-categories';
+import interviewCategories from '../../../fixtures/interview-categories';
 
 function renderCategoriesList(categories, handleCheckBox) {
   return render(<CategoriesList categories={categories} onCheckBox={handleCheckBox} />);

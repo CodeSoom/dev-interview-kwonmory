@@ -8,9 +8,9 @@ import { MemoryRouter } from 'react-router-dom';
 
 import InterviewsContainer from './InterviewsContainer';
 
-import mockInterview from '../../fixtures/interviews';
+import mockInterview from '../../../fixtures/interviews';
 
-import { setSelectedQuizId } from '../modules/reducer';
+import { setSelectedQuizId } from '../../modules/reducer';
 
 function renderInterviewsContainer() {
   return render(<MemoryRouter><InterviewsContainer /></MemoryRouter>);

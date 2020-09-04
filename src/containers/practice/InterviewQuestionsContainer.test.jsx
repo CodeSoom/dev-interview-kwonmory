@@ -5,8 +5,8 @@ import { render } from '@testing-library/react';
 
 import { MemoryRouter } from 'react-router-dom';
 
-import { interviewQuestionsTerms } from '../../fixtures/term';
-import interviewQuestions from '../../fixtures/interview-questions';
+import { interviewQuestionsTerms } from '../../../fixtures/term';
+import interviewQuestions from '../../../fixtures/interview-questions';
 
 import InterviewQuestionsContainer from './InterviewQuestionsContainer';
 

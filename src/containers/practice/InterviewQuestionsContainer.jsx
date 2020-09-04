@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { loadInterviewQuestions } from '../modules/reducer';
+import { loadInterviewQuestions } from '../../modules/reducer';
 
-import InterivewQuestions from '../components/InterviewQuestions';
+import InterivewQuestions from '../../components/practice/InterviewQuestions';
 
-import { get } from '../modules/utils';
+import { get } from '../../utils';
 
 const InterviewQuestionsContainer = () => {
   const dispatch = useDispatch();

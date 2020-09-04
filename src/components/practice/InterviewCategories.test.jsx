@@ -2,7 +2,7 @@ import React from 'react';
 
 import { render, fireEvent } from '@testing-library/react';
 
-import interviewCategories from '../../fixtures/interview-categories';
+import interviewCategories from '../../../fixtures/interview-categories';
 
 import InterviewCategories from './InterviewCategories';
 
