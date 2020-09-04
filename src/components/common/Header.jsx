@@ -148,7 +148,9 @@ const MenuLinkStyled = styled(NavLink)((props) => ({
   },
 }));
 
-const Header = ({ dropDownMenuActive, onDropdownMenuActive, blue = 0 }) => (
+const Header = ({
+  dropDownMenuActive, onDropdownMenuActive, blue = 0, location,
+}) => (
   <>
     <Wrapper blue={blue}>
       <HeaderStyled
@@ -164,7 +166,8 @@ const Header = ({ dropDownMenuActive, onDropdownMenuActive, blue = 0 }) => (
         <HeaderRightStyled>
           <MenuListStyled>
             <MenuListItemStyeld>
-              <MenuLinkStyled to="/interviews" exact activeClassName="selected" blue={blue}>시작하기</MenuLinkStyled>
+              {(!location || location.pathname !== '/interviews')
+              && <MenuLinkStyled to="/interviews" exact activeClassName="selected" blue={blue}>시작하기</MenuLinkStyled>}
             </MenuListItemStyeld>
           </MenuListStyled>
         </HeaderRightStyled>
