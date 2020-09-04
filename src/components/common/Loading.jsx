@@ -35,4 +35,4 @@ const Loadding = ({ flag }) => (
   </Warpper>
 );
 
-export default Loadding;
+export default React.memo(Loadding);

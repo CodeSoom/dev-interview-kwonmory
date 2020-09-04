@@ -177,4 +177,4 @@ const Header = ({ dropDownMenuActive, onDropdownMenuActive, blue = 0 }) => (
   </>
 );
 
-export default Header;
+export default React.memo(Header);

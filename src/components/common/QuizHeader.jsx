@@ -72,4 +72,4 @@ const QuizHeader = ({
   );
 };
 
-export default QuizHeader;
+export default React.memo(QuizHeader);

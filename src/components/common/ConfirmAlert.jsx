@@ -74,4 +74,4 @@ const ConfirmAlert = ({
   </Wrapper>
 );
 
-export default ConfirmAlert;
+export default React.memo(ConfirmAlert);

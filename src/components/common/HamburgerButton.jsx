@@ -88,4 +88,4 @@ const HamburgerButton = ({ active, onClick }) => (
   </HamburgerButtonStyled>
 );
 
-export default HamburgerButton;
+export default React.memo(HamburgerButton);
