@@ -10,8 +10,14 @@ const ListStyled = styled.li({
 
   img: {
     width: '18rem',
-    margin: '.7rem 0',
+    margin: '1.1rem 0',
     borderRadius: '.3rem',
+    transition: 'transform .5s',
+    cursor: 'pointer',
+
+    '&:hover': {
+      transform: 'scale(1.1)',
+    },
   },
   h2: {
     color: '#fff',
