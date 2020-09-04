@@ -17,14 +17,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kwonmory/project-react-1-kwonmory.git"
+    "url": "git+https://github.com/kwonmory/check-your-self-kwonmory.git"
   },
   "author": "kwonmory",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kwonmory/project-react-1-kwonmory/issues"
+    "url": "https://github.com/kwonmory/check-your-self-kwonmory/issues"
   },
-  "homepage": "https://github.com/kwonmory/project-react-1-kwonmory#readme",
+  "homepage": "https://github.com/CodeSoom/check-your-self-kwonmory",
   "dependencies": {
     "@codeceptjs/configure": "^0.5.2",
     "@emotion/core": "^10.0.28",
