@@ -8,23 +8,39 @@ const InterviewsItemStyled = styled.li({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
-  flexDirection: 'column',
-  maxWidth: '20rem',
+  width: '100%',
   minWidth: '20rem',
-  minHeight: '23rem',
-  maxHeight: '23rem',
   margin: '1.5rem .2rem',
+  paddingBottom: '1rem',
+  borderBottom: '1px solid rgba(0,0,0,0.1)',
+
+  '@media (max-width: 48rem)': {
+    flexDirection: 'column',
+  },
 });
 
 const InterviewsImagesStyled = styled.div({
   display: 'flex',
   justifyContent: 'center',
-  width: '300px',
-  height: '200px',
+  width: '20rem',
+  height: '15rem',
   img: {
-    width: '100%',
+    width: '20rem',
     height: '100%',
     borderRadius: '5px',
+  },
+});
+
+const InterviewsRightStyled = styled.div({
+  display: 'flex',
+  flexDirection: 'column',
+  justifyContent: 'space-between',
+  height: '15rem',
+  width: '100%',
+  marginLeft: '1rem',
+
+  '@media (max-width: 48rem)': {
+    height: 'auto',
   },
 });
 
@@ -35,14 +51,23 @@ const InterviewsTitleStyled = styled.h2({
   fontWeight: '700',
   color: '#263747',
   lineHeight: '1.3',
+
+  '@media (max-width: 48rem)': {
+    textAlign: 'center',
+  },
 });
 
 const InterviewsDescriptionStyled = styled.p({
   width: '100%',
   marginBottom: '1rem',
-  padding: '0 .5rem',
   color: '#98A8B9',
   fontSize: '.9rem',
+  lineHeight: 1.3,
+  letterSpacing: '0.075rem',
+
+  '@media (max-width: 48rem)': {
+    textAlign: 'center',
+  },
 });
 
 const InterviewsActiveStyled = styled.div({
@@ -54,7 +79,10 @@ const InterviewsActiveStyled = styled.div({
 
 const InterviewsTagsStyled = styled.div({
   display: 'flex',
+  justifyContent: 'space-between',
   alignItems: 'center',
+  flex: 1,
+  paddingRight: '1rem',
 
   span: {
     display: 'inline-block',
@@ -74,7 +102,7 @@ const InterviewsTagsStyled = styled.div({
 });
 
 const InterviewsActiveButtonStyled = styled.div({
-
+  // empty
 });
 
 const ButtonStyled = styled.button({
@@ -106,25 +134,35 @@ const InterviewsItem = ({ interviews, onStartButton }) => {
         <InterviewsImagesStyled>
           <img src={image} alt={imageAtl} />
         </InterviewsImagesStyled>
-        <InterviewsTitleStyled>
-          {_.truncate(interviews?.title || '제목이 없습니다!', {
-            length: 40,
-          })}
-        </InterviewsTitleStyled>
-        <InterviewsDescriptionStyled>
-          {_.truncate(interviews?.description || '설명이 없습니다!', {
-            length: 100,
-          })}
-        </InterviewsDescriptionStyled>
-        <InterviewsActiveStyled>
-          <InterviewsTagsStyled>
-            {interviews?.tags?.map((tag) => <span key={`tag_${interviews.id}_${tag.id}`}>{tag.title}</span>)}
-            {interviews?.source && <a key={interviews.id} href={interviews.source} target="_blank" rel="noreferrer">출처</a>}
-          </InterviewsTagsStyled>
-          <InterviewsActiveButtonStyled>
-            <ButtonStyled onClick={() => onStartButton(interviews.id)}>도전하기</ButtonStyled>
-          </InterviewsActiveButtonStyled>
-        </InterviewsActiveStyled>
+        <InterviewsRightStyled>
+          <div>
+            <InterviewsTitleStyled>
+              {_.truncate(interviews?.title || '제목이 없습니다!', {
+                length: 60,
+              })}
+            </InterviewsTitleStyled>
+            <InterviewsDescriptionStyled>
+              {_.truncate(interviews?.description || '설명이 없습니다!', {
+                length: 350,
+              })}
+            </InterviewsDescriptionStyled>
+          </div>
+          <div>
+            <InterviewsActiveStyled>
+              <InterviewsTagsStyled>
+                <div>
+                  {interviews?.tags?.map((tag) => <span key={`tag_${interviews.id}_${tag.id}`}>{tag.title}</span>)}
+                </div>
+                <div>
+                  {interviews?.source && <a key={interviews.id} href={interviews.source} target="_blank" rel="noreferrer">출처링크</a>}
+                </div>
+              </InterviewsTagsStyled>
+              <InterviewsActiveButtonStyled>
+                <ButtonStyled onClick={() => onStartButton(interviews.id)}>도전하기</ButtonStyled>
+              </InterviewsActiveButtonStyled>
+            </InterviewsActiveStyled>
+          </div>
+        </InterviewsRightStyled>
       </InterviewsItemStyled>
     </>
   );
