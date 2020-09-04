@@ -3,18 +3,20 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import { useSelector } from 'react-redux';
+
 import HeaderContainer from '../containers/common/HeaderContainer';
+import Footer from '../components/common/Footer';
 
 import Loadding from '../components/common/Loading';
 
-import { get } from '../modules/utils';
+import { get } from '../utils';
 
 const Wrapper = styled.div({
-
+  // empty
 });
 
 const BaseLayout = ({
-  children,
+  children, blue = 0,
 }) => {
   const loading = useSelector(get('loading'));
 
@@ -23,9 +25,9 @@ const BaseLayout = ({
       <Loadding flag={loading} />
 
       <Wrapper>
-        <HeaderContainer />
+        <HeaderContainer blue={blue} />
         {children}
-
+        <Footer />
       </Wrapper>
     </>
   );

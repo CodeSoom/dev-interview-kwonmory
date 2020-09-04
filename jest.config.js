@@ -1,4 +1,5 @@
 module.exports = {
+  verbose: false,
   setupFilesAfterEnv: [
     'given2/setup',
     'jest-plugin-context/setup',
@@ -11,5 +12,9 @@ module.exports = {
       lines: 100,
       statements: 100,
     },
+  },
+  moduleNameMapper: {
+    '\\.(css|scss|svg)$': 'identity-obj-proxy',
+    '\\.(jpg|jpeg|png|svg)$': '<rootDir>/src/config/assetsTransformer.js',
   },
 };

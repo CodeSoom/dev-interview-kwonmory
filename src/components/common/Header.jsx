@@ -11,19 +11,19 @@ import { faHippo } from '@fortawesome/free-solid-svg-icons';
 
 import HamburgerButton from './HamburgerButton';
 
-const Wrapper = styled.div({
+const Wrapper = styled.div((props) => ({
   display: 'flex',
   alignItems: 'center',
   width: '100%',
   minHeight: '3.3rem',
   padding: '0 2rem',
-  borderBottom: '1px solid #dfe6e9',
-  backgroundImage: 'linear-gradient(128deg, #6a80f8 6%, #4a65f6 91%)',
+  borderBottom: props.blue ? '1px solid #dfe6e9' : 'none',
+  backgroundImage: props.blue ? 'linear-gradient(128deg, #6a80f8 6%, #4a65f6 91%)' : 'linear-gradient(128deg, #363B3E 6%, #363B3E 91%)',
 
   '@media (max-width: 48rem)': {
     minHeight: '3.7rem',
   },
-});
+}));
 
 const HeaderLeftStyled = styled.div({
   width: '8.5rem',
@@ -131,13 +131,14 @@ const MenuListItemStyeld = styled.li({
   fontWeight: 500,
 });
 
-const MenuLinkStyled = styled(NavLink)({
+const MenuLinkStyled = styled(NavLink)((props) => ({
   padding: '0.2rem 1rem',
-  color: '#657CF7',
+  color: props.blue ? '#657CF7' : '#363b3e',
   fontWeight: 600,
   fontSize: '1rem',
   textDecoration: 'none',
   backgroundColor: '#fff',
+  border: '2px solid rgba(255, 255, 255, 0.6)',
   borderRadius: '.2rem',
 
   '&:hover': {
@@ -145,11 +146,11 @@ const MenuLinkStyled = styled(NavLink)({
     color: '#fff',
     border: '2px solid rgba(255, 255, 255, 0.6)',
   },
-});
+}));
 
-const Header = ({ dropDownMenuActive, onDropdownMenuActive }) => (
+const Header = ({ dropDownMenuActive, onDropdownMenuActive, blue = 0 }) => (
   <>
-    <Wrapper>
+    <Wrapper blue={blue}>
       <HeaderStyled
         dropDownMenuActive={dropDownMenuActive}
         className={classNames({ dropDownMenuActive })}
@@ -163,7 +164,7 @@ const Header = ({ dropDownMenuActive, onDropdownMenuActive }) => (
         <HeaderRightStyled>
           <MenuListStyled>
             <MenuListItemStyeld>
-              <MenuLinkStyled to="/interviews" exact activeClassName="selected">시작하기</MenuLinkStyled>
+              <MenuLinkStyled to="/interviews" exact activeClassName="selected" blue={blue}>시작하기</MenuLinkStyled>
             </MenuListItemStyeld>
           </MenuListStyled>
         </HeaderRightStyled>

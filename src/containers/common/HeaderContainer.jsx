@@ -2,7 +2,7 @@ import React, { useCallback, useState } from 'react';
 
 import Header from '../../components/common/Header';
 
-const HeaderContainer = () => {
+const HeaderContainer = ({ blue = 0 }) => {
   const [dropDownMenuActive, setDropdownMenuActive] = useState(false);
 
   const handleDropdownMenuActive = useCallback(() => {
@@ -13,6 +13,7 @@ const HeaderContainer = () => {
     <Header
       onDropdownMenuActive={handleDropdownMenuActive}
       dropDownMenuActive={dropDownMenuActive}
+      blue={blue}
     />
   );
 };

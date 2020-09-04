@@ -11,9 +11,11 @@
       "source": "https://h5bp.org/Front-end-Developer-Interview-Questions/translations/korean/",
       "tags": [
         {
+          "id": 1,
           "title": "frontend"
         },
         {
+          "id": 2,
           "title": "general"
         }
       ],
@@ -64,9 +66,11 @@
       "source": "https://h5bp.org/Front-end-Developer-Interview-Questions/translations/korean/",
       "tags": [
         {
+          "id": 1,
           "title": "frontend"
         },
         {
+          "id": 2,
           "title": "html"
         }
       ],
@@ -114,9 +118,11 @@
       "source": "https://h5bp.org/Front-end-Developer-Interview-Questions/translations/korean/",
       "tags": [
         {
+          "id": 1,
           "title": "frontend"
         },
         {
+          "id": 2,
           "title": "css"
         }
       ],
@@ -179,9 +185,11 @@
       "source": "https://h5bp.org/Front-end-Developer-Interview-Questions/translations/korean/",
       "tags": [
         {
+          "id": 1,
           "title": "frontend"
         },
         {
+          "id": 2,
           "title": "javascript"
         }
       ],
