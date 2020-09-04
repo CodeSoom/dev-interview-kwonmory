@@ -148,7 +148,7 @@ const MenuLinkStyled = styled(NavLink)((props) => ({
   },
 }));
 
-const Header = ({ dropDownMenuActive, onDropdownMenuActive, blue = false }) => (
+const Header = ({ dropDownMenuActive, onDropdownMenuActive, blue = 0 }) => (
   <>
     <Wrapper blue={blue}>
       <HeaderStyled

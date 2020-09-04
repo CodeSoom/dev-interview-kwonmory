@@ -14,7 +14,7 @@ const Wrapper = styled.div({
 });
 
 const BaseLayout = ({
-  children, blue = false,
+  children, blue = 0,
 }) => {
   const loading = useSelector(get('loading'));
 
@@ -25,7 +25,6 @@ const BaseLayout = ({
       <Wrapper>
         <HeaderContainer blue={blue} />
         {children}
-
       </Wrapper>
     </>
   );

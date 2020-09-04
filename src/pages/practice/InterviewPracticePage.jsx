@@ -63,7 +63,7 @@ const Banner = styled.div`
 `;
 
 const InterviewPracticePage = () => (
-  <BaseLayout>
+  <BaseLayout blue={0}>
     <Wrapper>
       <Banner>
         <div>

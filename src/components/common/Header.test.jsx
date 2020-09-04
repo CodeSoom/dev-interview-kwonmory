@@ -11,6 +11,7 @@ function renderHeader({ dropdownMenuActive, handleDropdownMenuActive }) {
       <Header
         dropdownMenuActive={dropdownMenuActive}
         onDropdownMenuActive={handleDropdownMenuActive}
+        blue={0}
       />
     </MemoryRouter>,
   );

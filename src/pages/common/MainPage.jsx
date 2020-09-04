@@ -12,6 +12,8 @@ import {
 
 import BaseLayout from '../../layout/BaseLayout';
 
+import GuideStepList from '../../components/common/GuideStepList';
+
 import intro1Image from '../../../assets/images/intro1.png';
 import intro2Image from '../../../assets/images/intro2.png';
 import intro3Image from '../../../assets/images/intro3.png';
@@ -97,25 +99,6 @@ const IntroSection = styled.section({
         justifyContent: 'center',
         flexWrap: 'wrap',
         marginBottom: '1rem',
-
-        li: {
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          flexDirection: 'column',
-          margin: '1rem 1.5rem',
-
-          img: {
-            width: '18rem',
-            margin: '.7rem 0',
-            borderRadius: '.3rem',
-          },
-          p: {
-            h2: {
-              color: '#fff',
-            },
-          },
-        },
       },
     },
   },
@@ -145,7 +128,7 @@ const MainPage = () => {
   };
 
   return (
-    <BaseLayout>
+    <BaseLayout blue={0}>
       <IntroSection>
         <article>
           <h3>
@@ -184,40 +167,45 @@ const MainPage = () => {
 
         <article>
           <ul>
-            <li>
-              <img src={intro1Image} alt="단계이미지" />
-              <p>
-                <h2>
-                  안내에 따라 시작해봅시다.
-                </h2>
-              </p>
-            </li>
-            <li>
-              <img src={intro2Image} alt="단계이미지" />
-              <p>
-                <h2>
-                  질문에 스스로 대답을 해보세요.
-                </h2>
-              </p>
-            </li>
+            <GuideStepList
+              image={
+                {
+                  src: intro1Image,
+                  alt: '1단계이미지',
+                }
+              }
+              text="안내에 따라 시작해봅시다."
+            />
+            <GuideStepList
+              image={
+                {
+                  src: intro2Image,
+                  alt: '2단계이미지',
+                }
+              }
+              text="질문에 스스로 대답을 해보세요."
+            />
+
           </ul>
           <ul>
-            <li>
-              <img src={intro3Image} alt="단계이미지" />
-              <p>
-                <h2>
-                  스스로 피드백을 해봅시다.
-                </h2>
-              </p>
-            </li>
-            <li>
-              <img src={intro4Image} alt="단계이미지" />
-              <p>
-                <h2>
-                  모든 피드백을 보고 다시한번 생각해봐요.
-                </h2>
-              </p>
-            </li>
+            <GuideStepList
+              image={
+                {
+                  src: intro3Image,
+                  alt: '3단계이미지',
+                }
+              }
+              text="스스로 피드백을 해봅시다."
+            />
+            <GuideStepList
+              image={
+                {
+                  src: intro4Image,
+                  alt: '4단계이미지',
+                }
+              }
+              text="모든 피드백을 보고 다시한번 생각해봐요."
+            />
           </ul>
         </article>
       </IntroSection>
