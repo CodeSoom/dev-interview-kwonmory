@@ -4,8 +4,7 @@ import styled from '@emotion/styled';
 
 import { Switch, Route } from 'react-router-dom';
 
-import HeaderContainer from './containers/common/HeaderContainer';
-
+import MainPage from './pages/common/MainPage';
 import InterviewPracticePage from './pages/practice/InterviewPracticePage';
 import NotFoundPage from './pages/common/NotFoundPage';
 
@@ -20,17 +19,11 @@ const Wrapper = styled.div({
   // empty
 });
 
-const tempMainPage = () => (
-  <>
-    <HeaderContainer />
-  </>
-);
-
 const App = () => (
   <>
     <Wrapper>
       <Switch>
-        <Route exact path="/" component={tempMainPage} />
+        <Route exact path="/" component={MainPage} />
         <Route exact path="/interviews" component={InterviewsPage} />
         <Route exact path="/interviews/practice" component={InterviewPracticePage} />
         <Route exact path="/interviews/quiz" component={InterviewsIntroPage} />
