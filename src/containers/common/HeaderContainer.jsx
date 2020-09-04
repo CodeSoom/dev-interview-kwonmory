@@ -1,8 +1,12 @@
 import React, { useCallback, useState } from 'react';
 
+import { useLocation } from 'react-router-dom';
+
 import Header from '../../components/common/Header';
 
 const HeaderContainer = ({ blue = 0 }) => {
+  const location = useLocation();
+
   const [dropDownMenuActive, setDropdownMenuActive] = useState(false);
 
   const handleDropdownMenuActive = useCallback(() => {
@@ -14,6 +18,7 @@ const HeaderContainer = ({ blue = 0 }) => {
       onDropdownMenuActive={handleDropdownMenuActive}
       dropDownMenuActive={dropDownMenuActive}
       blue={blue}
+      location={location}
     />
   );
 };
