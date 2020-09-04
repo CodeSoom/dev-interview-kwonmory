@@ -10,6 +10,23 @@ import mockInterviewCategories from '../../fixtures/interview-categories';
 import mockInterviews from '../../fixtures/interviews';
 
 describe('api', () => {
+  context('when NODE_ENV is production wtih error', () => {
+    beforeEach(() => {
+      fetch.mockReject(new Error('foo'));
+      jest.resetModules();
+      process.env = Object.assign(process.env, {
+        NODE_ENV: '/test',
+        API_PATH: '/test',
+      });
+    });
+
+    it('returns null', async () => {
+      const requestResult = await request();
+
+      expect(requestResult).toBeNull();
+    });
+  });
+
   describe('request', () => {
     beforeEach(() => {
       fetch.mockReject(new Error('foo'));
