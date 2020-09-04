@@ -45,7 +45,7 @@ module.exports = (env, argv) => ({
   output: {
     filename: 'bundle-[hash].js',
     path: path.resolve(__dirname, './dist'),
-    publicPath: argv.mode === 'production' ? '/project-react-1-kwonmory' : '/',
+    publicPath: argv.mode === 'production' ? '/check-your-self-kwonmory' : '/',
   },
   plugins: [
     new CleanWebpackPlugin(),
