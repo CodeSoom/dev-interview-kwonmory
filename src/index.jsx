@@ -17,7 +17,7 @@ import App from './App';
 ReactDOM.render(
   (
     <Provider store={store}>
-      <BrowserRouter>
+      <BrowserRouter basename={process?.env.PUBLIC_PATH || '/'}>
         <div className="transition-container fade-in">
           <App />
         </div>

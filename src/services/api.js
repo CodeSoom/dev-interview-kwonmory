@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:8080/data';
+const baseURL = process?.env.API_PATH || 'http://localhost:8080/data';
 
 export const request = async (url, options = {}) => {
   try {

@@ -2,6 +2,8 @@ const path = require('path');
 const apiMocker = require('connect-api-mocker');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = (env, argv) => ({
   entry: path.resolve(__dirname, 'src/index.jsx'),
@@ -51,6 +53,17 @@ module.exports = (env, argv) => ({
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'index.html'),
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: './favicon.ico', to: './' },
+        { from: './data/interviews.json', to: './data' },
+      ],
+    }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': argv.mode === 'production' ? JSON.stringify('production') : JSON.stringify('development'),
+      'process.env.PUBLIC_PATH': argv.mode === 'production' ? JSON.stringify('check-your-self-kwonmory') : JSON.stringify('/'),
+      'process.env.API_PATH': argv.mode === 'production' ? JSON.stringify('https://codesoom.github.io/check-your-self-kwonmory/data') : false,
     }),
   ],
   devServer: {
