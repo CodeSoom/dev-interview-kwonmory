@@ -63,7 +63,7 @@ describe('QuizHeader', () => {
       expect(container).toHaveTextContent('나가기');
       expect(container).toHaveTextContent(/step/);
       expect(container).toHaveTextContent(PROBLEMS_SIZE);
-      expect(container).toHaveTextContent('주니어 프론트엔드 개발자라면!');
+      expect(container).toHaveTextContent(mockInterviews[0].title);
     });
   });
 });
