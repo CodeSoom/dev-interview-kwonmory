@@ -2,7 +2,7 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-import BaseLayout from '../layout/BaseLayout';
+import BaseLayout from '../../layout/BaseLayout';
 
 const Wrapper = styled.div({
   display: 'flex',

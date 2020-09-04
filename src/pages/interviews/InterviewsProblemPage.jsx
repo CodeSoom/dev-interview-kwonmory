@@ -10,12 +10,12 @@ import _ from 'lodash';
 
 import styled from '@emotion/styled';
 
-import InterviewsLayout from '../layout/InterviewsLayout';
+import InterviewsLayout from '../../layout/InterviewsLayout';
 
-import QuizErrorMessage from '../components/quiz/QuizErrorMessage';
-import ButtonStyled from '../components/common/ButtonStyled';
+import QuizErrorMessage from '../../components/quiz/QuizErrorMessage';
+import ButtonStyled from '../../components/common/ButtonStyled';
 
-import { get } from '../modules/utils';
+import { get } from '../../modules/utils';
 
 const Wrapper = styled.div({
   display: 'flex',

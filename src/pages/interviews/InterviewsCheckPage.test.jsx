@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 
-import mockQuiz from '../../fixtures/quiz';
+import mockQuiz from '../../../fixtures/quiz';
 
 import InterviewsCheckPage from './InterviewsCheckPage';
 

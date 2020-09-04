@@ -5,19 +5,20 @@ import styled from '@emotion/styled';
 import { Switch, Route } from 'react-router-dom';
 
 import HeaderContainer from './containers/common/HeaderContainer';
-import InterviewPracticePage from './pages/InterviewPracticePage';
-import NotFoundPage from './pages/NotFoundPage';
-import InterviewsPage from './pages/InterviewsPage';
-import InterviewsIntroPage from './pages/InterviewsIntroPage';
-import InterviewsProblemPage from './pages/InterviewsProblemPage';
-import InterviewsFeedBackPage from './pages/InterviewsFeedBackPage';
-import InterviewsFinishPage from './pages/InterviewsFinishPage';
-import InterviewsCheckPage from './pages/InterviewsCheckPage';
 
-const Wrapper = styled.div`
-  //height: 100vh;
-  /* background-image: linear-gradient(128deg, #6a80f8 6%, #4a65f6 91%); */
-`;
+import InterviewPracticePage from './pages/practice/InterviewPracticePage';
+import NotFoundPage from './pages/common/NotFoundPage';
+
+import InterviewsPage from './pages/interviews/InterviewsPage';
+import InterviewsIntroPage from './pages/interviews/InterviewsIntroPage';
+import InterviewsProblemPage from './pages/interviews/InterviewsProblemPage';
+import InterviewsFeedBackPage from './pages/interviews/InterviewsFeedBackPage';
+import InterviewsFinishPage from './pages/interviews/InterviewsFinishPage';
+import InterviewsCheckPage from './pages/interviews/InterviewsCheckPage';
+
+const Wrapper = styled.div({
+  // empty
+});
 
 const tempMainPage = () => (
   <>

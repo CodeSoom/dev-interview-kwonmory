@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import InterviewsFeedBackPage from './InterviewsFeedBackPage';
 
-import mockQuiz from '../../fixtures/quiz';
+import mockQuiz from '../../../fixtures/quiz';
 
 function renderInterviewsFeedBackPage() {
   return render(<MemoryRouter><InterviewsFeedBackPage /></MemoryRouter>);
@@ -25,7 +25,7 @@ jest.mock('react-router-dom', () => ({
     block: jest.fn((message) => () => message),
   }),
 }));
-jest.mock('../services/storage');
+jest.mock('../../services/storage');
 
 describe('InterviewsFeedBackPage', () => {
   const dispatch = jest.fn();

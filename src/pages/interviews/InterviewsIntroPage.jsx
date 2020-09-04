@@ -6,13 +6,13 @@ import _ from 'lodash';
 
 import styled from '@emotion/styled';
 
-import { get } from '../modules/utils';
+import { get } from '../../modules/utils';
 
-import { loadQuiz } from '../modules/reducer'; // TODO setSelectedQuied 나중에 삭제해야함
+import { loadQuiz } from '../../modules/reducer'; // TODO setSelectedQuied 나중에 삭제해야함
 
-import QuizErrorMessage from '../components/quiz/QuizErrorMessage';
-import QuizIntroContainer from '../containers/quiz/QuizIntroContainer';
-import InterviewsLayout from '../layout/InterviewsLayout';
+import QuizErrorMessage from '../../components/quiz/QuizErrorMessage';
+import QuizIntroContainer from '../../containers/quiz/QuizIntroContainer';
+import InterviewsLayout from '../../layout/InterviewsLayout';
 
 const Wrapper = styled.div({
   // height: 'calc(100vh - 3.1rem)',

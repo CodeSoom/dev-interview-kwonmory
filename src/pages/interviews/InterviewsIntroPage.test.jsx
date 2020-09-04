@@ -8,7 +8,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import InterviewsIntroPage from './InterviewsIntroPage';
 
-import mockQuiz from '../../fixtures/quiz';
+import mockQuiz from '../../../fixtures/quiz';
 
 function renderInterviewsIntroPage() {
   return render(<MemoryRouter><InterviewsIntroPage /></MemoryRouter>);

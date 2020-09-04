@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import InterviewsPage from './InterviewsPage';
 
-import mockInterviews from '../../fixtures/interviews';
+import mockInterviews from '../../../fixtures/interviews';
 
 jest.mock('react-redux');
 

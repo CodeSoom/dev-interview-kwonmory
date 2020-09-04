@@ -2,10 +2,10 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-import InterviewCategoriesContainer from '../containers/InterviewCategoriesContainer';
-import InterviewQuestionsContainer from '../containers/InterviewQuestionsContainer';
+import InterviewCategoriesContainer from '../../containers/InterviewCategoriesContainer';
+import InterviewQuestionsContainer from '../../containers/InterviewQuestionsContainer';
 
-import BaseLayout from '../layout/BaseLayout';
+import BaseLayout from '../../layout/BaseLayout';
 
 const Wrapper = styled.div`
   margin: 0 2.5rem;

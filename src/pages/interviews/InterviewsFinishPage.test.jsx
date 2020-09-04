@@ -6,7 +6,7 @@ import { MemoryRouter } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 import InterviewsFinishPage from './InterviewsFinishPage';
-import mockQuiz from '../../fixtures/quiz';
+import mockQuiz from '../../../fixtures/quiz';
 
 const mockHistory = jest.fn();
 

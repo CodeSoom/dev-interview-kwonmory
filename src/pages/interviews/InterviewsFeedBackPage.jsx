@@ -2,9 +2,9 @@ import React from 'react';
 
 import styled from '@emotion/styled';
 
-import InterviewsLayout from '../layout/InterviewsLayout';
+import InterviewsLayout from '../../layout/InterviewsLayout';
 
-import InterviewsFeedBackContainer from '../containers/quiz/InterviewsFeedBackContainer';
+import InterviewsFeedBackContainer from '../../containers/quiz/InterviewsFeedBackContainer';
 
 const Wrapper = styled.div({
   display: 'flex',
