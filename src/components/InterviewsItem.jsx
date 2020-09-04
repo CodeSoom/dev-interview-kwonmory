@@ -118,8 +118,8 @@ const InterviewsItem = ({ interviews, onStartButton }) => {
         </InterviewsDescriptionStyled>
         <InterviewsActiveStyled>
           <InterviewsTagsStyled>
-            {interviews?.tags?.map((tag) => <span key={tag.id}>{tag.title}</span>)}
-            {interviews?.source && <a href={interviews.source} target="_blank" rel="noreferrer">출처</a>}
+            {interviews?.tags?.map((tag) => <span key={`tag_${interviews.id}_${tag.id}`}>{tag.title}</span>)}
+            {interviews?.source && <a key={interviews.id} href={interviews.source} target="_blank" rel="noreferrer">출처</a>}
           </InterviewsTagsStyled>
           <InterviewsActiveButtonStyled>
             <ButtonStyled onClick={() => onStartButton(interviews.id)}>도전하기</ButtonStyled>
