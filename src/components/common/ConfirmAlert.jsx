@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styled from '@emotion/styled';
+import CustomLazyLoadImage from './CustomLazyLoadImage';
 
 const Wrapper = styled.div({
   display: 'flex',
@@ -17,7 +18,6 @@ const Wrapper = styled.div({
 
   img: {
     display: 'block',
-    width: '40%',
     marginBottom: '1rem',
   },
 
@@ -55,23 +55,32 @@ const Wrapper = styled.div({
 const ConfirmAlert = ({
   onClose, message = '다음으로 넘어가시겠습니까?', closeMessage = '취소', confirmMessage = '다음으로',
   onHandleConfirm,
-}) => (
-  <Wrapper>
-    <img src="https://svgsilh.com/svg/1770788.svg" alt="강아지" />
-    <h1>{message}</h1>
-    <div>
-      <button
-        type="button"
-        onClick={() => {
-          if (onHandleConfirm) onHandleConfirm();
-          if (onClose) onClose();
-        }}
-      >
-        {confirmMessage}
-      </button>
-      <button type="button" onClick={onClose}>{closeMessage}</button>
-    </div>
-  </Wrapper>
-);
+}) => {
+  const image = {
+    src: 'https://svgsilh.com/svg/1770788.svg',
+    width: 90,
+    height: 108,
+    alt: '강아지 이미지',
+  };
+
+  return (
+    <Wrapper>
+      <CustomLazyLoadImage image={image} />
+      <h1>{message}</h1>
+      <div>
+        <button
+          type="button"
+          onClick={() => {
+            if (onHandleConfirm) onHandleConfirm();
+            if (onClose) onClose();
+          }}
+        >
+          {confirmMessage}
+        </button>
+        <button type="button" onClick={onClose}>{closeMessage}</button>
+      </div>
+    </Wrapper>
+  );
+};
 
 export default React.memo(ConfirmAlert);

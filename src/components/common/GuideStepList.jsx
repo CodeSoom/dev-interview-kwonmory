@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import CustomLazyLoadImage from './CustomLazyLoadImage';
 
 const ListStyled = styled.li({
   display: 'flex',
@@ -14,10 +15,6 @@ const ListStyled = styled.li({
     borderRadius: '.3rem',
     transition: 'transform .5s',
     cursor: 'pointer',
-
-    '&:hover': {
-      transform: 'scale(1.1)',
-    },
   },
   h2: {
     color: '#fff',
@@ -26,7 +23,7 @@ const ListStyled = styled.li({
 
 const GuideStepList = ({ image, text }) => (
   <ListStyled>
-    <img src={image.src} alt={image.alt} />
+    <CustomLazyLoadImage image={image} />
     <h2>
       {text}
     </h2>

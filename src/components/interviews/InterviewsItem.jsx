@@ -3,6 +3,7 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 import _ from 'lodash';
+import CustomLazyLoadImage from '../common/CustomLazyLoadImage';
 
 const InterviewsItemStyled = styled.li({
   display: 'flex',
@@ -128,11 +129,17 @@ const InterviewsItem = ({ interviews, onStartButton }) => {
   const image = interviews.image?.url || DEFAULT_IMAGE;
   const imageAtl = interviews?.image?.alt || '디폴트 이미지';
 
+  const madeImage = {
+    src: image,
+    alt: imageAtl,
+    with: 320,
+    height: 240,
+  };
   return (
     <>
       <InterviewsItemStyled>
         <InterviewsImagesStyled>
-          <img src={image} alt={imageAtl} />
+          <CustomLazyLoadImage image={madeImage} />
         </InterviewsImagesStyled>
         <InterviewsRightStyled>
           <div>
