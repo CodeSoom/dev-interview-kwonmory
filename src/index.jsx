@@ -10,9 +10,14 @@ import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import './css/react-transitions.css';
 
+import ReactGA from 'react-ga';
+
 import store from './modules/store';
 
 import App from './App';
+
+ReactGA.initialize('UA-151248860-3');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 ReactDOM.render(
   (
