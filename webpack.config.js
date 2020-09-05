@@ -48,7 +48,7 @@ module.exports = (env, argv) => ({
   output: {
     filename: 'bundle-[hash].js',
     path: path.resolve(__dirname, './dist'),
-    publicPath: argv.mode === 'production' ? '/check-your-self-kwonmory' : '/',
+    publicPath: '/',
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -63,8 +63,8 @@ module.exports = (env, argv) => ({
     }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': argv.mode === 'production' ? JSON.stringify('production') : JSON.stringify('development'),
-      'process.env.PUBLIC_PATH': argv.mode === 'production' ? JSON.stringify('check-your-self-kwonmory') : JSON.stringify('/'),
-      'process.env.API_PATH': argv.mode === 'production' ? JSON.stringify('https://codesoom.github.io/check-your-self-kwonmory/data') : false,
+      'process.env.PUBLIC_PATH': JSON.stringify('/'),
+      'process.env.API_PATH': argv.mode === 'production' ? JSON.stringify('https://interview.kwonmory.com/data') : false,
     }),
   ],
   devServer: {

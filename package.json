@@ -1,7 +1,7 @@
 {
   "name": "check-your-self",
   "version": "1.0.0",
-  "description": "check-your-self",
+  "description": "welocome to check-your-self",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -19,14 +19,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kwonmory/check-your-self-kwonmory.git"
+    "url": "git+https://github.com/CodeSoom/check-your-self-kwonmory.git"
   },
   "author": "kwonmory",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kwonmory/check-your-self-kwonmory/issues"
+    "url": "https://github.com/CodeSoom/check-your-self-kwonmory/issues"
   },
-  "homepage": "https://github.com/CodeSoom/check-your-self-kwonmory",
+  "homepage": "https://interview.kwonmory.com",
   "dependencies": {
     "@codeceptjs/configure": "^0.5.2",
     "@emotion/core": "^10.0.28",
