@@ -94,8 +94,8 @@ https://interview.kwonmory.com/
 
 > 개발환경
 
-- Webpack(webpackkdev-server)](https://webpack.js.org/guides/development/#usingwebpackkdevv-server)
-- Eslintt](https://eslint.org/)
+- [Webpack(webpackkdev-server)](https://webpack.js.org/guides/development/#usingwebpackkdevv-server)
+- [Eslint](https://eslint.org/)
 - ..등
 
 >테스트관련련
