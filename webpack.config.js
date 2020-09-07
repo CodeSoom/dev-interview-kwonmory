@@ -59,6 +59,7 @@ module.exports = (env, argv) => ({
       patterns: [
         { from: './favicon.ico', to: './' },
         { from: './data/interviews.json', to: './data' },
+        { from: './assets/preview.png', to: './public' },
       ],
     }),
     new webpack.DefinePlugin({
