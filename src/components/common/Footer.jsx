@@ -16,6 +16,10 @@ const FooterStyled = styled.div({
 
   span: {
     marginRight: '0.2rem',
+    a: {
+      color: 'rgba(255, 255, 255, .9)',
+      textDecoration: 'none',
+    },
   },
 });
 
@@ -23,7 +27,11 @@ const Footer = () => (
   <>
     <FooterStyled>
       <span>
-        2020 ⓒ 체크유얼셀프
+        2020 ⓒ
+        {' '}
+        <a href="https://github.com/CodeSoom/check-your-self-kwonmory" target="_blank" rel="noreferrer">체크유얼셀프</a>
+        {' '}
+        |
       </span>
       <FontAwesomeIcon icon={faHippo} />
     </FooterStyled>
