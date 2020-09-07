@@ -1,5 +1,7 @@
 
-# Check-Your-Self React Project (체크유얼셀프 리액트 프로젝트)
+# Check-Your-Self React Project
+
+(체크유얼셀프 리액트 프로젝트)
 
 개발자를 위한 셀프형 피드백에 기반한 모의 인터뷰 프로젝트
 
@@ -92,14 +94,14 @@ https://interview.kwonmory.com/
 
 > 개발환경
 
-- Webpackk(webpackkdevv-server)](https://webpack.js.org/guides/development/#usingwebpackkdevv-server)
+- Webpack(webpackkdev-server)](https://webpack.js.org/guides/development/#usingwebpackkdevv-server)
 - Eslintt](https://eslint.org/)
 - ..등
 
 >테스트관련련
 - [Jest](https://jestjsioo/)
 - [React Testing Library](https://testing-library.com/)
-- codeceptjss](https://codeceptioo/)
+- [codeceptjs](https://codeceptioo/)
 - ..등
 
 > 라이브러리
@@ -111,7 +113,7 @@ https://interview.kwonmory.com/
 
 # 프로젝트에 데이터 추가하기
 
-사이트 링크에 데이터를 추가할 수 있습니다. [문제 추가하기](https://github.comCodeSoomm/check-your-selfkwonmoryy/wiki%EB%AC%B8%EC%A0%9CC%EA%B8%B0%EC%97%AC%%ED%95%98%EB%8A%94%EB%B0%A9%EB%B2%955)
+사이트 링크에 데이터를 추가할 수 있습니다. [문제 추가하기](https://github.com/CodeSoom/check-your-self-kwonmory/wiki/%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%97%90-%EB%AC%B8%EC%A0%9C-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0)
 
 또는
 
