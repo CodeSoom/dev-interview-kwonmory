@@ -29,7 +29,7 @@ const Footer = () => (
       <span>
         2020 ⓒ
         {' '}
-        <a href="https://github.com/CodeSoom/check-your-self-kwonmory" target="_blank">체크유얼셀프</a>
+        <a href="https://github.com/CodeSoom/check-your-self-kwonmory" target="_blank" rel="noreferrer">체크유얼셀프</a>
         {' '}
         |
       </span>
