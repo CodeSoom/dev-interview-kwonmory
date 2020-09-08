@@ -29,6 +29,7 @@ const InterviewsImagesStyled = styled.div({
     width: '20rem',
     height: '100%',
     borderRadius: '5px',
+    objectFit: 'contain',
   },
 });
 
