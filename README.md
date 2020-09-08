@@ -98,7 +98,7 @@ https://interview.kwonmory.com/
 - [Eslint](https://eslint.org/)
 - ..등
 
->테스트관련련
+> 테스트관련
 - [Jest](https://jestjsioo/)
 - [React Testing Library](https://testing-library.com/)
 - [codeceptjs](https://codeceptioo/)
