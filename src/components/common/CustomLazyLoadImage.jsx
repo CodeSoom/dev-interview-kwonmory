@@ -6,7 +6,9 @@ const CustomLazyLoadImage = ({ image }) => (
   <>
     <LazyLoadImage
       alt={image.alt}
+      height={image.height}
       src={image.src} // use normal <img> attributes as props
+      width={image.width}
       effect="blur"
     />
   </>
