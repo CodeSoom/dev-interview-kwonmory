@@ -10,14 +10,26 @@ const ListStyled = styled.li({
   margin: '1rem 1.5rem',
 
   img: {
-    width: '18rem',
+    width: '100%',
+    maxWidth: '36rem',
+    height: '100%',
+    maxHeight: '23rem',
     margin: '1.1rem 0',
     borderRadius: '.3rem',
     transition: 'transform .5s',
-    cursor: 'pointer',
   },
+
   h2: {
     color: '#fff',
+  },
+  '@media (max-width: 64rem)': {
+    img: {
+      maxWidth: '100%',
+      maxHeight: '100%',
+    },
+    h2: {
+      marginTop: '2rem',
+    },
   },
 });
 
