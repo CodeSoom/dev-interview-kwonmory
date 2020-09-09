@@ -4,15 +4,14 @@ Feature('Interviews Page');
 
 Scenario('인터뷰즈 페이지를 렌더링한다.', (I) => {
   I.amOnPage('/interviews');
+  const interview = mockInterviews[0];
 
-  mockInterviews.forEach((interview) => {
-    I.see(interview.title);
+  I.see(interview.title);
 
-    I.see(interview.description);
+  I.see(interview.description);
 
-    interview.tags.forEach((tag) => {
-      I.see(tag.title.toLocaleUpperCase());
-    });
+  interview.tags.forEach((tag) => {
+    I.see(tag.title.toLocaleUpperCase());
   });
 
   I.see('도전하기');
