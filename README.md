@@ -79,7 +79,7 @@ CI/CD는 Github Actions 을 이용하였으며, CD는 개발 도중 Github Pages
 
 > Netlify(무료 버전)을 사용하고 있어 대역폭이 낮아 페이지를 불러오는데 시간이 약간 걸립니다.. 😭
 
-https://interview.kwonmory.com/
+https://bit.ly/3heoFfZ
 
 # Tech Stack_기술 스택
 
@@ -121,11 +121,11 @@ Fork를 하여 개인적으로 이용할 수 있습니다. [개인으로 이용�
 
 # 프로젝트 회고록
 
-- [1&2주 차 주간 회고록](https://kwonmory.github.io/codesoom/%EC%BD%94%EB%93%9C%EC%88%A8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-1&2%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A0%ED%95%98%EA%B8%B0/)
-- [3주 차 주간 회고록](https://kwonmory.github.io/codesoom/%EC%BD%94%EB%93%9C%EC%88%A8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-3%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A0%ED%95%98%EA%B8%B0/)
-- [4&5주 차 주간 회고록](https://kwonmory.github.io/codesoom/%EC%BD%94%EB%93%9C%EC%88%A8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-4&5%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A0%ED%95%98%EA%B8%B0/)
-- [6주 차 주간 회고록](https://kwonmory.github.io/codesoom/%EC%BD%94%EB%93%9C%EC%88%A8-%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-6%EC%A3%BC%EC%B0%A8-%ED%9A%8C%EA%B3%A0%ED%95%98%EA%B8%B0/)
-- [최종 회고록](https://kwonmory.github.io/codesoom/%EC%BD%94%EB%93%9C%EC%88%A8%EC%9D%84-%EB%81%9D%EB%82%B4%EB%A9%B0/)
+- [1&2주 차 주간 회고록](https://kwonmory.github.io/codesoom/codesoom-project-week1-2-retrospective)
+- [3주 차 주간 회고록](https://kwonmory.github.io/codesoom/codesoom-project-week3-retrospective)
+- [4&5주 차 주간 회고록](https://kwonmory.github.io/codesoom/codesoom-project-week4-5-retrospective)
+- [6주 차 주간 회고록](https://kwonmory.github.io/codesoom/codesoom-project-week6-retrospective)
+- [최종 회고록](https://kwonmory.github.io/codesoom/ending-codesoom)
 
 # 주 차별 진행 내역
 
