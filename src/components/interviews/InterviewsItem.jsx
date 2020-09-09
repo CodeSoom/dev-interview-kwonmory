@@ -23,13 +23,21 @@ const InterviewsItemStyled = styled.li({
 const InterviewsImagesStyled = styled.div({
   display: 'flex',
   justifyContent: 'center',
-  width: '20rem',
-  height: '15rem',
+
   img: {
-    width: '20rem',
+    width: '28rem',
     height: '100%',
     borderRadius: '5px',
-    objectFit: 'contain',
+    objectFit: 'cover',
+  },
+  '@media (max-width: 48rem)': {
+    width: '100%',
+    height: '16.5rem',
+    img: {
+      width: '100%',
+      maxWidth: '40rem',
+      height: '16rem',
+    },
   },
 });
 
@@ -39,7 +47,7 @@ const InterviewsRightStyled = styled.div({
   justifyContent: 'space-between',
   height: '15rem',
   width: '100%',
-  marginLeft: '1rem',
+  marginLeft: '2rem',
 
   '@media (max-width: 48rem)': {
     height: 'auto',
@@ -136,6 +144,7 @@ const InterviewsItem = ({ interviews, onStartButton }) => {
     with: 320,
     height: 240,
   };
+
   return (
     <>
       <InterviewsItemStyled>
@@ -152,7 +161,12 @@ const InterviewsItem = ({ interviews, onStartButton }) => {
             <InterviewsDescriptionStyled>
               {_.truncate(interviews?.description || '설명이 없습니다!', {
                 length: 350,
-              })}
+              }).split('\n').map((line) => (
+                <span key={`${interviews.id}_${line}`}>
+                  {line}
+                  <br />
+                </span>
+              ))}
             </InterviewsDescriptionStyled>
           </div>
           <div>

@@ -93,7 +93,12 @@ const InterviewsProblemPage = () => {
         <QuizStyled>
           Q.
           {' '}
-          {currentQuiz?.title}
+          {currentQuiz?.title.split('\n').map((line) => (
+            <span key={`${currentQuiz.id}_${line}`}>
+              {line}
+              <br />
+            </span>
+          ))}
         </QuizStyled>
         <ButtonStyled type="button" onClick={handleGoNextProblem}>다음문제</ButtonStyled>
       </Wrapper>
