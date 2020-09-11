@@ -34,7 +34,7 @@ const Footer = () => (
         {' '}
         {' '}
         <a href="https://github.com/CodeSoom/check-your-self-kwonmory" target="_blank" rel="noreferrer">
-          체크유얼셀프 |
+          데브-인터뷰 |
           {' '}
           <FontAwesomeIcon icon={faGithub} />
         </a>

@@ -160,7 +160,7 @@ const Header = ({
         <HeaderLeftStyled>
           <LogoLinkStyled to="/" className="logo">
             <FontAwesomeIcon icon={faHippo} />
-            <LogoTextStyled>체크유얼셀프</LogoTextStyled>
+            <LogoTextStyled>데브-인터뷰</LogoTextStyled>
           </LogoLinkStyled>
         </HeaderLeftStyled>
         <HeaderRightStyled>
