@@ -16,7 +16,7 @@ import store from './modules/store';
 
 import App from './App';
 
-ReactGA.initialize('UA-151248860-3');
+ReactGA.initialize('UA-151248860-6');
 ReactGA.pageview(window.location.pathname + window.location.search);
 
 ReactDOM.render(
