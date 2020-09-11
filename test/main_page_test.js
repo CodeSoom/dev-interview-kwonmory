@@ -5,7 +5,7 @@ Scenario('메인 페이지가 렌더링 된다.', (I) => {
 
   I.seeElement('.logo');
 
-  I.see('체크유얼셀프');
+  I.see('데브-인터뷰');
 
   I.see('Interview');
 

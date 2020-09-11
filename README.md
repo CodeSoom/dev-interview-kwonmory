@@ -1,13 +1,13 @@
 
-# Check-Your-Self React Project
-
-(체크유얼셀프 리액트 프로젝트)
+# Dev-Interview React Project
 
 개발자를 위한 셀프형 피드백에 기반한 모의 인터뷰 프로젝트
 
 (Simple mock interview project based on self-feedback for developers)
 
-![workflow_badge](https://github.com/CodeSoom/check-your-self-kwonmory/workflows/build/badge.svg?branch=master)
+> 이름이 CheckYourSelf 에서 Dev-Interview로 변경되었습니다.
+
+![workflow_badge](https://github.com/CodeSoom/dev-interview-kwonmory/workflows/build/badge.svg?branch=master)
 
 # Introduce_소개
 
@@ -19,7 +19,7 @@
 
 기술 면접에는 요구사항을 주고 코드를 짜고 설명하는 방식을 진행하는 회사도 있고 지식을 물어보는 방식과 같이 회사 마다 다양한 방식으로 개발자의 역량을 살펴보고 있습니다.
 
-그 중 `간단하게 지식을 물어보는 방식으로 개발자 인터뷰 준비를 할 수 있는 환경`이라도 있다면 도움이 될 것 같다고 생각하게 되어서 `Check-Your-Self`를 만들어보았습니다.
+그 중 `간단하게 지식을 물어보는 방식으로 개발자 인터뷰 준비를 할 수 있는 환경`이라도 있다면 도움이 될 것 같다고 생각하게 되어서 `Dev-Interview`를 만들어보았습니다.
 
  그러면 **어떻게 하면 도움이 될까**라는 부분이 핵심이였습니다.
 
@@ -113,27 +113,27 @@ https://bit.ly/33oGLai
 
 # 프로젝트에 데이터 추가하기
 
-사이트 링크에 데이터를 추가할 수 있습니다. [문제 추가하기](https://github.com/CodeSoom/check-your-self-kwonmory/wiki/%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%97%90-%EB%AC%B8%EC%A0%9C-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0)
+사이트 링크에 데이터를 추가할 수 있습니다. [문제 추가하기](https://github.com/CodeSoom/dev-interview-kwonmory/wiki/%EC%82%AC%EC%9D%B4%ED%8A%B8%EC%97%90-%EB%AC%B8%EC%A0%9C-%EC%B6%94%EA%B0%80%ED%95%98%EA%B8%B0)
 
 또는
 
-Fork를 하여 개인적으로 이용할 수 있습니다. [개인으로 이용하기](https://github.com/CodeSoom/check-your-self-kwonmory/wiki/%EA%B0%9C%EC%9D%B8%EC%9C%BC%EB%A1%9C-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0)
+Fork를 하여 개인적으로 이용할 수 있습니다. [개인으로 이용하기](https://github.com/CodeSoom/dev-interview-kwonmory/wiki/%EA%B0%9C%EC%9D%B8%EC%9C%BC%EB%A1%9C-%EC%9D%B4%EC%9A%A9%ED%95%98%EA%B8%B0)
 
 # 프로젝트 회고록
 
-- [1&2주 차 주간 회고록](https://kwonmory.github.io/codesoom/codesoom-project-week1-2-retrospective)
-- [3주 차 주간 회고록](https://kwonmory.github.io/codesoom/codesoom-project-week3-retrospective)
-- [4&5주 차 주간 회고록](https://kwonmory.github.io/codesoom/codesoom-project-week4-5-retrospective)
-- [6주 차 주간 회고록](https://kwonmory.github.io/codesoom/codesoom-project-week6-retrospective)
-- [최종 회고록](https://kwonmory.github.io/codesoom/ending-codesoom)
+- [1&2주 차 주간 회고록](https://blog.kwonmory.com/codesoom/codesoom-project-week1-2-retrospective)
+- [3주 차 주간 회고록](https://blog.kwonmory.com/codesoom/codesoom-project-week3-retrospective)
+- [4&5주 차 주간 회고록](https://blog.kwonmory.com/codesoom/codesoom-project-week4-5-retrospective)
+- [6주 차 주간 회고록](https://blog.kwonmory.com/codesoom/codesoom-project-week6-retrospective)
+- [최종 회고록](https://blog.kwonmory.com/codesoom/ending-codesoom)
 
 # 주 차별 진행 내역
 
-- [1주 차 진행 상황과 목표 링크](https://github.com/CodeSoom/check-your-self-kwonmory/issues/1)
-- [2주 차 진행 상황과 목표 링크](https://github.com/CodeSoom/check-your-self-kwonmory/issues/8)
-- [3주 차 진행 상황과 목표 링크](https://github.com/CodeSoom/check-your-self-kwonmory/issues/27)
-- [4&5주 차 진행 상황과 목표 링크](https://github.com/CodeSoom/check-your-self-kwonmory/issues/30)
-- [6주 차 진행 상황과 목표 링크](https://github.com/CodeSoom/check-your-self-kwonmory/issues/64)
+- [1주 차 진행 상황과 목표 링크](https://github.com/CodeSoom/dev-interview-kwonmory/issues/1)
+- [2주 차 진행 상황과 목표 링크](https://github.com/CodeSoom/dev-interview-kwonmory/issues/8)
+- [3주 차 진행 상황과 목표 링크](https://github.com/CodeSoom/dev-interview-kwonmory/issues/27)
+- [4&5주 차 진행 상황과 목표 링크](https://github.com/CodeSoom/dev-interview-kwonmory/issues/30)
+- [6주 차 진행 상황과 목표 링크](https://github.com/CodeSoom/dev-interview-kwonmory/issues/64)
 
 # Getting Started_시작하기
 

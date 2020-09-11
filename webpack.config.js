@@ -65,7 +65,7 @@ module.exports = (env, argv) => ({
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': argv.mode === 'production' ? JSON.stringify('production') : JSON.stringify('development'),
       'process.env.PUBLIC_PATH': JSON.stringify('/'),
-      'process.env.API_PATH': argv.mode === 'production' ? JSON.stringify('https://interview.kwonmory.com/data') : false,
+      'process.env.API_PATH': argv.mode === 'production' ? JSON.stringify('https://dev-interview.com/data') : false,
     }),
   ],
   devServer: {
