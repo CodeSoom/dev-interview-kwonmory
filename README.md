@@ -79,7 +79,7 @@ CI/CD는 Github Actions 을 이용하였으며, CD는 개발 도중 Github Pages
 
 > Netlify(무료 버전)을 사용하고 있어 대역폭이 낮아 페이지를 불러오는데 시간이 약간 걸립니다.. 😭
 
-https://bit.ly/3heoFfZ
+https://bit.ly/33oGLai
 
 # Tech Stack_기술 스택
 
