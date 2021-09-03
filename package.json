@@ -42,7 +42,7 @@
     "css-loader": "^4.0.0",
     "file-loader": "^6.0.0",
     "identity-obj-proxy": "^3.0.0",
-    "immer": "^7.0.8",
+    "immer": "^9.0.6",
     "lodash": "^4.17.20",
     "react": "^16.13.1",
     "react-confirm-alert": "^2.6.2",
